@@ -26,9 +26,10 @@
 
 <h2 align="center">About Me</h2>
 
-I’m Benjamin, a computer science and engineering student at **SKCET**. I build automations for things I’d rather spend less time doing. **HMT Restock Radar** watches for a restock so I can close the product page. My **n8n email workflow** uses a local model to summarize and prioritize Gmail previews before organizing them in Notion.
-
-I got hands-on with object-oriented **C++** at Thiranex and explored cloud development through **AWS Student Builder**. As a **GeeksforGeeks Campus Mantri**, I share technical learning opportunities with other students.
+Second-year B.E. Computer Science and Engineering student with a 9.54/10 CGPA and a strong foundation in C++, Java, SQL, web technologies, 
+and cloud computing. Completed a C++ programming internship at Thiranex, serves as an AWS Student Builder Campus Leader and 
+GeeksforGeeks Campus Mantri, and builds AI-assisted applications with Amazon Bedrock, Kiro, and Claude. Won first place at EUREKA! 2026 
+(E-Cell, IIT Bombay) and focuses on software development, AI-enabled applications, and practical problem-solving
 
 <h2 align="center">Featured Projects</h2>
 
