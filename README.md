@@ -1,51 +1,47 @@
-<p align="center">
-  <img
-    width="100%"
-    src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:101022,45:392358,78:754568,100:F29B91&amp;height=210&amp;section=header&amp;text=Benjamin%20Franklin%20A&amp;fontSize=48&amp;fontColor=FFF4E8&amp;fontAlignY=42&amp;desc=Computer%20Science%20%20%2F%20%20Madurai%2C%20India&amp;descSize=17&amp;descAlignY=61&amp;animation=fadeIn"
-    alt="Benjamin Franklin A · Computer Science · Madurai, India"
-  />
-</p>
+<h1 align="center">Benjamin Franklin A</h1>
+<p align="center"><strong>Computer Science &amp; Engineering · SKCET, Coimbatore</strong><br>Madurai, India</p>
+<p align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=17&amp;pause=1800&amp;color=58A6FF&amp;background=161B22&amp;center=true&amp;vCenter=true&amp;width=540&amp;height=48&amp;lines=Watching+for+the+next+HMT+restock...;Building+email+workflows+with+n8n..." alt="Watching for HMT restocks and building email workflows with n8n" /></p>
 
-<p align="center">
-  <a href="#selected-projects">Selected projects</a>
-  &nbsp;·&nbsp;
-  <a href="#recognition">Recognition</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/lolsico9t5?tab=repositories">All repositories ↗</a>
-</p>
+<h2 align="center">About me</h2>
 
-I’m **Benjamin**, a computer science student at **SKCET, Coimbatore**. I got tired of refreshing a product page to see if an HMT watch was back in stock, so I built a tool that would tell me. That’s the kind of software I enjoy making.
+I’m Benjamin, a computer science student at **Sri Krishna College of Engineering and Technology**. One of my projects started with a small wish: I wanted to close the HMT product page and still hear when a watch came back in stock.
 
-## Selected projects
+<h2 align="center">Tools I work with</h2>
+
+<p align="center"><code>C++</code> · <code>Python</code> · <code>JavaScript</code> · <code>SQL</code> · <code>AWS</code> · <code>n8n</code> · <code>Git</code></p>
+
+<h2 align="center">Featured projects</h2>
 
 <table>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://img.shields.io/badge/01-WATCHES%20%2F%20AUTOMATION-9BE5CB?style=flat-square&amp;labelColor=172525" alt="01 · Watches and automation" />
-      <h3><a href="https://github.com/lolsico9t5/hmt-restock-radar">HMT Restock Radar ↗</a></h3>
-      <p>Close the tab. Hear the restock. Radar checks HMT watch availability and sounds an alert when a watch returns.</p>
-      <p>I designed the alert behavior, guided implementation with Claude, and tested the monitor.</p>
-      <p><code>Python</code> <code>Requests</code> <code>JavaScript</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://img.shields.io/badge/02-EMAIL%20%2F%20WORKFLOWS-F3A49D?style=flat-square&amp;labelColor=30212D" alt="02 · Email and workflows" />
-      <h3>n8n Email Automation</h3>
-      <p>An email automation I built in n8n. The workflow lays out each step visually, so I can follow how an email moves through it and adjust individual steps.</p>
-      <p><code>n8n</code> <code>Email automation</code></p>
-    </td>
-  </tr>
+  <tr><td>
+    <h3>⌚ <a href="https://github.com/lolsico9t5/hmt-restock-radar">HMT Restock Radar ↗</a></h3>
+    <p>Checks HMT watch availability and sounds an alert on restock. I designed and tested the alert behavior and guided the implementation with Claude.</p>
+    <p><code>Python</code> <code>Requests</code> <code>JavaScript</code></p>
+  </td></tr>
+  <tr><td>
+    <h3>✉️ <a href="https://github.com/lolsico9t5/ai-email-intelligence-n8n">AI Email Intelligence System ↗</a></h3>
+    <p>I built an n8n workflow that turns Gmail previews into a prioritized inbox in Notion. Llama 3 runs locally through Ollama to summarize and categorize each snippet. Before saving a row, the workflow checks for a summary, category, and priority. If a parsed response is missing a required field, it makes one repair attempt.</p>
+    <p><code>n8n</code> <code>Gmail</code> <code>Ollama</code> <code>Llama 3</code> <code>Notion</code></p>
+  </td></tr>
 </table>
 
-## Recognition
+<h2 align="center">Internship &amp; campus leadership</h2>
 
-**Google Top Prompt Creator**  
-A prompt I wrote for the Google Student Ambassador Program’s *Game Night Edition* became a playable Gemini Canvas game.
+**C++ Programming Intern · Thiranex**  
+April–May 2026 · Built four console applications using object-oriented C++, including a library management system and a tic-tac-toe game.
 
-**EUREKA! 2026 · First place in startup pitching**  
-My team, **Zenith Labs**, won first place in the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.
+**Student Builder Campus Leader (SBCL) · AWS**  
+August–September 2026 · Led campus cloud engineering initiatives focused on building and deploying software on AWS.
 
-<p align="center">
-  <img width="100%" height="48"
-    src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:101022,45:392358,78:754568,100:F29B91&amp;height=60&amp;section=footer"
-    alt="" />
-</p>
+**Campus Mantri · GeeksforGeeks**  
+June 2026–present · Share technical learning opportunities with fellow students through LinkedIn and direct campus outreach.
+
+<h2 align="center">Recognition</h2>
+
+🏆 **EUREKA! 2026 · First place in startup pitching**  
+My team, Zenith Labs, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.
+
+🎮 **Top Prompt Creator · Google Student Ambassador Program**  
+My Game Night Edition prompt became a playable game in Gemini Canvas.
+
+<p align="center"><a href="https://github.com/lolsico9t5?tab=repositories"><strong>Explore my repositories ↗</strong></a></p>
