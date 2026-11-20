@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="224" viewBox="0 0 960 224" role="img" aria-labelledby="title desc">
+  <title id="title">HMT Restock Radar</title>
+  <desc id="desc">A mechanical watch ticks as a stock trace rises and rings a notification bell.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1=".8" x2="1" y2=".15"><stop stop-color="#d5ccba"/><stop offset=".43" stop-color="#eae2d3"/><stop offset="1" stop-color="#f6f1e7"/></linearGradient>
+    <linearGradient id="steel" x1=".03" y1=".12" x2=".94" y2=".86"><stop stop-color="#e3dfce"/><stop offset=".14" stop-color="#fcf8e6"/><stop offset=".27" stop-color="#87867a"/><stop offset=".47" stop-color="#c8c6b6"/><stop offset=".58" stop-color="#f8f2dc"/><stop offset=".78" stop-color="#77776e"/><stop offset=".94" stop-color="#dfd9c5"/><stop offset="1" stop-color="#999a8b"/></linearGradient>
+    <linearGradient id="band"><stop stop-color="#343c31"/><stop offset=".12" stop-color="#535b49"/><stop offset=".48" stop-color="#606654"/><stop offset=".87" stop-color="#4e5748"/><stop offset="1" stop-color="#303a30"/></linearGradient>
+    <radialGradient id="dial" cx=".42" cy=".33" r=".75"><stop stop-color="#fff9e9"/><stop offset=".74" stop-color="#eee7d2"/><stop offset="1" stop-color="#d0c8b1"/></radialGradient>
+    <filter id="shade" x="-45%" y="-35%" width="200%" height="190%"><feGaussianBlur stdDeviation="9"/></filter>
+    <clipPath id="panel"><rect width="960" height="224" rx="6"/></clipPath>
+  </defs>
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      .seconds { animation: seconds 60s steps(300,end) infinite; }
+      .trace { animation: trace 7.5s linear infinite; }
+      .cursor { animation: follow 7.5s linear infinite; }
+      .bell { transform-origin: 0 -14px; animation: ring 7.5s ease-in-out infinite; }
+      .waves { animation: sound 7.5s ease-out infinite; }
+    }
+    @keyframes seconds { from { transform: rotate(36deg); } to { transform: rotate(396deg); } }
+    @keyframes trace { 0%,8% { stroke-dashoffset: 100; opacity: 1; } 67%,86% { stroke-dashoffset: 0; opacity: 1; } 97%,100% { stroke-dashoffset: 0; opacity: 0; } }
+    @keyframes follow {
+      0%,8% { transform: translate(417px,153px); opacity: 0; }
+      12% { opacity: 1; } 29.8% { transform: translate(580px,153px); } 35.6% { transform: translate(580px,109px); }
+      49.8% { transform: translate(686px,109px); } 55.6% { transform: translate(686px,65px); }
+      67%,86% { transform: translate(771px,65px); opacity: 1; } 97%,100% { transform: translate(771px,65px); opacity: 0; }
+    }
+    @keyframes ring { 0%,64%,84%,100% { transform: rotate(0); } 67% { transform: rotate(15deg); } 71% { transform: rotate(-12deg); } 75% { transform: rotate(7deg); } 80% { transform: rotate(-3deg); } }
+    @keyframes sound { 0%,64%,95%,100% { opacity: 0; } 69%,78% { opacity: 1; } }
+  </style>
+  <g clip-path="url(#panel)">
+    <rect width="960" height="224" fill="url(#paper)"/>
+    <g transform="translate(209 115) rotate(-14)">
+      <g fill="#494332" opacity=".32" filter="url(#shade)" transform="translate(8 10)"><rect x="-43" y="-190" width="86" height="380"/><circle r="103"/></g>
+      <rect x="-41" y="-204" width="82" height="408" fill="url(#band)"/>
+      <path d="M-37 -191q34 2 74 -1 M-37 -185q34 2 74 -1 M-37 -179q34 2 74 -1 M-37 -173q34 2 74 -1 M-37 -167q34 2 74 -1 M-37 -161q34 2 74 -1 M-37 -155q34 2 74 -1 M-37 -149q34 2 74 -1 M-37 -143q34 2 74 -1 M-37 -137q34 2 74 -1 M-37 -131q34 2 74 -1 M-37 -125q34 2 74 -1 M-37 -119q34 2 74 -1 M-37 -113q34 2 74 -1 M-37 -107q34 2 74 -1 M-37 -101q34 2 74 -1 M-37 105q34 2 74 -1 M-37 111q34 2 74 -1 M-37 117q34 2 74 -1 M-37 123q34 2 74 -1 M-37 129q34 2 74 -1 M-37 135q34 2 74 -1 M-37 141q34 2 74 -1 M-37 147q34 2 74 -1 M-37 153q34 2 74 -1 M-37 159q34 2 74 -1 M-37 165q34 2 74 -1 M-37 171q34 2 74 -1 M-37 177q34 2 74 -1 M-37 183q34 2 74 -1 M-37 189q34 2 74 -1" fill="none" stroke="#222d25" stroke-opacity=".22" stroke-width="1.4"/>
+      <path d="M-34 -197v396m68 -396v396" stroke="#beb8a0" stroke-dasharray="4 4" stroke-width="1.4"/>
+      <path d="M-56 -76l6 -43h13l6 34h62l6 -34h13l6 43M-56 76l6 43h13l6 -34h62l6 34h13l6 -43" fill="url(#steel)" stroke="#797a6d" stroke-width="1.4"/>
+      <rect x="95" y="-9" width="24" height="18" rx="4" fill="url(#steel)" stroke="#707268" stroke-width="1.4"/>
+      <path d="M105 -6v12 M108 -6v12 M111 -6v12 M114 -6v12 M117 -6v12" stroke="#777a6c" stroke-width="1"/>
+      <circle r="103" fill="url(#steel)" stroke="#7c7d70" stroke-width="1.7"/>
+      <circle r="96.5" fill="#c5c4b5" stroke="#faf5e3" stroke-width="2.2"/>
+      <circle r="92.5" fill="url(#dial)" stroke="#706e60" stroke-width="1.5"/>
+      <path d="M0 -86v8" transform="rotate(0)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(6)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(12)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(18)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(24)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(30)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(36)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(42)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(48)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(54)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(60)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(66)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(72)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(78)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(84)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(90)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(96)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(102)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(108)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(114)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(120)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(126)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(132)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(138)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(144)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(150)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(156)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(162)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(168)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(174)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(180)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(186)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(192)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(198)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(204)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(210)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(216)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(222)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(228)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(234)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(240)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(246)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(252)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(258)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(264)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(270)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(276)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(282)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(288)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(294)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(300)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(306)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(312)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(318)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(324)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(330)" stroke="#423e32" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(336)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(342)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(348)" stroke="#6e6b5c" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(354)" stroke="#6e6b5c" stroke-width="1"/>
+      <g fill="#484438" text-anchor="middle" font-family="Georgia,serif">
+        <text y="-52" font-size="21">12</text><text x="64" y="7" font-size="20">3</text>
+        <text y="68" font-size="20">6</text><text x="-64" y="7" font-size="20">9</text>
+        <text y="-22" font-size="12.5" letter-spacing="2">HMT</text>
+      </g>
+      <path d="M-2 7l-2 -42 3 -15 4 14 1 43z" fill="#333b34" transform="rotate(-57)"/>
+      <path d="M-2 9l-.5 -64 2 -16 2.5 16v64z" fill="#333b34" transform="rotate(57)"/>
+      <g class="seconds" transform="rotate(36)"><path d="M0 20v-94" stroke="#aa512c" stroke-width="1.65"/><circle cy="17" r="2.7" fill="#aa512c"/></g>
+      <circle r="4.7" fill="#474738"/><circle r="2.2" fill="#d9c39b"/>
+    </g>
+    <g fill="none">
+      <path d="M417 65h452m-452 44h452m-452 44h452" stroke="#a39883" stroke-opacity=".45" stroke-dasharray="2 5"/>
+      <path d="M417 172.5h452 M417 46v127" stroke="#9d9685"/>
+      <path d="M417 172v6 M429 172v3 M441 172v3 M453 172v3 M465 172v3 M477 172v6 M489 172v3 M501 172v3 M513 172v3 M525 172v3 M537 172v6 M549 172v3 M561 172v3 M573 172v3 M585 172v3 M597 172v6 M609 172v3 M621 172v3 M633 172v3 M645 172v3 M657 172v6 M669 172v3 M681 172v3 M693 172v3 M705 172v3 M717 172v6 M729 172v3 M741 172v3 M753 172v3 M765 172v3 M777 172v6 M789 172v3 M801 172v3 M813 172v3 M825 172v3 M837 172v6 M849 172v3 M861 172v3 M873 172v3" stroke="#9d9685"/>
+      <path d="M417 153h163v-44h106V65h85" stroke="#b0ad99" stroke-width="2" stroke-linejoin="round"/>
+      <path class="trace" d="M417 153h163v-44h106V65h85" fill="none" pathLength="100" stroke-dasharray="100" stroke="#436b58" stroke-linejoin="round" stroke-width="3.6"/>
+    </g>
+    <g class="cursor" transform="translate(771 65)"><circle r="7" fill="#e9dfc6" opacity=".92"/><circle r="3.8" fill="#a85833"/></g>
+    <g transform="translate(835 65)">
+      <circle r="33" fill="#e4dbc7" stroke="#b3a892" stroke-width="1"/>
+      <g class="bell" stroke="#544c3b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none">
+        <path d="M-12 8c4 -4 3 -8 4 -12a8 8 0 0 1 16 0c1 4 0 8 4 12z" fill="#e9e0c9"/><path d="M-3 12q3 5 6 0m-3 -25v-2"/>
+      </g>
+      <path class="waves" d="M-16 -8q-3 3 -3 8m35 -8q3 3 3 8" opacity=".62" stroke="#aa6239" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+</svg>

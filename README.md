@@ -1,5 +1,10 @@
 <h1>
-  <img src="banner.svg" width="100%" alt="Benjamin Franklin A">
+  <a href="banner.svg">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/banner.webp">
+      <img src="banner.svg" width="100%" alt="Benjamin Franklin A">
+    </picture>
+  </a>
 </h1>
 
 Second-year computer science student building AI-assisted software and cloud projects from Tamil Nadu, India.
@@ -18,6 +23,13 @@ Completed a C++ programming internship at Thiranex, serves as an AWS Student Bui
 
 ### [HMT Restock Radar](https://github.com/lolsico9t5/hmt-restock-radar)
 
+<a href="https://github.com/lolsico9t5/hmt-restock-radar">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/restock-radar.webp">
+    <img src="assets/restock-radar.svg" width="100%" alt="A watch ticks as the availability trace rises and the restock bell rings.">
+  </picture>
+</a>
+
 *Python, Requests, HTML, CSS, JavaScript*
 
 Radar checks HMT watch availability and sounds an alert when a watch comes back in stock. I designed and tested the alert behavior and guided the implementation with Claude.
@@ -25,6 +37,13 @@ Radar checks HMT watch availability and sounds an alert when a watch comes back 
 [View repository](https://github.com/lolsico9t5/hmt-restock-radar)
 
 ### [AI Email Intelligence System](https://github.com/lolsico9t5/ai-email-intelligence-n8n)
+
+<a href="https://github.com/lolsico9t5/ai-email-intelligence-n8n">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/email-workflow.webp">
+    <img src="assets/email-workflow.svg" width="100%" alt="A Gmail message passes through Ollama and moves into its priority position in Notion.">
+  </picture>
+</a>
 
 *n8n, Gmail, Ollama, Llama 3, Notion*
 
@@ -92,7 +111,10 @@ My Game Night Edition prompt became a playable game in Gemini Canvas.
 ## GitHub activity
 
 <a href="https://github.com/lolsico9t5">
-  <img src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=172D29&amp;border=314943&amp;stroke=465C54&amp;ring=C6AE7D&amp;fire=C6AE7D&amp;currStreakNum=F4F1E9&amp;currStreakLabel=F4F1E9&amp;sideNums=F4F1E9&amp;sideLabels=F4F1E9&amp;dates=C0CDC5&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=true" width="550" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak">
+  <picture>
+    <source media="(prefers-reduced-motion: no-preference)" srcset="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=172D29&amp;border=314943&amp;stroke=465C54&amp;ring=C6AE7D&amp;fire=C6AE7D&amp;currStreakNum=F4F1E9&amp;currStreakLabel=F4F1E9&amp;sideNums=F4F1E9&amp;sideLabels=F4F1E9&amp;dates=C0CDC5&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=false">
+    <img src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=172D29&amp;border=314943&amp;stroke=465C54&amp;ring=C6AE7D&amp;fire=C6AE7D&amp;currStreakNum=F4F1E9&amp;currStreakLabel=F4F1E9&amp;sideNums=F4F1E9&amp;sideLabels=F4F1E9&amp;dates=C0CDC5&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=true" width="550" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak">
+  </picture>
 </a>
 
 <a name="contact"></a>
