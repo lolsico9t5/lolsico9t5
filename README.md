@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" width="100%" alt="Benjamin Franklin A, second-year computer science student building AI-assisted software and cloud projects from Tamil Nadu, India" />
+  <img src="banner.svg" width="100%" alt="Benjamin Franklin A, second-year computer science student building AI-assisted software and cloud projects from Tamil Nadu, India" />
 </p>
 
 <p align="center">
@@ -25,14 +25,14 @@
 <br>
 
 <a name="about"></a>
-<img src="assets/heading-about.svg" height="56" alt="About" />
+<img src="heading-about.svg" height="56" alt="About" />
 
 Second-year B.E. Computer Science and Engineering student with a 9.54/10 CGPA and a strong foundation in C++, Java, SQL, web technologies, and cloud computing. Completed a C++ programming internship at Thiranex, serves as an AWS Student Builder Campus Leader and GeeksforGeeks Campus Mantri, and builds AI-assisted applications with Amazon Bedrock, Kiro, and Claude. Won first place at EUREKA! 2026 (E-Cell, IIT Bombay) and focuses on software development, AI-enabled applications, and practical problem-solving.
 
 <br>
 
 <a name="learning"></a>
-<img src="assets/heading-learning.svg" height="56" alt="Currently learning" />
+<img src="heading-learning.svg" height="56" alt="Currently learning" />
 
 <table>
   <tr><td><b>Java</b></td><td>Object-oriented design</td></tr>
@@ -45,10 +45,10 @@ Second-year B.E. Computer Science and Engineering student with a 9.54/10 CGPA an
 <br>
 
 <a name="projects"></a>
-<img src="assets/heading-projects.svg" height="56" alt="Featured projects" />
+<img src="heading-projects.svg" height="56" alt="Featured projects" />
 
 <a href="https://github.com/lolsico9t5/hmt-restock-radar">
-  <img src="assets/project-hmt-restock-radar.svg" width="100%" alt="HMT Restock Radar. Python, Requests, HTML, CSS, JavaScript" />
+  <img src="project-hmt-restock-radar.svg" width="100%" alt="HMT Restock Radar. Python, Requests, HTML, CSS, JavaScript" />
 </a>
 
 Radar checks HMT watch availability and sounds an alert when a watch comes back in stock. I designed and tested the alert behavior and guided the implementation with Claude.
@@ -56,7 +56,7 @@ Radar checks HMT watch availability and sounds an alert when a watch comes back 
 [View repository](https://github.com/lolsico9t5/hmt-restock-radar)
 
 <a href="https://github.com/lolsico9t5/ai-email-intelligence-n8n">
-  <img src="assets/project-ai-email-intelligence.svg" width="100%" alt="AI Email Intelligence System. n8n, Gmail, Ollama, Llama 3, Notion" />
+  <img src="project-ai-email-intelligence.svg" width="100%" alt="AI Email Intelligence System. n8n, Gmail, Ollama, Llama 3, Notion" />
 </a>
 
 An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Llama 3 runs locally via Ollama to summarize and categorize each snippet. The workflow checks for a summary, category, and priority and attempts one repair if a parsed response is missing a required field.
@@ -66,7 +66,7 @@ An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Ll
 <br>
 
 <a name="skills"></a>
-<img src="assets/heading-skills.svg" height="56" alt="Technical skills" />
+<img src="heading-skills.svg" height="56" alt="Technical skills" />
 
 <table>
   <tr><td><b>Programming</b></td><td>C++, C, Java, Python</td></tr>
@@ -78,19 +78,19 @@ An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Ll
 <br>
 
 <a name="experience"></a>
-<img src="assets/heading-experience.svg" height="56" alt="Experience and leadership" />
+<img src="heading-experience.svg" height="56" alt="Experience and leadership" />
 
 <table>
   <tr>
-    <td width="260" valign="top"><img src="assets/date-thiranex.svg" height="40" alt="April to May 2026" /></td>
+    <td width="260" valign="top"><img src="date-thiranex.svg" height="40" alt="April to May 2026" /></td>
     <td valign="top"><b>C++ Programming Intern, Thiranex</b><br>Built four console applications using object-oriented C++, including a library management system and a tic-tac-toe game.</td>
   </tr>
   <tr>
-    <td width="260" valign="top"><img src="assets/date-aws.svg" height="40" alt="August to September 2026" /></td>
+    <td width="260" valign="top"><img src="date-aws.svg" height="40" alt="August to September 2026" /></td>
     <td valign="top"><b>Student Builder Campus Leader, AWS</b><br>Led campus cloud engineering initiatives focused on building and deploying software on AWS.</td>
   </tr>
   <tr>
-    <td width="260" valign="top"><img src="assets/date-gfg.svg" height="40" alt="June 2026 to present" /></td>
+    <td width="260" valign="top"><img src="date-gfg.svg" height="40" alt="June 2026 to present" /></td>
     <td valign="top"><b>Campus Mantri, GeeksforGeeks</b><br>Share technical learning opportunities with fellow students through LinkedIn and direct campus outreach.</td>
   </tr>
 </table>
@@ -98,15 +98,15 @@ An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Ll
 <br>
 
 <a name="recognition"></a>
-<img src="assets/heading-recognition.svg" height="56" alt="Recognition" />
+<img src="heading-recognition.svg" height="56" alt="Recognition" />
 
 <table>
   <tr>
-    <td width="260" valign="top"><img src="assets/tag-first-place.svg" height="40" alt="First place" /></td>
+    <td width="260" valign="top"><img src="tag-first-place.svg" height="40" alt="First place" /></td>
     <td valign="top"><b>EUREKA! 2026, Startup Pitching</b><br>My team, <b>Zenith Labs</b>, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.</td>
   </tr>
   <tr>
-    <td width="260" valign="top"><img src="assets/tag-top-prompt-creator.svg" height="40" alt="Top Prompt Creator" /></td>
+    <td width="260" valign="top"><img src="tag-top-prompt-creator.svg" height="40" alt="Top Prompt Creator" /></td>
     <td valign="top"><b>Google Student Ambassador Program</b><br>My Game Night Edition prompt became a playable game in Gemini Canvas.</td>
   </tr>
 </table>
@@ -114,15 +114,15 @@ An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Ll
 <br>
 
 <a name="contact"></a>
-<img src="assets/heading-contact.svg" height="56" alt="Get in touch" />
+<img src="heading-contact.svg" height="56" alt="Get in touch" />
 
 <p>
-  <a href="https://www.linkedin.com/in/benjamin-franklin-a-4b272b391/"><img src="assets/button-linkedin.svg" height="52" alt="LinkedIn" /></a>
-  <a href="mailto:abf2k07@gmail.com"><img src="assets/button-email.svg" height="52" alt="Email" /></a>
-  <a href="https://www.instagram.com/lol_sico_9t5/"><img src="assets/button-instagram.svg" height="52" alt="Instagram" /></a>
-  <a href="https://github.com/lolsico9t5?tab=repositories"><img src="assets/button-github.svg" height="52" alt="GitHub repositories" /></a>
+  <a href="https://www.linkedin.com/in/benjamin-franklin-a-4b272b391/"><img src="button-linkedin.svg" height="52" alt="LinkedIn" /></a>
+  <a href="mailto:abf2k07@gmail.com"><img src="button-email.svg" height="52" alt="Email" /></a>
+  <a href="https://www.instagram.com/lol_sico_9t5/"><img src="button-instagram.svg" height="52" alt="Instagram" /></a>
+  <a href="https://github.com/lolsico9t5?tab=repositories"><img src="button-github.svg" height="52" alt="GitHub repositories" /></a>
 </p>
 
 <br>
 
-<img src="assets/footer.svg" width="100%" alt="Built in Tamil Nadu, India" />
+<img src="footer.svg" width="100%" alt="Built in Tamil Nadu, India" />
