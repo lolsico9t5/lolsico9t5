@@ -111,12 +111,15 @@ My Game Night Edition prompt became a playable game in **Gemini Canvas**.
 
 ## <picture><img src="assets/icons/activity.svg" width="36" height="28" align="texttop" alt=""></picture>GitHub activity
 
-<a href="https://github.com/lolsico9t5">
-  <picture>
+<p align="center">
+  <a href="https://github.com/lolsico9t5"><picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/streak-orbit.webp">
+    <img src="assets/streak-orbit.svg" width="620" align="top" alt="">
+  </picture><br><picture>
     <source media="(prefers-reduced-motion: no-preference)" srcset="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=121529&amp;border=585777&amp;stroke=434565&amp;ring=B8BAFF&amp;fire=F3BDCD&amp;currStreakNum=F4F2FF&amp;currStreakLabel=F4F2FF&amp;sideNums=FFDCB8&amp;sideLabels=F4F2FF&amp;dates=C8CCDF&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=false">
-    <img src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=121529&amp;border=585777&amp;stroke=434565&amp;ring=B8BAFF&amp;fire=F3BDCD&amp;currStreakNum=F4F2FF&amp;currStreakLabel=F4F2FF&amp;sideNums=FFDCB8&amp;sideLabels=F4F2FF&amp;dates=C8CCDF&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=true" width="550" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak">
-  </picture>
-</a>
+    <img src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=121529&amp;border=585777&amp;stroke=434565&amp;ring=B8BAFF&amp;fire=F3BDCD&amp;currStreakNum=F4F2FF&amp;currStreakLabel=F4F2FF&amp;sideNums=FFDCB8&amp;sideLabels=F4F2FF&amp;dates=C8CCDF&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=true" width="620" align="top" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak">
+  </picture></a>
+</p>
 
 <a name="contact"></a>
 
