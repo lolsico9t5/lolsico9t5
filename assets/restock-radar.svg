@@ -2,20 +2,43 @@
   <title id="title">HMT Restock Radar</title>
   <desc id="desc">A mechanical watch ticks as a stock trace rises and rings a notification bell.</desc>
   <defs>
-    <linearGradient id="paper" x1="0" y1=".8" x2="1" y2=".15"><stop stop-color="#d5ccba"/><stop offset=".43" stop-color="#eae2d3"/><stop offset="1" stop-color="#f6f1e7"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1=".8" x2="1" y2=".15"><stop stop-color="#d4c3ab"/><stop offset=".43" stop-color="#f2e2ca"/><stop offset="1" stop-color="#fff5e7"/></linearGradient>
     <linearGradient id="steel" x1=".03" y1=".12" x2=".94" y2=".86"><stop stop-color="#e3dfce"/><stop offset=".14" stop-color="#fcf8e6"/><stop offset=".27" stop-color="#87867a"/><stop offset=".47" stop-color="#c8c6b6"/><stop offset=".58" stop-color="#f8f2dc"/><stop offset=".78" stop-color="#77776e"/><stop offset=".94" stop-color="#dfd9c5"/><stop offset="1" stop-color="#999a8b"/></linearGradient>
-    <linearGradient id="band"><stop stop-color="#343c31"/><stop offset=".12" stop-color="#535b49"/><stop offset=".48" stop-color="#606654"/><stop offset=".87" stop-color="#4e5748"/><stop offset="1" stop-color="#303a30"/></linearGradient>
-    <radialGradient id="dial" cx=".42" cy=".33" r=".75"><stop stop-color="#fff9e9"/><stop offset=".74" stop-color="#eee7d2"/><stop offset="1" stop-color="#d0c8b1"/></radialGradient>
+    <linearGradient id="band"><stop stop-color="#193c46"/><stop offset=".12" stop-color="#315566"/><stop offset=".48" stop-color="#416e7a"/><stop offset=".87" stop-color="#2c5664"/><stop offset="1" stop-color="#173641"/></linearGradient>
+    <radialGradient id="dial" cx=".42" cy=".33" r=".75"><stop stop-color="#398692"/><stop offset=".74" stop-color="#1a5969"/><stop offset="1" stop-color="#113f52"/></radialGradient>
     <filter id="shade" x="-45%" y="-35%" width="200%" height="190%"><feGaussianBlur stdDeviation="9"/></filter>
+    <linearGradient id="chart-wash" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#179991" stop-opacity=".42"/><stop offset="1" stop-color="#58c5b2" stop-opacity=".07"/>
+    </linearGradient>
+    <linearGradient id="reflection"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".52" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#d5fff8" stop-opacity="0"/></linearGradient>
+    <clipPath id="dial-face"><circle r="91"/></clipPath>
+    <clipPath id="plot-window"><rect class="plot-window" x="417" y="55" width="354" height="118"/></clipPath>
     <clipPath id="panel"><rect width="960" height="224" rx="6"/></clipPath>
   </defs>
   <style>
     @media (prefers-reduced-motion: no-preference) {
+      .sapphire-glint { animation: glint 6.2s ease-in-out infinite; }
+      .plot-window { transform-origin: 417px 0; animation: fill-plot 6.2s linear infinite; }
+      .wash { animation: fade-plot 6.2s linear infinite; }
+      .echo { animation: echo 6.2s ease-out infinite; }
       .seconds { animation: seconds 60s steps(300,end) infinite; }
-      .trace { animation: trace 7.5s linear infinite; }
-      .cursor { animation: follow 7.5s linear infinite; }
-      .bell { transform-origin: 0 -14px; animation: ring 7.5s ease-in-out infinite; }
-      .waves { animation: sound 7.5s ease-out infinite; }
+      .trace { animation: trace 6.2s linear infinite; }
+      .cursor { animation: follow 6.2s linear infinite; }
+      .bell { transform-origin: 0 -14px; animation: ring 6.2s ease-in-out infinite; }
+      .waves { animation: sound 6.2s ease-out infinite; }
+    }
+    @keyframes glint {
+      0%,8% { transform: translateX(-148px); opacity: 0; }
+      23% { opacity: .82; } 49%,100% { transform: translateX(148px); opacity: 0; }
+    }
+    @keyframes fill-plot {
+      0%,8% { transform: scaleX(0); } 29.8%,35.6% { transform: scaleX(.46045); }
+      49.8%,55.6% { transform: scaleX(.75989); } 67%,100% { transform: scaleX(1); }
+    }
+    @keyframes fade-plot { 0%,86% { opacity: 1; } 97%,100% { opacity: 0; } }
+    @keyframes echo {
+      0%,64% { transform: scale(.91); opacity: 0; } 67% { opacity: .68; }
+      88%,100% { transform: scale(1.68); opacity: 0; }
     }
     @keyframes seconds { from { transform: rotate(36deg); } to { transform: rotate(396deg); } }
     @keyframes trace { 0%,8% { stroke-dashoffset: 100; opacity: 1; } 67%,86% { stroke-dashoffset: 0; opacity: 1; } 97%,100% { stroke-dashoffset: 0; opacity: 0; } }
@@ -41,90 +64,95 @@
       <circle r="103" fill="url(#steel)" stroke="#7c7d70" stroke-width="1.7"/>
       <circle r="96.5" fill="#c5c4b5" stroke="#faf5e3" stroke-width="2.2"/>
       <circle r="92.5" fill="url(#dial)" stroke="#706e60" stroke-width="1.5"/>
-      <path d="M0 -86v8" transform="rotate(0)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(6)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(12)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(18)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(24)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(30)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(36)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(42)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(48)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(54)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(60)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(66)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(72)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(78)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(84)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(90)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(96)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(102)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(108)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(114)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(120)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(126)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(132)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(138)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(144)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(150)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(156)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(162)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(168)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(174)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(180)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(186)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(192)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(198)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(204)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(210)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(216)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(222)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(228)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(234)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(240)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(246)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(252)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(258)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(264)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(270)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(276)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(282)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(288)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(294)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(300)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(306)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(312)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(318)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(324)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v8" transform="rotate(330)" stroke="#423e32" stroke-width="3.4"/>
-      <path d="M0 -86v3.2" transform="rotate(336)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(342)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(348)" stroke="#6e6b5c" stroke-width="1"/>
-      <path d="M0 -86v3.2" transform="rotate(354)" stroke="#6e6b5c" stroke-width="1"/>
-      <g fill="#484438" text-anchor="middle" font-family="Georgia,serif">
+      <path d="M0 -86v8" transform="rotate(0)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(6)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(12)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(18)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(24)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(30)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(36)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(42)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(48)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(54)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(60)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(66)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(72)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(78)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(84)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(90)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(96)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(102)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(108)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(114)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(120)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(126)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(132)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(138)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(144)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(150)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(156)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(162)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(168)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(174)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(180)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(186)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(192)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(198)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(204)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(210)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(216)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(222)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(228)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(234)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(240)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(246)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(252)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(258)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(264)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(270)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(276)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(282)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(288)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(294)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(300)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(306)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(312)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(318)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(324)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v8" transform="rotate(330)" stroke="#f6d397" stroke-width="3.4"/>
+      <path d="M0 -86v3.2" transform="rotate(336)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(342)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(348)" stroke="#b4d6d3" stroke-width="1"/>
+      <path d="M0 -86v3.2" transform="rotate(354)" stroke="#b4d6d3" stroke-width="1"/>
+      <g fill="#fff0c8" text-anchor="middle" font-family="Georgia,serif">
         <text y="-52" font-size="21">12</text><text x="64" y="7" font-size="20">3</text>
         <text y="68" font-size="20">6</text><text x="-64" y="7" font-size="20">9</text>
         <text y="-22" font-size="12.5" letter-spacing="2">HMT</text>
       </g>
-      <path d="M-2 7l-2 -42 3 -15 4 14 1 43z" fill="#333b34" transform="rotate(-57)"/>
-      <path d="M-2 9l-.5 -64 2 -16 2.5 16v64z" fill="#333b34" transform="rotate(57)"/>
-      <g class="seconds" transform="rotate(36)"><path d="M0 20v-94" stroke="#aa512c" stroke-width="1.65"/><circle cy="17" r="2.7" fill="#aa512c"/></g>
+      <path d="M-2 7l-2 -42 3 -15 4 14 1 43z" fill="#f4da9f" transform="rotate(-57)"/>
+      <path d="M-2 9l-.5 -64 2 -16 2.5 16v64z" fill="#f4da9f" transform="rotate(57)"/>
+      <g class="seconds" transform="rotate(36)"><path d="M0 20v-94" stroke="#ff8c66" stroke-width="1.65"/><circle cy="17" r="2.7" fill="#ff8c66"/></g>
+      <g clip-path="url(#dial-face)">
+        <g class="sapphire-glint" opacity="0"><path d="M-70 105L-15 -105h43l-55 210z" fill="url(#reflection)"/></g>
+      </g>
       <circle r="4.7" fill="#474738"/><circle r="2.2" fill="#d9c39b"/>
     </g>
     <g fill="none">
+      <path class="wash" clip-path="url(#plot-window)" d="M417 153h163v-44h106V65h85v107H417z" fill="url(#chart-wash)"/>
       <path d="M417 65h452m-452 44h452m-452 44h452" stroke="#a39883" stroke-opacity=".45" stroke-dasharray="2 5"/>
       <path d="M417 172.5h452 M417 46v127" stroke="#9d9685"/>
       <path d="M417 172v6 M429 172v3 M441 172v3 M453 172v3 M465 172v3 M477 172v6 M489 172v3 M501 172v3 M513 172v3 M525 172v3 M537 172v6 M549 172v3 M561 172v3 M573 172v3 M585 172v3 M597 172v6 M609 172v3 M621 172v3 M633 172v3 M645 172v3 M657 172v6 M669 172v3 M681 172v3 M693 172v3 M705 172v3 M717 172v6 M729 172v3 M741 172v3 M753 172v3 M765 172v3 M777 172v6 M789 172v3 M801 172v3 M813 172v3 M825 172v3 M837 172v6 M849 172v3 M861 172v3 M873 172v3" stroke="#9d9685"/>
       <path d="M417 153h163v-44h106V65h85" stroke="#b0ad99" stroke-width="2" stroke-linejoin="round"/>
-      <path class="trace" d="M417 153h163v-44h106V65h85" fill="none" pathLength="100" stroke-dasharray="100" stroke="#436b58" stroke-linejoin="round" stroke-width="3.6"/>
+      <path class="trace" d="M417 153h163v-44h106V65h85" fill="none" pathLength="100" stroke-dasharray="100" stroke="#087a79" stroke-linejoin="round" stroke-width="3.6"/>
     </g>
-    <g class="cursor" transform="translate(771 65)"><circle r="7" fill="#e9dfc6" opacity=".92"/><circle r="3.8" fill="#a85833"/></g>
+    <g class="cursor" transform="translate(771 65)"><circle r="7" fill="#e9dfc6" opacity=".92"/><circle r="3.8" fill="#c15b38"/></g>
     <g transform="translate(835 65)">
-      <circle r="33" fill="#e4dbc7" stroke="#b3a892" stroke-width="1"/>
-      <g class="bell" stroke="#544c3b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none">
-        <path d="M-12 8c4 -4 3 -8 4 -12a8 8 0 0 1 16 0c1 4 0 8 4 12z" fill="#e9e0c9"/><path d="M-3 12q3 5 6 0m-3 -25v-2"/>
+      <circle class="echo" r="33" fill="none" stroke="#cf724f" stroke-width="2.4" opacity="0"/>
+      <circle r="33" fill="#f3bc9c" stroke="#c98461" stroke-width="1"/>
+      <g class="bell" stroke="#6a422e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none">
+        <path d="M-12 8c4 -4 3 -8 4 -12a8 8 0 0 1 16 0c1 4 0 8 4 12z" fill="#ffe2bd"/><path d="M-3 12q3 5 6 0m-3 -25v-2"/>
       </g>
-      <path class="waves" d="M-16 -8q-3 3 -3 8m35 -8q3 3 3 8" opacity=".62" stroke="#aa6239" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path class="waves" d="M-16 -8q-3 3 -3 8m35 -8q3 3 3 8" opacity=".62" stroke="#96512c" stroke-width="1.8" stroke-linecap="round" fill="none"/>
     </g>
   </g>
 </svg>
