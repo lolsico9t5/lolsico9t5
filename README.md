@@ -1,118 +1,57 @@
+<p align="center"> <img src="assets/banner.svg" width="100%" alt="Benjamin Franklin A, second-year computer science student building AI-assisted software and cloud projects from Tamil Nadu, India" /> </p> <p align="center"> <a href="https://github.com/lolsico9t5"> <img width="550" src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;theme=dark&amp;background=135,131A3A,1B2350,131A3A&amp;border=2D3770&amp;stroke=2D3770&amp;ring=F5B82E&amp;fire=F5B82E&amp;currStreakNum=F4F1E8&amp;currStreakLabel=F5B82E&amp;sideNums=2FB8A6&amp;sideLabels=F4F1E8&amp;dates=A9B1D6&amp;border_radius=24&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=false" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak" /> </a> </p> <p align="center"> <a href="#about">About</a> &nbsp;|&nbsp; <a href="#learning">Learning</a> &nbsp;|&nbsp; <a href="#projects">Projects</a> &nbsp;|&nbsp; <a href="#skills">Skills</a> &nbsp;|&nbsp; <a href="#experience">Experience</a> &nbsp;|&nbsp; <a href="#contact">Contact</a> </p> <br>
 
-<h1 align="center">Benjamin Franklin A</h1>
+<a name="about"></a> <img src="assets/heading-about.svg" height="56" alt="About" />
 
-<p align="center">
-  <strong>Computer Science &amp; Engineering · SKCET, Coimbatore</strong><br>
-  Madurai, India
-</p>
+I am a second-year B.E. Computer Science and Engineering student at SKCET with a 9.54 CGPA and a strong foundation in C++, Java, SQL, web technologies, and cloud computing. I completed a C++ programming internship at Thiranex, serve as an AWS Student Builder Campus Leader and GeeksforGeeks Campus Mantri, and build AI-assisted applications with Amazon Bedrock, Kiro, and Claude.
 
-<p align="center">
-  <a href="https://github.com/lolsico9t5">
-    <img
-      width="550"
-      src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;theme=dark&amp;background=135,0D1117,1C1734,10292B&amp;border=343452&amp;stroke=343452&amp;ring=A78BFA&amp;fire=FF9D8F&amp;currStreakNum=F5F3FF&amp;currStreakLabel=D8CBFF&amp;sideNums=A9F5DC&amp;sideLabels=E6EDF3&amp;dates=B7C5D9&amp;border_radius=14&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=false"
-      alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak"
-    />
-  </a>
-</p>
+My team won first place at EUREKA! 2026, organized by E-Cell, IIT Bombay. I focus on software development, AI-enabled applications, and practical problem-solving, and I contribute to open source through GirlScript Summer of Code (GSSoC).
 
-<p align="center">
-  <a href="#about-me">About</a> ·
-  <a href="#featured-projects">Projects</a> ·
-  <a href="#technical-skills">Skills</a> ·
-  <a href="#experience--campus-leadership">Experience</a> ·
-  <a href="#recognition">Recognition</a>
-</p>
+<br>
 
-<h2 align="center">About Me</h2>
+<a name="learning"></a> <img src="assets/heading-learning.svg" height="56" alt="Currently learning" />
 
-Second-year B.E. Computer Science and Engineering student with a 9.54/10 CGPA and a strong foundation in C++, Java, SQL, web technologies, 
-and cloud computing. Completed a C++ programming internship at Thiranex, serves as an AWS Student Builder Campus Leader and 
-GeeksforGeeks Campus Mantri, and builds AI-assisted applications with Amazon Bedrock, Kiro, and Claude. Won first place at EUREKA! 2026 
-(E-Cell, IIT Bombay) and focuses on software development, AI-enabled applications, and practical problem-solving.
+<table> <tr><td><b>Java</b></td><td>Object-oriented design</td></tr> <tr><td><b>Data structures and algorithms</b></td><td>Problem-solving and interview fundamentals</td></tr> <tr><td><b>Oracle SQL</b></td><td>Database design and querying</td></tr> <tr><td><b>Python</b></td><td>Backend development and automation</td></tr> <tr><td><b>AWS</b></td><td>Cloud architecture</td></tr> </table> <br>
 
-<h2 align="center">Featured Projects</h2>
+<a name="projects"></a> <img src="assets/heading-projects.svg" height="56" alt="Featured projects" />
 
-<table>
-  <tr>
-    <td>
-      <h3>⌚ <a href="https://github.com/lolsico9t5/hmt-restock-radar">HMT Restock Radar ↗</a></h3>
-      <p>Radar checks HMT watch availability and sounds an alert when a watch comes back in stock. I designed and tested the alert behavior and guided the implementation with Claude.</p>
-      <p><img src="https://img.shields.io/badge/Python%20%2F%20Requests%20%2F%20HTML%20%2F%20CSS%20%2F%20JavaScript-1B5861?style=flat-square" alt="Python, Requests, HTML, CSS, and JavaScript" /></p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <h3>📬 <a href="https://github.com/lolsico9t5/ai-email-intelligence-n8n">AI Email Intelligence System ↗</a></h3>
-      <p>An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Llama 3 runs locally via Ollama to summarize and categorize each snippet. The workflow checks for a summary, category, and priority and attempts one repair if a parsed response is missing a required field.</p>
-      <p><img src="https://img.shields.io/badge/n8n%20%2F%20Gmail%20%2F%20Ollama%20%2F%20Llama%203%20%2F%20Notion-A63058?style=flat-square" alt="n8n, Gmail, Ollama, Llama 3, and Notion" /></p>
-      <p><a href="https://github.com/lolsico9t5/ai-email-intelligence-n8n#-workflow-overview">See the workflow canvas ↗</a></p>
-    </td>
-  </tr>
-</table>
+<a href="https://github.com/lolsico9t5/hmt-restock-radar"> <img src="assets/project-hmt-restock-radar.svg" width="100%" alt="HMT Restock Radar. Python, Requests, HTML, CSS, JavaScript" /> </a>
 
-<h2 align="center">Technical Skills</h2>
+Radar checks HMT watch availability and sounds an alert when a watch comes back in stock. I designed and tested the alert behavior and guided the implementation with Claude.
 
-<p align="center">
-  <strong>Programming</strong><br>
-  <img src="https://img.shields.io/badge/C%2B%2B-165AAD?style=flat-square&amp;logo=cplusplus&amp;logoColor=white" alt="C++" />
-  <img src="https://img.shields.io/badge/C-4D468F?style=flat-square&amp;logo=c&amp;logoColor=white" alt="C" />
-  <img src="https://img.shields.io/badge/Java-9D3A27?style=flat-square" alt="Java" />
-  <img src="https://img.shields.io/badge/Python-25648F?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python" />
-</p>
+View repository
 
-<p align="center">
-  <strong>Web &amp; Databases</strong><br>
-  <img src="https://img.shields.io/badge/HTML-AC3D26?style=flat-square&amp;logo=html5&amp;logoColor=white" alt="HTML" />
-  <img src="https://img.shields.io/badge/CSS-563798?style=flat-square&amp;logo=css&amp;logoColor=white" alt="CSS" />
-  <img src="https://img.shields.io/badge/JavaScript-70560C?style=flat-square&amp;logo=javascript&amp;logoColor=white" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Oracle%20SQL-9C303B?style=flat-square" alt="Oracle SQL" />
-</p>
+<a href="https://github.com/lolsico9t5/ai-email-intelligence-n8n"> <img src="assets/project-ai-email-intelligence.svg" width="100%" alt="AI Email Intelligence System. n8n, Gmail, Ollama, Llama 3, Notion" /> </a>
 
-<p align="center">
-  <strong>Cloud &amp; AI</strong><br>
-  <img src="https://img.shields.io/badge/AWS-98500B?style=flat-square" alt="AWS" />
-  <img src="https://img.shields.io/badge/Amazon%20Bedrock-6A3F99?style=flat-square" alt="Amazon Bedrock" />
-  <img src="https://img.shields.io/badge/Amazon%20Nova%20Pro-814084?style=flat-square" alt="Amazon Nova Pro" />
-  <img src="https://img.shields.io/badge/Strands%20Agents-3E5299?style=flat-square" alt="Strands Agents" />
-  <img src="https://img.shields.io/badge/Ollama-1B5861?style=flat-square&amp;logo=ollama&amp;logoColor=white" alt="Ollama" />
-  <img src="https://img.shields.io/badge/Llama%203-295B94?style=flat-square" alt="Llama 3" />
-</p>
+An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Llama 3 runs locally via Ollama to summarize and categorize each snippet. The workflow checks for a summary, category, and priority and attempts one repair if a parsed response is missing a required field.
 
-<p align="center">
-  <strong>Automation &amp; Developer Tools</strong><br>
-  <img src="https://img.shields.io/badge/n8n-A63058?style=flat-square&amp;logo=n8n&amp;logoColor=white" alt="n8n" />
-  <img src="https://img.shields.io/badge/Notion-474B61?style=flat-square&amp;logo=notion&amp;logoColor=white" alt="Notion" />
-  <img src="https://img.shields.io/badge/Git-9F392E?style=flat-square&amp;logo=git&amp;logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-354158?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/Kiro-6F4594?style=flat-square" alt="Kiro" />
-  <img src="https://img.shields.io/badge/Claude-8D472A?style=flat-square&amp;logo=claude&amp;logoColor=white" alt="Claude" />
-</p>
+View repository  |  Workflow canvas
 
-<h2 align="center">Experience &amp; Campus Leadership</h2>
+<img src="assets/project-solvinai.svg" width="100%" alt="SolvinAI. Python, Flask, SQLAlchemy, Gemini AI" />
 
-**C++ Programming Intern · Thiranex**  
-April–May 2026 · Built four console applications using object-oriented C++, including a library management system and a tic-tac-toe game.
+A municipal grievance AI agent built in phases with Python. It ingests complaints from Gmail, classifies them with Gemini AI, and stores and serves them through a Flask and SQLAlchemy backend.
 
-**Student Builder Campus Leader (SBCL) · AWS**  
-August–September 2026 · Led campus cloud engineering initiatives focused on building and deploying software on AWS.
+<br>
 
-**Campus Mantri · GeeksforGeeks**  
-June 2026–present · Share technical learning opportunities with fellow students through LinkedIn and direct campus outreach.
+<a name="opensource"></a> <img src="assets/heading-opensource.svg" height="56" alt="Open source" />
 
-<h2 align="center">Recognition</h2>
+<img src="assets/tag-gssoc.svg" height="40" alt="GSSoC contributor" />
 
-![First place](https://img.shields.io/badge/FIRST_PLACE-98500B?style=flat-square) **EUREKA! 2026 · Startup Pitching**  
-My team, **Zenith Labs**, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.
+Contributor at GirlScript Summer of Code (GSSoC), working with maintainers through issues, pull requests, and code review.
 
-![Top Prompt Creator](https://img.shields.io/badge/TOP_PROMPT_CREATOR-6A3F99?style=flat-square) **Google Student Ambassador Program**  
-My Game Night Edition prompt became a playable game in Gemini Canvas.
+<br>
 
----
+<a name="skills"></a> <img src="assets/heading-skills.svg" height="56" alt="Technical skills" />
 
-<p align="center">
-  <a href="https://github.com/lolsico9t5?tab=repositories">
-    <img src="https://img.shields.io/badge/Explore_my_repositories-3F4880?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Explore my GitHub repositories" />
-  </a>
-</p>
-```
+<table> <tr><td><b>Programming</b></td><td>C++, C, Java, Python</td></tr> <tr><td><b>Web and databases</b></td><td>HTML, CSS, JavaScript, Oracle SQL</td></tr> <tr><td><b>Cloud and AI</b></td><td>AWS, Amazon Bedrock, Amazon Nova Pro, Strands Agents, Ollama, Llama 3</td></tr> <tr><td><b>Automation and tools</b></td><td>n8n, Notion, Git, GitHub, Kiro, Claude</td></tr> </table> <br>
+
+<a name="experience"></a> <img src="assets/heading-experience.svg" height="56" alt="Experience and leadership" />
+
+<table> <tr> <td width="260" valign="top"><img src="assets/date-thiranex.svg" height="40" alt="April to May 2026" /></td> <td valign="top"><b>C++ Programming Intern, Thiranex</b><br>Built four console applications using object-oriented C++, including a library management system and a tic-tac-toe game.</td> </tr> <tr> <td width="260" valign="top"><img src="assets/date-aws.svg" height="40" alt="August to September 2026" /></td> <td valign="top"><b>Student Builder Campus Leader, AWS</b><br>Led campus cloud engineering initiatives focused on building and deploying software on AWS.</td> </tr> <tr> <td width="260" valign="top"><img src="assets/date-gfg.svg" height="40" alt="June 2026 to present" /></td> <td valign="top"><b>Campus Mantri, GeeksforGeeks</b><br>Share technical learning opportunities with fellow students through LinkedIn and direct campus outreach.</td> </tr> </table> <br>
+
+<a name="recognition"></a> <img src="assets/heading-recognition.svg" height="56" alt="Recognition" />
+
+<table> <tr> <td width="260" valign="top"><img src="assets/tag-first-place.svg" height="40" alt="First place" /></td> <td valign="top"><b>EUREKA! 2026, Startup Pitching</b><br>My team, <b>Zenith Labs</b>, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.</td> </tr> <tr> <td width="260" valign="top"><img src="assets/tag-top-prompt-creator.svg" height="40" alt="Top Prompt Creator" /></td> <td valign="top"><b>Google Student Ambassador Program</b><br>My Game Night Edition prompt became a playable game in Gemini Canvas.</td> </tr> </table> <br>
+
+<a name="contact"></a> <img src="assets/heading-contact.svg" height="56" alt="Get in touch" />
+
+<p> <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME"><img src="assets/button-linkedin.svg" height="52" alt="LinkedIn" /></a> <a href="mailto:YOUR-EMAIL@example.com"><img src="assets/button-email.svg" height="52" alt="Email" /></a> <a href="https://github.com/lolsico9t5?tab=repositories"><img src="assets/button-github.svg" height="52" alt="GitHub repositories" /></a> </p> <br> <img src="assets/footer.svg" width="100%" alt="Built in Tamil Nadu, India" />
