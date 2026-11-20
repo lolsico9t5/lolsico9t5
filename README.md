@@ -11,7 +11,7 @@ Second-year computer science student building AI-assisted software and cloud pro
 
 [About](#about) · [Projects](#projects) · [Experience](#experience) · [Recognition](#recognition) · [Skills](#skills) · [Learning](#learning) · [Contact](#contact)
 
-## About
+## <picture><img src="assets/icons/about.svg" width="36" height="28" align="texttop" alt=""></picture>About
 
 Second-year B.E. Computer Science and Engineering student with a strong foundation in C++, Java, SQL, web technologies, and cloud computing.
 
@@ -19,7 +19,7 @@ Completed a C++ programming internship at Thiranex, serves as an AWS Student Bui
 
 <a name="projects"></a>
 
-## Featured projects
+## <picture><img src="assets/icons/projects.svg" width="36" height="28" align="texttop" alt=""></picture>Featured projects
 
 ### [HMT Restock Radar](https://github.com/lolsico9t5/hmt-restock-radar)
 
@@ -53,7 +53,7 @@ An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Ll
 
 <a name="experience"></a>
 
-## Experience and leadership
+## <picture><img src="assets/icons/experience.svg" width="36" height="28" align="texttop" alt=""></picture>Experience and leadership
 
 **C++ Programming Intern, Thiranex**<br>
 *April to May 2026*<br>
@@ -67,7 +67,7 @@ Led campus cloud engineering initiatives focused on building and deploying softw
 *June 2026 to present*<br>
 Share technical learning opportunities with fellow students through LinkedIn and direct campus outreach.
 
-## Recognition
+## <picture><img src="assets/icons/recognition.svg" width="36" height="28" align="texttop" alt=""></picture>Recognition
 
 **EUREKA! 2026, Startup Pitching** · *First place*<br>
 My team, **Zenith Labs**, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.
@@ -77,7 +77,7 @@ My Game Night Edition prompt became a playable game in Gemini Canvas.
 
 <a name="skills"></a>
 
-## Technical skills
+## <picture><img src="assets/icons/skills.svg" width="36" height="28" align="texttop" alt=""></picture>Technical skills
 
 <table>
   <tr>
@@ -100,7 +100,7 @@ My Game Night Edition prompt became a playable game in Gemini Canvas.
 
 <a name="learning"></a>
 
-## Currently learning
+## <picture><img src="assets/icons/learning.svg" width="36" height="28" align="texttop" alt=""></picture>Currently learning
 
 - **Java** · Object-oriented design
 - **Data structures and algorithms** · Problem-solving and interview fundamentals
@@ -108,7 +108,7 @@ My Game Night Edition prompt became a playable game in Gemini Canvas.
 - **Python** · Backend development and automation
 - **AWS** · Cloud architecture
 
-## GitHub activity
+## <picture><img src="assets/icons/activity.svg" width="36" height="28" align="texttop" alt=""></picture>GitHub activity
 
 <a href="https://github.com/lolsico9t5">
   <picture>
@@ -119,8 +119,13 @@ My Game Night Edition prompt became a playable game in Gemini Canvas.
 
 <a name="contact"></a>
 
-## Get in touch
+## <picture><img src="assets/icons/contact.svg" width="36" height="28" align="texttop" alt=""></picture>Get in touch
 
 [LinkedIn](https://www.linkedin.com/in/benjamin-franklin-a-4b272b391/) · [Email](mailto:abf2k07@gmail.com) · [Instagram](https://www.instagram.com/lol_sico_9t5/) · [GitHub](https://github.com/lolsico9t5?tab=repositories)
 
 *Built in Tamil Nadu, India*
+
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/colophon.webp">
+  <img src="assets/colophon.svg" width="100%" alt="">
+</picture>

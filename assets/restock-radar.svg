@@ -1,11 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="224" viewBox="0 0 960 224" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="248" viewBox="0 0 960 248" role="img" aria-labelledby="title desc">
   <title id="title">HMT Restock Radar</title>
   <desc id="desc">A mechanical watch ticks as a stock trace rises and rings a notification bell.</desc>
   <defs>
     <linearGradient id="paper" x1="0" y1=".8" x2="1" y2=".15"><stop stop-color="#d4c3ab"/><stop offset=".43" stop-color="#f2e2ca"/><stop offset="1" stop-color="#fff5e7"/></linearGradient>
+    <linearGradient id="case-field" x1=".05" y1="0" x2=".94" y2=".84"><stop stop-color="#15273d"/><stop offset=".57" stop-color="#1b4651"/><stop offset="1" stop-color="#122939"/></linearGradient>
+    <radialGradient id="dial-light" cx=".32" cy=".18" r=".92"><stop stop-color="#40888c"/><stop offset=".56" stop-color="#1d616b"/><stop offset="1" stop-color="#103647"/></radialGradient>
+    <linearGradient id="graph" x2="1" y2=".15"><stop stop-color="#bdbdad"/><stop offset=".4" stop-color="#e0decb"/><stop offset="1" stop-color="#f6ecd7"/></linearGradient>
+    <linearGradient id="brass"><stop stop-color="#9d745f"/><stop offset=".31" stop-color="#efd6a9"/><stop offset=".54" stop-color="#b69b79"/><stop offset="1" stop-color="#f3c9a1"/></linearGradient>
+    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M0 22V0h22" fill="none" stroke="#6b8a81" stroke-width=".65" opacity=".39"/><circle cx="1" cy="1" r=".75" fill="#789288" opacity=".5"/></pattern>
+    <pattern id="knurl" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(44)"><path d="M0 0v5" stroke="#b8e3d5" opacity=".24" stroke-width="1.3"/></pattern>
+    <g id="lug"><circle r="3" fill="#929b8f"/><path d="M-1.4 1.4l2.8-2.8" stroke="#e6e3d0" stroke-width="1"/></g>
     <linearGradient id="steel" x1=".03" y1=".12" x2=".94" y2=".86"><stop stop-color="#e3dfce"/><stop offset=".14" stop-color="#fcf8e6"/><stop offset=".27" stop-color="#87867a"/><stop offset=".47" stop-color="#c8c6b6"/><stop offset=".58" stop-color="#f8f2dc"/><stop offset=".78" stop-color="#77776e"/><stop offset=".94" stop-color="#dfd9c5"/><stop offset="1" stop-color="#999a8b"/></linearGradient>
     <linearGradient id="band"><stop stop-color="#193c46"/><stop offset=".12" stop-color="#315566"/><stop offset=".48" stop-color="#416e7a"/><stop offset=".87" stop-color="#2c5664"/><stop offset="1" stop-color="#173641"/></linearGradient>
-    <radialGradient id="dial" cx=".42" cy=".33" r=".75"><stop stop-color="#398692"/><stop offset=".74" stop-color="#1a5969"/><stop offset="1" stop-color="#113f52"/></radialGradient>
     <filter id="shade" x="-45%" y="-35%" width="200%" height="190%"><feGaussianBlur stdDeviation="9"/></filter>
     <linearGradient id="chart-wash" x1="0" y1="0" x2="0" y2="1">
       <stop stop-color="#179991" stop-opacity=".42"/><stop offset="1" stop-color="#58c5b2" stop-opacity=".07"/>
@@ -13,7 +19,7 @@
     <linearGradient id="reflection"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".52" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#d5fff8" stop-opacity="0"/></linearGradient>
     <clipPath id="dial-face"><circle r="91"/></clipPath>
     <clipPath id="plot-window"><rect class="plot-window" x="417" y="55" width="354" height="118"/></clipPath>
-    <clipPath id="panel"><rect width="960" height="224" rx="6"/></clipPath>
+    <clipPath id="panel"><rect width="960" height="248" rx="12"/></clipPath>
   </defs>
   <style>
     @media (prefers-reduced-motion: no-preference) {
@@ -27,6 +33,14 @@
       .bell { transform-origin: 0 -14px; animation: ring 6.2s ease-in-out infinite; }
       .waves { animation: sound 6.2s ease-out infinite; }
     }
+    @media (prefers-reduced-motion: no-preference) {
+      .balance {animation: rock 1.5s ease-in-out infinite;}
+      .detected {animation: confirm 6.2s ease-out infinite;}
+      .sweep-light {animation: scan 6.2s linear infinite;}
+    }
+    @keyframes rock {0%,100% {transform:rotate(-37deg)} 50% {transform:rotate(37deg)}}
+    @keyframes confirm {0%,59%,100% {opacity:.2} 68%,83% {opacity:1}}
+    @keyframes scan {0%,8% {transform:translateX(0);opacity:0} 12% {opacity:.74} 29.8%,35.6% {transform:translateX(163px)} 49.8%,55.6% {transform:translateX(269px)} 67%,84% {transform:translateX(354px);opacity:.74} 97%,100% {transform:translateX(354px);opacity:0}}
     @keyframes glint {
       0%,8% { transform: translateX(-148px); opacity: 0; }
       23% { opacity: .82; } 49%,100% { transform: translateX(148px); opacity: 0; }
@@ -52,7 +66,21 @@
     @keyframes sound { 0%,64%,95%,100% { opacity: 0; } 69%,78% { opacity: 1; } }
   </style>
   <g clip-path="url(#panel)">
-    <rect width="960" height="224" fill="url(#paper)"/>
+    <rect width="960" height="248" fill="url(#paper)"/>
+    <path d="M0 0h399l-97 248H0z" fill="url(#case-field)"/>
+    <g stroke="#96bcb9" stroke-width="1" fill="none" opacity=".28">
+      <circle cx="188" cy="139" r="120"/><circle cx="188" cy="139" r="134" stroke-dasharray="2 4"/>
+      <circle cx="188" cy="139" r="149"/><path d="M0 139h57m269 0h10M22 40V23h19"/>
+    </g>
+    <path d="M399 0l-97 248m103-248l-97 248" stroke="#bba78c" fill="none"/>
+    <g transform="translate(0 12)">
+    <rect x="388" y="23" width="529" height="174" rx="10" fill="#9f9785" opacity=".32" transform="translate(0 4)"/>
+    <rect x="387" y="21" width="530" height="175" rx="11" fill="url(#brass)" stroke="#968e7f"/>
+    <rect x="392" y="26" width="520" height="165" rx="8" fill="url(#graph)" stroke="#f5eddb"/>
+    <rect x="400" y="34" width="504" height="149" rx="4" fill="url(#grid)"/>
+    <g><use href="#lug" x="399" y="32"/><use href="#lug" x="905" y="32"/><use href="#lug" x="399" y="184"/><use href="#lug" x="905" y="184"/></g>
+    <path class="sweep-light" d="M417 47v125" stroke="#518b7b" stroke-dasharray="3 4" opacity="0"/>
+
     <g transform="translate(209 115) rotate(-14)">
       <g fill="#494332" opacity=".32" filter="url(#shade)" transform="translate(8 10)"><rect x="-43" y="-190" width="86" height="380"/><circle r="103"/></g>
       <rect x="-41" y="-204" width="82" height="408" fill="url(#band)"/>
@@ -63,7 +91,15 @@
       <path d="M105 -6v12 M108 -6v12 M111 -6v12 M114 -6v12 M117 -6v12" stroke="#777a6c" stroke-width="1"/>
       <circle r="103" fill="url(#steel)" stroke="#7c7d70" stroke-width="1.7"/>
       <circle r="96.5" fill="#c5c4b5" stroke="#faf5e3" stroke-width="2.2"/>
-      <circle r="92.5" fill="url(#dial)" stroke="#706e60" stroke-width="1.5"/>
+      <circle r="92.5" fill="url(#dial-light)" stroke="#706e60" stroke-width="1.5"/>
+      <circle r="76.5" fill="url(#knurl)" stroke="#a9cfbd" stroke-opacity=".49" stroke-width=".8"/>
+      <circle r="49" fill="none" stroke="#b8d7c0" opacity=".38" stroke-width=".7"/>
+      <g transform="translate(0 35)">
+        <circle r="14" fill="#153e49" stroke="#c9c4a2" stroke-width="1.25"/>
+        <circle r="11.5" fill="none" stroke="#a9cec1" stroke-dasharray="1 2"/>
+        <g class="balance" fill="none" stroke="#f3c993"><circle r="8"/><path d="M0 0v-8M0 0l7 4M0 0l-7 4" stroke-width="2"/></g>
+        <circle r="2" fill="#f1d0a3"/>
+      </g>
       <path d="M0 -86v8" transform="rotate(0)" stroke="#f6d397" stroke-width="3.4"/>
       <path d="M0 -86v3.2" transform="rotate(6)" stroke="#b4d6d3" stroke-width="1"/>
       <path d="M0 -86v3.2" transform="rotate(12)" stroke="#b4d6d3" stroke-width="1"/>
@@ -143,16 +179,21 @@
       <path d="M417 172.5h452 M417 46v127" stroke="#9d9685"/>
       <path d="M417 172v6 M429 172v3 M441 172v3 M453 172v3 M465 172v3 M477 172v6 M489 172v3 M501 172v3 M513 172v3 M525 172v3 M537 172v6 M549 172v3 M561 172v3 M573 172v3 M585 172v3 M597 172v6 M609 172v3 M621 172v3 M633 172v3 M645 172v3 M657 172v6 M669 172v3 M681 172v3 M693 172v3 M705 172v3 M717 172v6 M729 172v3 M741 172v3 M753 172v3 M765 172v3 M777 172v6 M789 172v3 M801 172v3 M813 172v3 M825 172v3 M837 172v6 M849 172v3 M861 172v3 M873 172v3" stroke="#9d9685"/>
       <path d="M417 153h163v-44h106V65h85" stroke="#b0ad99" stroke-width="2" stroke-linejoin="round"/>
-      <path class="trace" d="M417 153h163v-44h106V65h85" fill="none" pathLength="100" stroke-dasharray="100" stroke="#087a79" stroke-linejoin="round" stroke-width="3.6"/>
+      <path class="trace" d="M417 153h163v-44h106V65h85" fill="none" pathLength="100" stroke-dasharray="100" stroke="#087a79" stroke-linejoin="round" stroke-width="4.4"/>
     </g>
     <g class="cursor" transform="translate(771 65)"><circle r="7" fill="#e9dfc6" opacity=".92"/><circle r="3.8" fill="#c15b38"/></g>
     <g transform="translate(835 65)">
       <circle class="echo" r="33" fill="none" stroke="#cf724f" stroke-width="2.4" opacity="0"/>
-      <circle r="33" fill="#f3bc9c" stroke="#c98461" stroke-width="1"/>
+      <circle r="36" fill="#6c7669" opacity=".23" transform="translate(1 2)"/>
+      <circle r="33.5" fill="url(#brass)" stroke="#806e60"/>
+      <circle r="29" fill="#edb397" stroke="#ffdfb6"/>
+      <path class="detected" d="M-25 20a32 32 0 0 0 50 0" fill="none" stroke="#b9694c" stroke-width="2.7" stroke-linecap="round"/>
       <g class="bell" stroke="#6a422e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none">
         <path d="M-12 8c4 -4 3 -8 4 -12a8 8 0 0 1 16 0c1 4 0 8 4 12z" fill="#ffe2bd"/><path d="M-3 12q3 5 6 0m-3 -25v-2"/>
       </g>
       <path class="waves" d="M-16 -8q-3 3 -3 8m35 -8q3 3 3 8" opacity=".62" stroke="#96512c" stroke-width="1.8" stroke-linecap="round" fill="none"/>
     </g>
+    </g>
+    <rect x="1" y="1" width="958" height="246" rx="12" fill="none" stroke="#9bada0" stroke-opacity=".55"/>
   </g>
 </svg>

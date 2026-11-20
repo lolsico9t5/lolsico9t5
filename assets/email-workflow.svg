@@ -1,18 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="224" viewBox="0 0 960 224" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="248" viewBox="0 0 960 248" role="img" aria-labelledby="title desc">
   <title id="title">AI Email Intelligence System</title>
   <desc id="desc">A message leaves Gmail, passes through Ollama, and settles into a prioritized list in Notion.</desc>
   <defs>
-    <linearGradient id="field" x1="0" y1=".5" x2="1" y2=".58"><stop stop-color="#182d3a"/><stop offset=".54" stop-color="#203b47"/><stop offset="1" stop-color="#1a3040"/></linearGradient>
+    <linearGradient id="field" x1="0" y1=".5" x2="1" y2=".58"><stop stop-color="#151e31"/><stop offset=".54" stop-color="#23394b"/><stop offset="1" stop-color="#25233c"/></linearGradient>
     <linearGradient id="paper" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffe5cb"/><stop offset="1" stop-color="#efa687"/></linearGradient>
     <linearGradient id="metal" x1="0" y1="0" x2=".83" y2="1"><stop stop-color="#ffd49b"/><stop offset=".35" stop-color="#d6a368"/><stop offset="1" stop-color="#b08257"/></linearGradient>
     <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#335369"/><stop offset="1" stop-color="#233a51"/></linearGradient>
+    <linearGradient id="bed" x2=".86" y2="1"><stop stop-color="#374a67"/><stop offset=".5" stop-color="#2b4c5b"/><stop offset="1" stop-color="#182d40"/></linearGradient>
+    <linearGradient id="rim"><stop stop-color="#537a89"/><stop offset=".34" stop-color="#b5c3c1"/><stop offset=".68" stop-color="#617b94"/><stop offset="1" stop-color="#a3abbd"/></linearGradient>
+    <radialGradient id="pool"><stop stop-color="#9bb5d7" stop-opacity=".24"/><stop offset="1" stop-color="#91a8e0" stop-opacity="0"/></radialGradient>
+    <pattern id="board-grid" width="32" height="16" patternUnits="userSpaceOnUse"><path d="M-16 8l32 16L48 8M-16 8L16-8 48 8" fill="none" stroke="#9cb6cc" stroke-width=".6" opacity=".24"/></pattern>
+    <clipPath id="panel"><rect width="960" height="248" rx="12"/></clipPath>
+    <g id="socket">
+      <path d="M-94 0l94 23 94-23v6l-94 24-94-24Z" fill="#0f2133" stroke="#475b71" stroke-width="1"/>
+      <path d="M-94 0l94-23 94 23-94 23Z" fill="url(#bed)" stroke="url(#rim)"/>
+      <path d="M-73 0l73-17 73 17-73 17Z" fill="none" stroke="#739caa" opacity=".54"/>
+      <path d="M-51 14l33 8m4 1l6 1.5" stroke="#d8c2a7" stroke-width="1.4" stroke-linecap="round"/>
+    </g>
     <g id="pin-bank" fill="none" stroke="#b5a582" stroke-width="3.4" stroke-linecap="round">
       <path d="M-29 -43v-7m10 7v-7m10 7v-7m10 7v-7m10 7v-7m10 7v-7m10 7v-7"/>
     </g>
+    <linearGradient id="flap" x2=".5" y2="1"><stop stop-color="#fff0d2"/><stop offset=".47" stop-color="#ffceaa"/><stop offset="1" stop-color="#e7957d"/></linearGradient>
+    <linearGradient id="fold" x2=".7" y2="1"><stop stop-color="#bd7569"/><stop offset="1" stop-color="#f0ac89"/></linearGradient>
+    <radialGradient id="wax" cx=".32" cy=".25" r=".85"><stop stop-color="#f7bf9e"/><stop offset=".38" stop-color="#cc8377"/><stop offset="1" stop-color="#985b64"/></radialGradient>
     <g id="card">
       <rect x="-60" y="-34" width="120" height="68" rx="4" fill="url(#paper)" stroke="#ffddbf" stroke-width="1.1"/>
-      <path d="M-58 30l38 -29m78 29l-38 -29" fill="none" stroke="#b77c69" stroke-width="1.45"/>
-      <path d="M-58 -30L-4 6q4 3 8 0l54 -36" fill="none" stroke="#8f5649" stroke-width="1.8"/>
+      <path d="M-58 31l40-34h36l40 34z" fill="url(#fold)" stroke="#d28b76"/>
+      <path d="M-58 -30c0-1 1-2 3-2H55q3 0 3 2L5 10q-5 4-10 0z" fill="url(#flap)" stroke="#89594e" stroke-width="1.6"/>
+      <path d="M-50 -26l44 31m11 .3L50-26" stroke="#fff1d6" stroke-width="1.1" fill="none"/>
+      <path d="M-56 27l29-21m83 21L29 7" fill="none" stroke="#f2bd9d" stroke-width="1"/>
+      <circle cy="7.5" r="7.2" fill="url(#wax)" stroke="#935e58"/>
+      <path d="M-3 7.8l2.2 2.3 4.2-5" stroke="#ffdfb9" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      <path d="M-48 25h8m3 0h3" stroke="#ffe2be" stroke-width="1.2"/>
     </g>
   </defs>
   <style>
@@ -30,6 +49,16 @@
       .priority { animation: sort 5.9s cubic-bezier(.32,.02,.24,.99) infinite; }
       .row { animation: shift 5.9s cubic-bezier(.32,.02,.24,.99) infinite; }
     }
+    @media (prefers-reduced-motion: no-preference) {
+      .timing-ring {animation: clock 14s linear infinite;}
+      .flow-in {animation: inbound 5.9s linear infinite;}
+      .flow-out {animation: outbound 5.9s linear infinite;}
+      .decode-light {animation: decode 5.9s ease-in-out infinite;}
+    }
+    @keyframes decode {0%,30% {stroke-dashoffset:0;opacity:.25} 39%,53% {opacity:1} 61%,100% {stroke-dashoffset:-235;opacity:.25}}
+    @keyframes clock {to {stroke-dashoffset:-181}}
+    @keyframes inbound {0%,12%,43%,100% {opacity:0} 20%,32% {opacity:.88}}
+    @keyframes outbound {0%,52%,82%,100% {opacity:0} 61%,72% {opacity:.88}}
     @keyframes extract {
       0%,4%,36%,100% { transform: translateY(0); } 14%,21% { transform: translateY(-25px); }
     }
@@ -64,14 +93,30 @@
       100% { transform: translateY(-22px); }
     }
   </style>
-  <rect width="960" height="224" rx="6" fill="url(#field)"/>
+  <g clip-path="url(#panel)">
+  <rect width="960" height="248" fill="url(#field)"/>
+  <rect x="0" y="23" width="960" height="185" fill="url(#board-grid)"/>
+  <ellipse cx="470" cy="112" rx="390" ry="125" fill="url(#pool)"/>
+  <g transform="translate(0 10)">
+  <g fill="none" stroke="#749da8" stroke-width="1" opacity=".57">
+    <path d="M0 75h54l20 12h29m-103 44h52l18-10h25m764-35h29l19-13h53M860 119h30l29 17h41"/>
+    <path d="M11 81h37l18 12h23m797 34l24 14h41M257 142l26 15h44l24-15h36m156-16h28l24 15h60"/>
+    <g fill="#99b5bc"><circle cx="103" cy="87" r="2"/><circle cx="387" cy="142" r="2"/><circle cx="655" cy="141" r="2"/></g>
+  </g>
+  <g><use href="#socket" x="170" y="137"/><use href="#socket" x="466" y="137"/><use href="#socket" x="768" y="137"/></g>
+  <g transform="translate(466 92)" class="timing-ring" fill="none" stroke="#c7b9de" stroke-width="1" opacity=".53">
+    <ellipse rx="78" ry="62" stroke-dasharray="46 18 2 5 2 7 35 66"/>
+  </g>
   <g fill="none" stroke-linecap="round">
-    <path d="M241 98H418m97 0h174" stroke="#769a9f" stroke-width="1.5"/>
+    <path d="M241 98H418m97 0h174" stroke="#638998" stroke-width="4.5"/>
+    <path d="M241 98H418m97 0h174" stroke="#c4d0cf" stroke-dasharray="2 7" stroke-width="1.35"/>
+    <path class="flow-in" d="M242 98h166" stroke="#f4bd98" stroke-width="3" opacity="0"/>
+    <path class="flow-out" d="M524 98h161" stroke="#a6e5cd" stroke-width="3" opacity="0"/>
     <path d="M276 107h52l9 7h46m161 -30h40l10 6h49" stroke="#45666e" stroke-width="1"/>
     <path d="M289 90h20m312 15h22" stroke="#668a93" stroke-width="1"/>
     <g stroke="#b9ab87" stroke-width="1.2"><path d="M403 94l5 4 -5 4m277 -8l5 4 -5 4"/></g>
   </g>
-  <g transform="translate(170 98)">
+  <g transform="translate(170 92)">
     <rect class="back-envelope" x="-62" y="-30" width="120" height="68" rx="4" transform="rotate(-10)" fill="#9c6159" stroke="#c78778"/>
     <rect x="-61" y="-30" width="120" height="68" rx="4" transform="rotate(-4)" fill="#c17b68" stroke="#e8a58c"/>
     <g transform="rotate(3)">
@@ -82,13 +127,19 @@
     </g>
     <g transform="rotate(3)"><g class="message"><use href="#card"/></g></g>
   </g>
-  <g transform="translate(466 98)">
+  <g transform="translate(466 96)">
     <rect class="ack" x="-46" y="-46" width="92" height="92" rx="8" fill="none" stroke="#edbd7e" stroke-width="1.8" opacity="0"/>
     <use href="#pin-bank"/><use href="#pin-bank" transform="rotate(90)"/><use href="#pin-bank" transform="rotate(180)"/><use href="#pin-bank" transform="rotate(270)"/>
     <rect x="-41" y="-39" width="87" height="87" rx="7" fill="#0a1c19" opacity=".7"/>
     <rect x="-43" y="-43" width="86" height="86" rx="7" fill="url(#metal)" stroke="#cabe9f" stroke-width="1.3"/>
+    <path d="M-41 -39h78l4 4m-79 73h74" fill="none" stroke="#ffe0ae" stroke-width="1.6"/>
     <rect x="-36" y="-36" width="72" height="72" rx="4" fill="url(#board)" stroke="#384b40" stroke-width="1.2"/>
     <rect class="core" x="-32" y="-32" width="64" height="64" rx="2.5" fill="none" stroke="#ffc986" opacity=".62"/>
+    <g fill="none" stroke="#83a3b6" opacity=".55" stroke-width="1">
+      <rect x="-24" y="-23" width="48" height="46" rx="5"/>
+      <path d="M-33 -23h7m-7 7h6m51 31h8m-8 6h8"/>
+    </g>
+    <rect x="-29" y="-29" width="58" height="58" fill="none" rx="3.5" stroke="#dcc7e7" stroke-width="1.4" stroke-dasharray="19 216" class="decode-light"/>
     <g fill="#ffe4b9">
       <rect class="bar" x="-15" y="-11" width="31" height="3.2" rx="1"/>
       <rect class="bar b2" x="-15" y="-1.5" width="23" height="3.2" rx="1"/>
@@ -98,6 +149,7 @@
   </g>
   <g transform="translate(768 98)">
     <rect x="-73" y="-49" width="151" height="103" rx="5" fill="#0d211d"/>
+    <path d="M-70 -45l10-12H82v99l-8 9Z" fill="#77939a" stroke="#a7bdbd"/>
     <rect x="-76" y="-52" width="152" height="104" rx="5" fill="#25484c" stroke="#649898" stroke-width="1.3"/>
     <path d="M-75 -36h150" stroke="#497173"/><path d="M-63 -44h24" stroke="#9cc5bf" stroke-width="2" stroke-linecap="round"/>
     <g class="row" stroke-linecap="round">
@@ -121,7 +173,11 @@
     <rect x="-14" y="-8" width="28" height="16" rx="2.4" fill="#8ddcca" stroke="#c6f1dc" stroke-width="1.2"/>
     <path d="M-9 -2h7m-7 4h5m4 -1l3 3 6 -7" fill="none" stroke="#285854" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <g font-family="Georgia, 'Times New Roman', serif" font-size="22" text-anchor="middle" fill="#f8efe2">
-    <text x="170" y="187">Gmail</text><text x="466" y="187">Ollama</text><text x="768" y="187">Notion</text>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="31" text-anchor="middle" fill="#f8efe2">
+    <text x="170" y="209">Gmail</text><text x="466" y="209">Ollama</text><text x="768" y="209">Notion</text>
+  </g>
+  </g>
+  <path d="M18 35V17h22m880 0h22v18M18 213v18h22m880 0h22v-18" fill="none" stroke="#a5b1c1" opacity=".5"/>
+  <rect x="1" y="1" width="958" height="246" rx="12" fill="none" stroke="#798797" opacity=".67"/>
   </g>
 </svg>

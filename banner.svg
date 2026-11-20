@@ -1,423 +1,244 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="344" viewBox="0 0 960 344" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="354" viewBox="0 0 1000 354" role="img" aria-labelledby="title desc">
   <title id="title">Benjamin Franklin A</title>
-  <desc id="description">An ivory nameplate beside a turning sculpture of teal, copper and champagne-colored plates.</desc>
+  <desc id="desc">An ivory and mint nameplate beside a kinetic trefoil sculpture made of individually twisting metallic fins.</desc>
   <defs>
-    <linearGradient id="ground" x2="1" y2=".22" gradientUnits="objectBoundingBox">
-      <stop stop-color="#102d2b"/><stop offset=".52" stop-color="#122b2d"/><stop offset="1" stop-color="#192b36"/>
-    </linearGradient>
-    <radialGradient id="light"><stop stop-color="#54888b" stop-opacity=".34"/><stop offset="1" stop-color="#41636e" stop-opacity="0"/></radialGradient>
-    <radialGradient id="shadow"><stop stop-color="#050e0b" stop-opacity=".78"/><stop offset="1" stop-color="#091610" stop-opacity="0"/></radialGradient>
-    <linearGradient id="metal" x1="0" y1=".35" x2="1" y2=".63">
-      <stop stop-color="#657064"/><stop offset=".14" stop-color="#b4ad8e"/><stop offset=".40" stop-color="#f6d99c"/>
-      <stop offset=".59" stop-color="#d9af73"/><stop offset=".82" stop-color="#ab845d"/><stop offset="1" stop-color="#f1cc91"/>
-    </linearGradient>
-    <linearGradient id="lagoon" x1="0" y1=".3" x2="1" y2=".67">
-      <stop stop-color="#225960"/><stop offset=".22" stop-color="#478f91"/><stop offset=".48" stop-color="#9ae1d1"/>
-      <stop offset=".67" stop-color="#55afa3"/><stop offset="1" stop-color="#397b7d"/>
-    </linearGradient>
-    <linearGradient id="copper" x1="0" y1=".35" x2="1" y2=".7">
-      <stop stop-color="#7b4845"/><stop offset=".19" stop-color="#bc7560"/><stop offset=".45" stop-color="#ffd2ac"/>
-      <stop offset=".66" stop-color="#ec9c7a"/><stop offset="1" stop-color="#a86653"/>
-    </linearGradient>
-    <linearGradient id="rule-metal" gradientUnits="userSpaceOnUse" x1="51" y1="300" x2="275" y2="300">
-      <stop stop-color="#e5b477"/><stop offset=".48" stop-color="#f5ac86"/><stop offset="1" stop-color="#78cbbf"/>
-    </linearGradient>
-    <linearGradient id="cut"><stop stop-color="#53594b"/><stop offset=".34" stop-color="#aba181"/><stop offset=".71" stop-color="#625f4c"/><stop offset="1" stop-color="#85846b"/></linearGradient>
-    <g id="edge"><rect x="-131" y="-57" width="262" height="114" rx="7" fill="url(#cut)" stroke="#777760" stroke-width=".85"/></g>
-    <g id="foil">
-      <rect x="-131" y="-57" width="262" height="114" rx="7" fill="inherit" stroke="#f0e3c3" stroke-width="1.65"/>
-      <path d="M-122 -52h244M-125 51h250" fill="none" stroke="#f9e9c7" stroke-width="1.1" opacity=".66"/>
-    </g>
-    <g id="cap"><use href="#foil"/><rect x="-120" y="-47" width="240" height="94" rx="4" fill="none" stroke="#767660" stroke-width="1.15"/>
-      <path d="M-106 -36h57m-57 6h38m142 63h21" fill="none" stroke="#8b8971" stroke-width="1.4"/>
-    </g>
-    <clipPath id="sheet"><rect width="960" height="344" rx="7"/></clipPath>
+    <linearGradient id="night" x2="1" y2=".65"><stop stop-color="#101e32"/><stop offset=".47" stop-color="#102732"/><stop offset="1" stop-color="#25283f"/></linearGradient>
+    <radialGradient id="aura"><stop stop-color="#77c8c3" stop-opacity=".23"/><stop offset=".62" stop-color="#6283a8" stop-opacity=".11"/><stop offset="1" stop-color="#7488b0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="script" x1=".08" y1=".12" x2=".89" y2=".88"><stop stop-color="#e6fbe9"/><stop offset=".55" stop-color="#a6e4d3"/><stop offset="1" stop-color="#8acfcf"/></linearGradient>
+    <linearGradient id="ruling"><stop stop-color="#88ccbb"/><stop offset=".52" stop-color="#9a9bb6"/><stop offset="1" stop-color="#f5bb9a"/></linearGradient>
+    <linearGradient id="intaglio"><stop stop-color="#72b3c0" stop-opacity=".35"/><stop offset="1" stop-color="#76b6ae" stop-opacity="0"/></linearGradient>
+    <linearGradient id="edge"><stop stop-color="#7fb9bb"/><stop offset=".48" stop-color="#384b68"/><stop offset="1" stop-color="#ac91a7"/></linearGradient>
+    <linearGradient id="jade" x1="0" y1=".2" x2=".88" y2=".91"><stop offset="0" stop-color="#19415c"/><stop offset=".21" stop-color="#43828d"/><stop offset=".43" stop-color="#b6ffdf"/><stop offset=".59" stop-color="#7ed7c4"/><stop offset=".79" stop-color="#407f8c"/><stop offset="1" stop-color="#c4f5e5"/></linearGradient>
+    <linearGradient id="silver" x1="0" y1=".2" x2=".88" y2=".91"><stop offset="0" stop-color="#374d68"/><stop offset=".21" stop-color="#8798aa"/><stop offset=".43" stop-color="#fff0cf"/><stop offset=".59" stop-color="#b8c5c5"/><stop offset=".79" stop-color="#616c8c"/><stop offset="1" stop-color="#f1e4e4"/></linearGradient>
+    <linearGradient id="iris" x1="0" y1=".2" x2=".88" y2=".91"><stop offset="0" stop-color="#2d345a"/><stop offset=".21" stop-color="#7673b2"/><stop offset=".43" stop-color="#e6deff"/><stop offset=".59" stop-color="#b8b1ec"/><stop offset=".79" stop-color="#59678f"/><stop offset="1" stop-color="#ded7ff"/></linearGradient>
+    <linearGradient id="flame" x1="0" y1=".2" x2=".88" y2=".91"><stop offset="0" stop-color="#623f55"/><stop offset=".21" stop-color="#c78278"/><stop offset=".43" stop-color="#ffdeb2"/><stop offset=".59" stop-color="#f2ae94"/><stop offset=".79" stop-color="#a66366"/><stop offset="1" stop-color="#fce4c7"/></linearGradient>
+    <radialGradient id="shadow"><stop stop-color="#050b16" stop-opacity=".7"/><stop offset="1" stop-color="#040c14" stop-opacity="0"/></radialGradient>
+    <pattern id="screen" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="#9bb5c6" opacity=".19"/></pattern>
+    <clipPath id="panel"><rect x="1" y="1" width="998" height="352" rx="15"/></clipPath>
+    <path id="fin" d="M-27 -24Q-29 -12 -29 15Q-29 20 -23 24Q-6 31 18 28Q25 27 28 21Q32 8 29 -17Q28 -23 22 -26Q0 -33 -23 -29Q-26 -29 -27 -24Z M-15 -14Q-10 -20 13 -16Q18 -15 18 -8L17 10Q17 15 12 16Q-4 18 -13 14Q-17 12 -17 8L-16 -10Z" fill-rule="evenodd" stroke="#c9e8e0" stroke-opacity=".65" stroke-width=".68"/>
+    <path id="star" d="M0 -5C.6 -1 .9 -.7 5 0C1 .8 .6 1 0 5C-.7 1 -1 .8 -5 0C-1 -.7 -.7 -1 0 -5Z"/>
   </defs>
   <style>
     @media (prefers-reduced-motion: no-preference) {
-    .vane { animation-duration: 7.8s; animation-timing-function: linear; animation-iteration-count: infinite; }
-    @keyframes turn-0 {
-      0% { transform: matrix(0.8139,-0.2498,0.5810,0.3500,0.00,0.00); }
-      6.25% { transform: matrix(0.9612,-0.1186,0.2758,0.4133,4.21,0.00); }
-      12.5% { transform: matrix(1.0000,0.0040,-0.0093,0.4300,7.78,0.00); }
-      18.75% { transform: matrix(0.9796,0.0864,-0.2009,0.4212,10.16,0.00); }
-      25% { transform: matrix(0.9638,0.1147,-0.2667,0.4144,11.00,0.00); }
-      31.25% { transform: matrix(0.9796,0.0864,-0.2009,0.4212,10.16,0.00); }
-      37.5% { transform: matrix(1.0000,0.0040,-0.0093,0.4300,7.78,0.00); }
-      43.75% { transform: matrix(0.9612,-0.1186,0.2758,0.4133,4.21,0.00); }
-      50% { transform: matrix(0.8139,-0.2498,0.5810,0.3500,0.00,0.00); }
-      56.25% { transform: matrix(0.5730,-0.3524,0.8195,0.2464,-4.21,0.00); }
-      62.5% { transform: matrix(0.3160,-0.4080,0.9488,0.1359,-7.78,0.00); }
-      68.75% { transform: matrix(0.1282,-0.4265,0.9917,0.0551,-10.16,0.00); }
-      75% { transform: matrix(0.0608,-0.4292,0.9982,0.0261,-11.00,0.00); }
-      81.25% { transform: matrix(0.1282,-0.4265,0.9917,0.0551,-10.16,0.00); }
-      87.5% { transform: matrix(0.3160,-0.4080,0.9488,0.1359,-7.78,0.00); }
-      93.75% { transform: matrix(0.5730,-0.3524,0.8195,0.2464,-4.21,0.00); }
-      100% { transform: matrix(0.8139,-0.2498,0.5810,0.3500,-0.00,0.00); }
+      .fin { animation: feather 7s ease-in-out infinite; }
+      .sculpture { animation: suspend 11s ease-in-out infinite; }
+      .orbit { animation: orbit 24s linear infinite; }
+      .shine { animation: shine 6s ease-in-out infinite; }
+      .signature { animation: arrive .95s cubic-bezier(.18,.72,.3,1) both; }
     }
-    .v0 { animation-name: turn-0; }
-    @keyframes turn-1 {
-      0% { transform: matrix(0.7638,-0.2776,0.6455,0.3284,-1.72,0.00); }
-      6.25% { transform: matrix(0.9378,-0.1492,0.3471,0.4033,2.57,0.08); }
-      12.5% { transform: matrix(0.9995,-0.0136,0.0316,0.4298,6.47,0.31); }
-      18.75% { transform: matrix(0.9764,0.0929,-0.2161,0.4198,9.38,0.66); }
-      25% { transform: matrix(0.9374,0.1498,-0.3483,0.4031,10.86,1.07); }
-      31.25% { transform: matrix(0.9355,0.1520,-0.3534,0.4022,10.70,1.48); }
-      37.5% { transform: matrix(0.9729,0.0995,-0.2313,0.4183,8.90,1.83); }
-      43.75% { transform: matrix(1.0000,-0.0035,0.0082,0.4300,5.75,2.06); }
-      50% { transform: matrix(0.9470,-0.1381,0.3211,0.4072,1.72,2.14); }
-      56.25% { transform: matrix(0.7813,-0.2684,0.6242,0.3359,-2.57,2.06); }
-      62.5% { transform: matrix(0.5428,-0.3611,0.8398,0.2334,-6.47,1.83); }
-      68.75% { transform: matrix(0.3187,-0.4076,0.9478,0.1371,-9.38,1.48); }
-      75% { transform: matrix(0.1854,-0.4225,0.9827,0.0797,-10.86,1.07); }
-      81.25% { transform: matrix(0.1800,-0.4230,0.9837,0.0774,-10.70,0.66); }
-      87.5% { transform: matrix(0.3039,-0.4097,0.9527,0.1307,-8.90,0.31); }
-      93.75% { transform: matrix(0.5231,-0.3665,0.8523,0.2249,-5.75,0.08); }
-      100% { transform: matrix(0.7638,-0.2776,0.6455,0.3284,-1.72,0.00); }
-    }
-    .v1 { animation-name: turn-1; }
-    @keyframes turn-2 {
-      0% { transform: matrix(0.7145,-0.3009,0.6997,0.3072,-3.40,0.00); }
-      6.25% { transform: matrix(0.9062,-0.1819,0.4229,0.3896,0.86,0.16); }
-      12.5% { transform: matrix(0.9956,-0.0404,0.0940,0.4281,4.99,0.63); }
-      18.75% { transform: matrix(0.9800,0.0857,-0.1992,0.4214,8.36,1.32); }
-      25% { transform: matrix(0.9201,0.1684,-0.3917,0.3956,10.46,2.14); }
-      31.25% { transform: matrix(0.8865,0.1989,-0.4627,0.3812,10.97,2.96); }
-      37.5% { transform: matrix(0.9114,0.1769,-0.4114,0.3919,9.80,3.66); }
-      43.75% { transform: matrix(0.9713,0.1023,-0.2380,0.4176,7.14,4.12); }
-      50% { transform: matrix(0.9991,-0.0181,0.0422,0.4296,3.40,4.29); }
-      56.25% { transform: matrix(0.9285,-0.1597,0.3714,0.3993,-0.86,4.12); }
-      62.5% { transform: matrix(0.7498,-0.2845,0.6617,0.3224,-4.99,3.66); }
-      68.75% { transform: matrix(0.5253,-0.3659,0.8509,0.2259,-8.36,2.96); }
-      75% { transform: matrix(0.3440,-0.4038,0.9390,0.1479,-10.46,2.14); }
-      81.25% { transform: matrix(0.2693,-0.4141,0.9631,0.1158,-10.97,1.32); }
-      87.5% { transform: matrix(0.3237,-0.4069,0.9462,0.1392,-9.80,0.63); }
-      93.75% { transform: matrix(0.4911,-0.3746,0.8711,0.2112,-7.14,0.16); }
-      100% { transform: matrix(0.7145,-0.3009,0.6997,0.3072,-3.40,0.00); }
-    }
-    .v2 { animation-name: turn-2; }
-    @keyframes turn-3 {
-      0% { transform: matrix(0.6735,-0.3178,0.7392,0.2896,-5.00,0.00); }
-      6.25% { transform: matrix(0.8690,-0.2128,0.4948,0.3737,-0.87,0.24); }
-      12.5% { transform: matrix(0.9855,-0.0731,0.1699,0.4237,3.40,0.94); }
-      18.75% { transform: matrix(0.9879,0.0668,-0.1554,0.4248,7.14,1.98); }
-      25% { transform: matrix(0.9160,0.1725,-0.4013,0.3939,9.80,3.21); }
-      31.25% { transform: matrix(0.8468,0.2287,-0.5319,0.3641,10.97,4.44); }
-      37.5% { transform: matrix(0.8379,0.2347,-0.5458,0.3603,10.46,5.49); }
-      43.75% { transform: matrix(0.8962,0.1908,-0.4437,0.3854,8.37,6.18); }
-      50% { transform: matrix(0.9745,0.0964,-0.2242,0.4191,5.00,6.43); }
-      56.25% { transform: matrix(0.9961,-0.0378,0.0880,0.4283,0.87,6.18); }
-      62.5% { transform: matrix(0.9069,-0.1812,0.4214,0.3900,-3.40,5.49); }
-      68.75% { transform: matrix(0.7237,-0.2968,0.6902,0.3112,-7.14,4.44); }
-      75% { transform: matrix(0.5245,-0.3661,0.8514,0.2256,-9.80,3.21); }
-      81.25% { transform: matrix(0.3933,-0.3953,0.9194,0.1691,-10.97,1.98); }
-      87.5% { transform: matrix(0.3781,-0.3981,0.9257,0.1626,-10.46,0.94); }
-      93.75% { transform: matrix(0.4841,-0.3763,0.8750,0.2082,-8.37,0.24); }
-      100% { transform: matrix(0.6735,-0.3178,0.7392,0.2896,-5.00,0.00); }
-    }
-    .v3 { animation-name: turn-3; }
-    @keyframes turn-4 {
-      0% { transform: matrix(0.6487,-0.3273,0.7611,0.2789,-6.47,0.00); }
-      6.25% { transform: matrix(0.8315,-0.2389,0.5555,0.3576,-2.57,0.33); }
-      12.5% { transform: matrix(0.9681,-0.1078,0.2506,0.4163,1.72,1.26); }
-      18.75% { transform: matrix(0.9959,0.0390,-0.0907,0.4282,5.75,2.65); }
-      25% { transform: matrix(0.9245,0.1640,-0.3813,0.3975,8.90,4.29); }
-      31.25% { transform: matrix(0.8242,0.2435,-0.5663,0.3544,10.70,5.93); }
-      37.5% { transform: matrix(0.7706,0.2741,-0.6374,0.3313,10.87,7.32); }
-      43.75% { transform: matrix(0.7991,0.2585,-0.6012,0.3436,9.38,8.25); }
-      50% { transform: matrix(0.8913,0.1950,-0.4535,0.3832,6.47,8.57); }
-      56.25% { transform: matrix(0.9811,0.0832,-0.1934,0.4219,2.57,8.25); }
-      62.5% { transform: matrix(0.9901,-0.0604,0.1405,0.4257,-1.72,7.32); }
-      68.75% { transform: matrix(0.8846,-0.2005,0.4663,0.3804,-5.75,5.93); }
-      75% { transform: matrix(0.7070,-0.3041,0.7072,0.3040,-8.90,4.29); }
-      81.25% { transform: matrix(0.5435,-0.3610,0.8394,0.2337,-10.70,2.65); }
-      87.5% { transform: matrix(0.4666,-0.3803,0.8845,0.2006,-10.87,1.26); }
-      93.75% { transform: matrix(0.5069,-0.3707,0.8620,0.2180,-9.38,0.33); }
-      100% { transform: matrix(0.6487,-0.3273,0.7611,0.2789,-6.47,0.00); }
-    }
-    .v4 { animation-name: turn-4; }
-    @keyframes turn-5 {
-      0% { transform: matrix(0.6463,-0.3281,0.7631,0.2779,-7.78,0.00); }
-      6.25% { transform: matrix(0.8005,-0.2577,0.5994,0.3442,-4.21,0.41); }
-      12.5% { transform: matrix(0.9449,-0.1407,0.3272,0.4063,-0.00,1.57); }
-      18.75% { transform: matrix(0.9999,0.0055,-0.0128,0.4300,4.21,3.31); }
-      25% { transform: matrix(0.9417,0.1447,-0.3364,0.4049,7.78,5.36); }
-      31.25% { transform: matrix(0.8212,0.2454,-0.5706,0.3531,10.16,7.41); }
-      37.5% { transform: matrix(0.7213,0.2978,-0.6926,0.3102,11.00,9.15); }
-      43.75% { transform: matrix(0.7021,0.3062,-0.7121,0.3019,10.16,10.31); }
-      50% { transform: matrix(0.7742,0.2721,-0.6329,0.3329,7.78,10.71); }
-      56.25% { transform: matrix(0.8961,0.1908,-0.4438,0.3853,4.21,10.31); }
-      62.5% { transform: matrix(0.9887,0.0645,-0.1500,0.4251,0.00,9.15); }
-      68.75% { transform: matrix(0.9809,-0.0836,0.1944,0.4218,-4.21,7.41); }
-      75% { transform: matrix(0.8648,-0.2159,0.5021,0.3719,-7.78,5.36); }
-      81.25% { transform: matrix(0.7038,-0.3055,0.7104,0.3026,-10.16,3.31); }
-      87.5% { transform: matrix(0.5834,-0.3492,0.8122,0.2509,-11.00,1.57); }
-      93.75% { transform: matrix(0.5609,-0.3560,0.8279,0.2412,-10.16,0.41); }
-      100% { transform: matrix(0.6463,-0.3281,0.7631,0.2779,-7.78,0.00); }
-    }
-    .v5 { animation-name: turn-5; }
-    @keyframes turn-6 {
-      0% { transform: matrix(0.6701,-0.3192,0.7423,0.2881,-8.90,0.00); }
-      6.25% { transform: matrix(0.7827,-0.2676,0.6224,0.3366,-5.75,0.49); }
-      12.5% { transform: matrix(0.9201,-0.1685,0.3918,0.3956,-1.72,1.88); }
-      18.75% { transform: matrix(0.9976,-0.0300,0.0699,0.4289,2.56,3.97); }
-      25% { transform: matrix(0.9623,0.1170,-0.2721,0.4138,6.46,6.43); }
-      31.25% { transform: matrix(0.8358,0.2361,-0.5491,0.3594,9.38,8.89); }
-      37.5% { transform: matrix(0.6963,0.3086,-0.7178,0.2994,10.86,10.97); }
-      43.75% { transform: matrix(0.6214,0.3369,-0.7835,0.2672,10.70,12.37); }
-      50% { transform: matrix(0.6486,0.3273,-0.7611,0.2789,8.90,12.86); }
-      56.25% { transform: matrix(0.7646,0.2771,-0.6445,0.3288,5.75,12.37); }
-      62.5% { transform: matrix(0.9085,0.1797,-0.4179,0.3906,1.72,10.97); }
-      68.75% { transform: matrix(0.9952,0.0423,-0.0983,0.4279,-2.56,8.89); }
-      75% { transform: matrix(0.9697,-0.1051,0.2445,0.4170,-6.46,6.43); }
-      81.25% { transform: matrix(0.8511,-0.2257,0.5250,0.3660,-9.38,3.97); }
-      87.5% { transform: matrix(0.7165,-0.3000,0.6976,0.3081,-10.86,1.88); }
-      93.75% { transform: matrix(0.6435,-0.3291,0.7654,0.2767,-10.70,0.49); }
-      100% { transform: matrix(0.6701,-0.3192,0.7423,0.2881,-8.90,0.00); }
-    }
-    .v6 { animation-name: turn-6; }
-    @keyframes turn-7 {
-      0% { transform: matrix(0.7202,-0.2983,0.6938,0.3097,-9.80,0.00); }
-      6.25% { transform: matrix(0.7838,-0.2670,0.6210,0.3370,-7.15,0.57); }
-      12.5% { transform: matrix(0.8991,-0.1882,0.4377,0.3866,-3.40,2.20); }
-      18.75% { transform: matrix(0.9889,-0.0638,0.1483,0.4252,0.86,4.63); }
-      25% { transform: matrix(0.9808,0.0839,-0.1950,0.4217,4.99,7.50); }
-      31.25% { transform: matrix(0.8629,0.2173,-0.5054,0.3711,8.36,10.37); }
-      37.5% { transform: matrix(0.6960,0.3087,-0.7180,0.2993,10.46,12.80); }
-      43.75% { transform: matrix(0.5666,0.3543,-0.8240,0.2436,10.97,14.43); }
-      50% { transform: matrix(0.5346,0.3634,-0.8451,0.2299,9.80,15.00); }
-      56.25% { transform: matrix(0.6137,0.3395,-0.7895,0.2639,7.15,14.43); }
-      62.5% { transform: matrix(0.7693,0.2747,-0.6389,0.3308,3.40,12.80); }
-      68.75% { transform: matrix(0.9253,0.1630,-0.3791,0.3979,-0.86,10.37); }
-      75% { transform: matrix(0.9990,0.0188,-0.0437,0.4296,-4.99,7.50); }
-      81.25% { transform: matrix(0.9583,-0.1229,0.2858,0.4121,-8.36,4.63); }
-      87.5% { transform: matrix(0.8468,-0.2288,0.5320,0.3641,-10.46,2.20); }
-      93.75% { transform: matrix(0.7462,-0.2862,0.6657,0.3209,-10.97,0.57); }
-      100% { transform: matrix(0.7202,-0.2983,0.6938,0.3097,-9.80,0.00); }
-    }
-    .v7 { animation-name: turn-7; }
-    @keyframes turn-8 {
-      0% { transform: matrix(0.7917,-0.2627,0.6109,0.3404,-10.46,0.00); }
-      6.25% { transform: matrix(0.8063,-0.2543,0.5915,0.3467,-8.37,0.65); }
-      12.5% { transform: matrix(0.8880,-0.1978,0.4599,0.3818,-5.00,2.51); }
-      18.75% { transform: matrix(0.9768,-0.0921,0.2141,0.4200,-0.87,5.29); }
-      25% { transform: matrix(0.9936,0.0487,-0.1133,0.4272,3.39,8.57); }
-      31.25% { transform: matrix(0.8961,0.1909,-0.4439,0.3853,7.14,11.85); }
-      37.5% { transform: matrix(0.7174,0.2996,-0.6967,0.3085,9.80,14.63); }
-      43.75% { transform: matrix(0.5416,0.3615,-0.8407,0.2329,10.97,16.49); }
-      50% { transform: matrix(0.4459,0.3849,-0.8951,0.1917,10.46,17.14); }
-      56.25% { transform: matrix(0.4675,0.3801,-0.8840,0.2010,8.37,16.49); }
-      62.5% { transform: matrix(0.5984,0.3445,-0.8012,0.2573,5.00,14.63); }
-      68.75% { transform: matrix(0.7856,0.2661,-0.6188,0.3378,0.87,11.85); }
-      75% { transform: matrix(0.9435,0.1425,-0.3315,0.4057,-3.39,8.57); }
-      81.25% { transform: matrix(1.0000,-0.0037,0.0085,0.4300,-7.14,5.29); }
-      87.5% { transform: matrix(0.9495,-0.1350,0.3139,0.4083,-9.80,2.51); }
-      93.75% { transform: matrix(0.8541,-0.2237,0.5202,0.3672,-10.97,0.65); }
-      100% { transform: matrix(0.7917,-0.2627,0.6109,0.3404,-10.46,0.00); }
-    }
-    .v8 { animation-name: turn-8; }
-    @keyframes turn-9 {
-      0% { transform: matrix(0.8737,-0.2092,0.4865,0.3757,-10.87,0.00); }
-      6.25% { transform: matrix(0.8487,-0.2274,0.5289,0.3649,-9.38,0.73); }
-      12.5% { transform: matrix(0.8910,-0.1952,0.4539,0.3831,-6.47,2.82); }
-      18.75% { transform: matrix(0.9656,-0.1117,0.2599,0.4152,-2.57,5.95); }
-      25% { transform: matrix(0.9994,0.0154,-0.0359,0.4297,1.71,9.64); }
-      31.25% { transform: matrix(0.9288,0.1594,-0.3706,0.3994,5.74,13.33); }
-      37.5% { transform: matrix(0.7544,0.2823,-0.6564,0.3244,8.90,16.46); }
-      43.75% { transform: matrix(0.5454,0.3604,-0.8382,0.2345,10.69,18.55); }
-      50% { transform: matrix(0.3893,0.3961,-0.9211,0.1674,10.87,19.29); }
-      56.25% { transform: matrix(0.3435,0.4038,-0.9391,0.1477,9.38,18.55); }
-      62.5% { transform: matrix(0.4230,0.3896,-0.9061,0.1819,6.47,16.46); }
-      68.75% { transform: matrix(0.6013,0.3436,-0.7991,0.2585,2.57,13.33); }
-      75% { transform: matrix(0.8098,0.2523,-0.5867,0.3482,-1.71,9.64); }
-      81.25% { transform: matrix(0.9602,0.1202,-0.2794,0.4129,-5.74,5.95); }
-      87.5% { transform: matrix(0.9986,-0.0229,0.0532,0.4294,-8.90,2.82); }
-      93.75% { transform: matrix(0.9457,-0.1398,0.3251,0.4066,-10.69,0.73); }
-      100% { transform: matrix(0.8737,-0.2092,0.4865,0.3757,-10.87,0.00); }
-    }
-    .v9 { animation-name: turn-9; }
-    @keyframes turn-10 {
-      0% { transform: matrix(0.9488,-0.1358,0.3158,0.4080,-11.00,0.00); }
-      6.25% { transform: matrix(0.9040,-0.1838,0.4275,0.3887,-10.17,0.82); }
-      12.5% { transform: matrix(0.9096,-0.1786,0.4155,0.3911,-7.78,3.14); }
-      18.75% { transform: matrix(0.9601,-0.1202,0.2796,0.4129,-4.22,6.61); }
-      25% { transform: matrix(0.9996,-0.0123,0.0285,0.4298,-0.01,10.71); }
-      31.25% { transform: matrix(0.9562,0.1259,-0.2928,0.4112,4.20,14.81); }
-      37.5% { transform: matrix(0.7996,0.2582,-0.6005,0.3438,7.77,18.29); }
-      43.75% { transform: matrix(0.5738,0.3522,-0.8190,0.2467,10.16,20.61); }
-      50% { transform: matrix(0.3665,0.4001,-0.9304,0.1576,11.00,21.43); }
-      56.25% { transform: matrix(0.2520,0.4161,-0.9677,0.1084,10.17,20.61); }
-      62.5% { transform: matrix(0.2649,0.4146,-0.9643,0.1139,7.78,18.29); }
-      68.75% { transform: matrix(0.4015,0.3938,-0.9158,0.1727,4.22,14.81); }
-      75% { transform: matrix(0.6194,0.3376,-0.7851,0.2663,0.01,10.71); }
-      81.25% { transform: matrix(0.8380,0.2346,-0.5456,0.3604,-4.20,6.61); }
-      87.5% { transform: matrix(0.9736,0.0981,-0.2281,0.4187,-7.77,3.14); }
-      93.75% { transform: matrix(0.9964,-0.0367,0.0853,0.4284,-10.16,0.82); }
-      100% { transform: matrix(0.9488,-0.1358,0.3158,0.4080,-11.00,0.00); }
-    }
-    .v10 { animation-name: turn-10; }
-    @keyframes turn-11 {
-      0% { transform: matrix(0.9949,-0.0432,0.1004,0.4278,-10.86,0.00); }
-      6.25% { transform: matrix(0.9591,-0.1217,0.2830,0.4124,-10.70,0.90); }
-      12.5% { transform: matrix(0.9404,-0.1462,0.3400,0.4044,-8.90,3.45); }
-      18.75% { transform: matrix(0.9634,-0.1153,0.2682,0.4143,-5.75,7.28); }
-      25% { transform: matrix(0.9974,-0.0310,0.0720,0.4289,-1.73,11.79); }
-      31.25% { transform: matrix(0.9757,0.0942,-0.2192,0.4195,2.56,16.30); }
-      37.5% { transform: matrix(0.8457,0.2295,-0.5337,0.3636,6.46,20.12); }
-      43.75% { transform: matrix(0.6201,0.3374,-0.7845,0.2666,9.38,22.67); }
-      50% { transform: matrix(0.3751,0.3986,-0.9270,0.1613,10.86,23.57); }
-      56.25% { transform: matrix(0.1969,0.4216,-0.9804,0.0847,10.70,22.67); }
-      62.5% { transform: matrix(0.1377,0.4259,-0.9905,0.0592,8.90,20.12); }
-      68.75% { transform: matrix(0.2120,0.4202,-0.9773,0.0912,5.75,16.30); }
-      75% { transform: matrix(0.4014,0.3938,-0.9159,0.1726,1.73,11.79); }
-      81.25% { transform: matrix(0.6488,0.3272,-0.7609,0.2790,-2.56,7.28); }
-      87.5% { transform: matrix(0.8665,0.2147,-0.4992,0.3726,-6.46,3.45); }
-      93.75% { transform: matrix(0.9832,0.0786,-0.1827,0.4228,-9.38,0.90); }
-      100% { transform: matrix(0.9949,-0.0432,0.1004,0.4278,-10.86,0.00); }
-    }
-    .v11 { animation-name: turn-11; }
-    @keyframes turn-12 {
-      0% { transform: matrix(0.9889,0.0639,-0.1485,0.4252,-10.46,0.00); }
-      6.25% { transform: matrix(0.9955,-0.0407,0.0947,0.4281,-10.97,0.98); }
-      12.5% { transform: matrix(0.9747,-0.0961,0.2236,0.4191,-9.80,3.77); }
-      18.75% { transform: matrix(0.9752,-0.0951,0.2213,0.4193,-7.15,7.94); }
-      25% { transform: matrix(0.9961,-0.0378,0.0879,0.4283,-3.41,12.86); }
-      31.25% { transform: matrix(0.9874,0.0682,-0.1585,0.4246,0.85,17.78); }
-      37.5% { transform: matrix(0.8866,0.1989,-0.4626,0.3812,4.99,21.95); }
-      43.75% { transform: matrix(0.6762,0.3168,-0.7367,0.2908,8.36,24.74); }
-      50% { transform: matrix(0.4102,0.3921,-0.9120,0.1764,10.46,25.71); }
-      56.25% { transform: matrix(0.1779,0.4231,-0.9840,0.0765,10.97,24.74); }
-      62.5% { transform: matrix(0.0481,0.4295,-0.9988,0.0207,9.80,21.95); }
-      68.75% { transform: matrix(0.0505,0.4295,-0.9987,0.0217,7.15,17.78); }
-      75% { transform: matrix(0.1845,0.4226,-0.9828,0.0794,3.41,12.86); }
-      81.25% { transform: matrix(0.4194,0.3903,-0.9078,0.1804,-0.85,7.94); }
-      87.5% { transform: matrix(0.6850,0.3133,-0.7286,0.2945,-4.99,3.77); }
-      93.75% { transform: matrix(0.8920,0.1944,-0.4520,0.3836,-8.36,0.98); }
-      100% { transform: matrix(0.9889,0.0639,-0.1485,0.4252,-10.46,0.00); }
-    }
-    .v12 { animation-name: turn-12; }
-    @keyframes turn-13 {
-      0% { transform: matrix(0.9126,0.1758,-0.4087,0.3924,-9.80,0.00); }
-      6.25% { transform: matrix(0.9915,0.0560,-0.1303,0.4263,-10.97,1.06); }
-      12.5% { transform: matrix(0.9979,-0.0279,0.0648,0.4291,-10.46,4.08); }
-      18.75% { transform: matrix(0.9908,-0.0582,0.1353,0.4260,-8.37,8.60); }
-      25% { transform: matrix(0.9975,-0.0305,0.0709,0.4289,-5.00,13.93); }
-      31.25% { transform: matrix(0.9929,0.0512,-0.1191,0.4269,-0.87,19.26); }
-      37.5% { transform: matrix(0.9186,0.1700,-0.3953,0.3950,3.39,23.78); }
-      43.75% { transform: matrix(0.7342,0.2919,-0.6789,0.3157,7.14,26.80); }
-      50% { transform: matrix(0.4647,0.3807,-0.8855,0.1998,9.80,27.86); }
-      56.25% { transform: matrix(0.1917,0.4220,-0.9815,0.0824,10.97,26.80); }
-      62.5% { transform: matrix(-0.0027,0.4300,-1.0000,-0.0011,10.46,23.78); }
-      68.75% { transform: matrix(-0.0734,0.4288,-0.9973,-0.0316,8.37,19.26); }
-      75% { transform: matrix(-0.0088,0.4300,-1.0000,-0.0038,5.00,13.93); }
-      81.25% { transform: matrix(0.1806,0.4229,-0.9836,0.0776,0.87,8.60); }
-      87.5% { transform: matrix(0.4516,0.3837,-0.8922,0.1942,-3.39,4.08); }
-      93.75% { transform: matrix(0.7233,0.2969,-0.6906,0.3110,-7.14,1.06); }
-      100% { transform: matrix(0.9126,0.1758,-0.4087,0.3924,-9.80,0.00); }
-    }
-    .v13 { animation-name: turn-13; }
-    @keyframes turn-14 {
-      0% { transform: matrix(0.7596,0.2796,-0.6503,0.3266,-8.89,0.00); }
-      6.25% { transform: matrix(0.9272,0.1611,-0.3746,0.3987,-10.69,1.14); }
-      12.5% { transform: matrix(0.9912,0.0568,-0.1321,0.4262,-10.87,4.39); }
-      18.75% { transform: matrix(1.0000,-0.0036,0.0083,0.4300,-9.38,9.26); }
-      25% { transform: matrix(0.9999,-0.0073,0.0169,0.4299,-6.47,15.00); }
-      31.25% { transform: matrix(0.9942,0.0463,-0.1078,0.4275,-2.58,20.74); }
-      37.5% { transform: matrix(0.9403,0.1464,-0.3404,0.4043,1.71,25.61); }
-      43.75% { transform: matrix(0.7870,0.2653,-0.6169,0.3384,5.74,28.86); }
-      50% { transform: matrix(0.5302,0.3646,-0.8479,0.2280,8.89,30.00); }
-      56.25% { transform: matrix(0.2327,0.4182,-0.9726,0.1000,10.69,28.86); }
-      62.5% { transform: matrix(-0.0167,0.4299,-0.9999,-0.0072,10.87,25.61); }
-      68.75% { transform: matrix(-0.1569,0.4247,-0.9876,-0.0675,9.38,20.74); }
-      75% { transform: matrix(-0.1654,0.4241,-0.9862,-0.0711,6.47,15.00); }
-      81.25% { transform: matrix(-0.0412,0.4296,-0.9992,-0.0177,2.58,9.26); }
-      87.5% { transform: matrix(0.1969,0.4216,-0.9804,0.0847,-1.71,4.39); }
-      93.75% { transform: matrix(0.4931,0.3741,-0.8700,0.2120,-5.74,1.14); }
-      100% { transform: matrix(0.7596,0.2796,-0.6503,0.3266,-8.89,0.00); }
-    }
-    .v14 { animation-name: turn-14; }
-    .reflection { animation: breathe 7.8s ease-in-out infinite; transform-origin: 736px 296px; }
-    @keyframes breathe { 0%,100% { transform: scaleX(.88); opacity: .79; } 50% { transform: scaleX(1.1); opacity: 1; } }
-    .first { animation: set-type .86s cubic-bezier(.19,1,.22,1) both; }
-    .last { animation: set-type 1.12s cubic-bezier(.19,1,.22,1) both; }
-    .ink { animation: print-rule 7.8s cubic-bezier(.42,0,.32,1) infinite; }
-    @keyframes set-type { from { opacity: .35; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes print-rule {
-      0%,100% { transform: translateX(0); stroke-dasharray: 94 480; }
-      45% { transform: translateX(109px); stroke-dasharray: 222 480; }
-      70% { transform: translateX(269px); stroke-dasharray: 104 480; }
-    }
-    }
+    @keyframes feather { 0%,100% {transform:rotate(-17deg)} 50% {transform:rotate(24deg)} }
+    @keyframes suspend { 0%,100% {transform:translateY(2px) rotate(-3deg)} 50% {transform:translateY(-4px) rotate(3deg)} }
+    @keyframes orbit { to {transform:rotate(360deg)} }
+    @keyframes shine { 0%,100% {opacity:.4} 50% {opacity:1} }
+    @keyframes arrive { from {opacity:.6;transform:translateY(6px)} to {opacity:1;transform:translateY(0)} }
   </style>
-  <g clip-path="url(#sheet)">
-    <rect width="960" height="344" fill="url(#ground)"/>
-    <ellipse cx="744" cy="142" rx="256" ry="204" fill="url(#light)"/>
-    <ellipse class="reflection" cx="736" cy="296" rx="151" ry="23" fill="url(#shadow)"/>
-    <g font-family="Georgia, 'Times New Roman', serif" fill="#f8f4e7">
-      <text class="first" x="46" y="153" font-size="102" letter-spacing="-5">Benjamin</text>
-      <text class="last" x="48" y="247" font-size="103" letter-spacing="-5" font-style="italic">Franklin A</text>
+  <g clip-path="url(#panel)">
+    <rect width="1000" height="354" fill="url(#night)"/>
+    <rect x="530" width="470" height="354" fill="url(#screen)"/>
+    <ellipse cx="761" cy="168" rx="259" ry="226" fill="url(#aura)"/>
+    <g fill="none" stroke="url(#intaglio)" stroke-width=".74">
+    <path d="M-40 305.0 C110 345.0 190 271.0 312 289.0 S517 385.0 575 361.0"/>
+    <path d="M-40 308.4 C110 347.0 190 273.4 312 292.8 S517 386.8 575 364.0"/>
+    <path d="M-40 311.8 C110 349.0 190 275.8 312 296.5 S517 388.6 575 367.0"/>
+    <path d="M-40 315.2 C110 351.0 190 278.2 312 300.2 S517 390.4 575 370.0"/>
+    <path d="M-40 318.6 C110 353.0 190 280.6 312 304.0 S517 392.2 575 373.0"/>
+    <path d="M-40 322.0 C110 355.0 190 283.0 312 307.8 S517 394.0 575 376.0"/>
+    <path d="M-40 325.4 C110 357.0 190 285.4 312 311.5 S517 395.8 575 379.0"/>
+    <path d="M-40 328.8 C110 359.0 190 287.8 312 315.2 S517 397.6 575 382.0"/>
+    <path d="M-40 332.2 C110 361.0 190 290.2 312 319.0 S517 399.4 575 385.0"/>
+    <path d="M-40 335.6 C110 363.0 190 292.6 312 322.8 S517 401.2 575 388.0"/>
+    <path d="M-40 339.0 C110 365.0 190 295.0 312 326.5 S517 403.0 575 391.0"/>
+    <path d="M-40 342.4 C110 367.0 190 297.4 312 330.2 S517 404.8 575 394.0"/>
+    <path d="M-40 345.8 C110 369.0 190 299.8 312 334.0 S517 406.6 575 397.0"/>
+    <path d="M-40 349.2 C110 371.0 190 302.2 312 337.8 S517 408.4 575 400.0"/>
+    <path d="M-40 352.6 C110 373.0 190 304.6 312 341.5 S517 410.2 575 403.0"/>
+    <path d="M-40 356.0 C110 375.0 190 307.0 312 345.2 S517 412.0 575 406.0"/>
+    <path d="M-40 359.4 C110 377.0 190 309.4 312 349.0 S517 413.8 575 409.0"/>
+    <path d="M-40 362.8 C110 379.0 190 311.8 312 352.8 S517 415.6 575 412.0"/>
+    <path d="M-40 366.2 C110 381.0 190 314.2 312 356.5 S517 417.4 575 415.0"/>
+    <path d="M-40 369.6 C110 383.0 190 316.6 312 360.2 S517 419.2 575 418.0"/>
+    <path d="M-40 373.0 C110 385.0 190 319.0 312 364.0 S517 421.0 575 421.0"/>
+    <path d="M-40 376.4 C110 387.0 190 321.4 312 367.8 S517 422.8 575 424.0"/>
+    <path d="M-40 379.8 C110 389.0 190 323.8 312 371.5 S517 424.6 575 427.0"/>
+    <path d="M-40 383.2 C110 391.0 190 326.2 312 375.2 S517 426.4 575 430.0"/>
+    <path d="M-40 386.6 C110 393.0 190 328.6 312 379.0 S517 428.2 575 433.0"/>
+    <path d="M-40 390.0 C110 395.0 190 331.0 312 382.8 S517 430.0 575 436.0"/>
+    <path d="M-40 393.4 C110 397.0 190 333.4 312 386.5 S517 431.8 575 439.0"/>
     </g>
-    <g transform="translate(734 264.0)" fill="url(#lagoon)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v0" transform="matrix(0.8139,-0.2498,0.5810,0.3500,0.00,0.00)"/></g>
-      <use href="#foil" class="vane v0" transform="matrix(0.8139,-0.2498,0.5810,0.3500,0.00,0.00)"/>
+    <path d="M34 49V30h30m872 0h30v19M34 305v19h30m872 0h30v-19" fill="none" stroke="#9eb6b4" opacity=".48"/>
+    <g transform="translate(740 177)">
+      <g fill="none" stroke="#a5c7c7" opacity=".39" stroke-width="1"><path d="M0 -151v8" transform="rotate(0)"/><path d="M0 -151v2.5" transform="rotate(3.75)"/><path d="M0 -151v2.5" transform="rotate(7.5)"/><path d="M0 -151v2.5" transform="rotate(11.25)"/><path d="M0 -151v5" transform="rotate(15)"/><path d="M0 -151v2.5" transform="rotate(18.75)"/><path d="M0 -151v2.5" transform="rotate(22.5)"/><path d="M0 -151v2.5" transform="rotate(26.25)"/><path d="M0 -151v8" transform="rotate(30)"/><path d="M0 -151v2.5" transform="rotate(33.75)"/><path d="M0 -151v2.5" transform="rotate(37.5)"/><path d="M0 -151v2.5" transform="rotate(41.25)"/><path d="M0 -151v5" transform="rotate(45)"/><path d="M0 -151v2.5" transform="rotate(48.75)"/><path d="M0 -151v2.5" transform="rotate(52.5)"/><path d="M0 -151v2.5" transform="rotate(56.25)"/><path d="M0 -151v8" transform="rotate(60)"/><path d="M0 -151v2.5" transform="rotate(101.25)"/><path d="M0 -151v5" transform="rotate(105)"/><path d="M0 -151v2.5" transform="rotate(108.75)"/><path d="M0 -151v2.5" transform="rotate(112.5)"/><path d="M0 -151v2.5" transform="rotate(116.25)"/><path d="M0 -151v8" transform="rotate(120)"/><path d="M0 -151v2.5" transform="rotate(123.75)"/><path d="M0 -151v2.5" transform="rotate(127.5)"/><path d="M0 -151v2.5" transform="rotate(131.25)"/><path d="M0 -151v5" transform="rotate(135)"/><path d="M0 -151v2.5" transform="rotate(138.75)"/><path d="M0 -151v2.5" transform="rotate(142.5)"/><path d="M0 -151v2.5" transform="rotate(146.25)"/><path d="M0 -151v8" transform="rotate(150)"/><path d="M0 -151v2.5" transform="rotate(153.75)"/><path d="M0 -151v2.5" transform="rotate(157.5)"/><path d="M0 -151v2.5" transform="rotate(161.25)"/><path d="M0 -151v5" transform="rotate(165)"/><path d="M0 -151v2.5" transform="rotate(168.75)"/><path d="M0 -151v2.5" transform="rotate(172.5)"/><path d="M0 -151v2.5" transform="rotate(176.25)"/><path d="M0 -151v8" transform="rotate(180)"/><path d="M0 -151v2.5" transform="rotate(183.75)"/><path d="M0 -151v2.5" transform="rotate(187.5)"/><path d="M0 -151v2.5" transform="rotate(191.25)"/><path d="M0 -151v5" transform="rotate(195)"/><path d="M0 -151v2.5" transform="rotate(198.75)"/><path d="M0 -151v2.5" transform="rotate(202.5)"/><path d="M0 -151v2.5" transform="rotate(206.25)"/><path d="M0 -151v8" transform="rotate(210)"/><path d="M0 -151v2.5" transform="rotate(243.75)"/><path d="M0 -151v2.5" transform="rotate(247.5)"/><path d="M0 -151v2.5" transform="rotate(251.25)"/><path d="M0 -151v5" transform="rotate(255)"/><path d="M0 -151v2.5" transform="rotate(258.75)"/><path d="M0 -151v2.5" transform="rotate(262.5)"/><path d="M0 -151v2.5" transform="rotate(266.25)"/><path d="M0 -151v8" transform="rotate(270)"/><path d="M0 -151v2.5" transform="rotate(273.75)"/><path d="M0 -151v2.5" transform="rotate(277.5)"/><path d="M0 -151v2.5" transform="rotate(281.25)"/><path d="M0 -151v5" transform="rotate(285)"/><path d="M0 -151v2.5" transform="rotate(288.75)"/><path d="M0 -151v2.5" transform="rotate(292.5)"/><path d="M0 -151v2.5" transform="rotate(296.25)"/><path d="M0 -151v8" transform="rotate(300)"/><path d="M0 -151v2.5" transform="rotate(303.75)"/><path d="M0 -151v2.5" transform="rotate(307.5)"/><path d="M0 -151v2.5" transform="rotate(311.25)"/><path d="M0 -151v5" transform="rotate(315)"/><path d="M0 -151v2.5" transform="rotate(318.75)"/><path d="M0 -151v2.5" transform="rotate(322.5)"/><path d="M0 -151v2.5" transform="rotate(326.25)"/><path d="M0 -151v8" transform="rotate(330)"/><path d="M0 -151v2.5" transform="rotate(333.75)"/><path d="M0 -151v2.5" transform="rotate(337.5)"/><path d="M0 -151v2.5" transform="rotate(341.25)"/><path d="M0 -151v5" transform="rotate(345)"/><path d="M0 -151v2.5" transform="rotate(348.75)"/><path d="M0 -151v2.5" transform="rotate(352.5)"/><path d="M0 -151v2.5" transform="rotate(356.25)"/></g>
+      <circle r="142" fill="none" stroke="#90c9d1" opacity=".19" stroke-dasharray="270 15 65 542" transform="rotate(-53)"/>
+      <g transform="rotate(-17)"><ellipse rx="200" ry="55" fill="none" stroke="#86b9ca" stroke-width=".85" opacity=".34"/></g>
+      <g class="orbit"><circle cx="0" cy="-149" r="2.5" fill="#ebba9e"/><circle cx="0" cy="-149" r="6.5" fill="none" stroke="#eebaa3" stroke-width=".65" opacity=".62"/></g>
+      <ellipse cy="125" rx="131" ry="15" fill="url(#shadow)"/>
+      <g transform="scale(.83)"><g class="sculpture">
+      <g transform="matrix(-0.882 0.370 0.284 -0.074 -87.09 62.16)" fill="url(#silver)"><g transform="rotate(-9)"><use href="#fin" class="fin" style="animation-delay:-2.00s"/></g></g>
+      <g transform="matrix(-0.932 0.268 0.223 -0.111 -91.46 50.14)" fill="url(#silver)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-1.95s"/></g></g>
+      <g transform="matrix(-0.818 0.470 0.350 -0.053 -81.39 74.13)" fill="url(#silver)"><g transform="rotate(-8)"><use href="#fin" class="fin" style="animation-delay:-2.05s"/></g></g>
+      <g transform="matrix(-0.967 0.164 0.170 -0.166 -94.49 38.32)" fill="url(#silver)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-1.91s"/></g></g>
+      <g transform="matrix(-0.987 0.061 0.130 -0.234 -96.22 26.91)" fill="url(#silver)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-1.86s"/></g></g>
+      <g transform="matrix(-0.739 0.563 0.416 -0.051 -74.40 85.83)" fill="url(#silver)"><g transform="rotate(-7)"><use href="#fin" class="fin" style="animation-delay:-2.09s"/></g></g>
+      <g transform="matrix(-0.994 -0.040 0.106 -0.314 -96.73 16.12)" fill="url(#silver)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-1.82s"/></g></g>
+      <g transform="matrix(-0.647 0.648 0.479 -0.065 -66.20 97.00)" fill="url(#silver)"><g transform="rotate(-6)"><use href="#fin" class="fin" style="animation-delay:-2.14s"/></g></g>
+      <g transform="matrix(-0.989 -0.137 0.101 -0.401 -96.11 6.11)" fill="url(#silver)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-1.77s"/></g></g>
+      <g transform="matrix(-0.542 0.724 0.535 -0.094 -56.92 107.43)" fill="url(#iris)"><g transform="rotate(-5)"><use href="#fin" class="fin" style="animation-delay:-2.18s"/></g></g>
+      <g transform="matrix(-0.974 -0.227 0.116 -0.489 -94.50 -2.97)" fill="url(#silver)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-1.73s"/></g></g>
+      <g transform="matrix(-0.427 0.787 0.583 -0.137 -46.72 116.90)" fill="url(#iris)"><g transform="rotate(-3)"><use href="#fin" class="fin" style="animation-delay:-2.23s"/></g></g>
+      <g transform="matrix(0.158 0.890 -0.122 -0.411 74.52 37.34)" fill="url(#jade)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-6.32s"/></g></g>
+      <g transform="matrix(0.250 0.877 -0.012 -0.420 84.45 35.25)" fill="url(#jade)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-6.36s"/></g></g>
+      <g transform="matrix(0.072 0.895 -0.234 -0.413 64.80 39.07)" fill="url(#jade)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-6.27s"/></g></g>
+      <g transform="matrix(0.345 0.855 0.090 -0.441 94.42 32.69)" fill="url(#jade)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-6.41s"/></g></g>
+      <g transform="matrix(-0.007 0.894 -0.341 -0.424 55.41 40.56)" fill="url(#jade)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-6.23s"/></g></g>
+      <g transform="matrix(-0.949 -0.311 0.151 -0.572 -92.05 -11.01)" fill="url(#silver)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-1.68s"/></g></g>
+      <g transform="matrix(0.441 0.823 0.178 -0.472 104.27 29.60)" fill="url(#jade)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-6.45s"/></g></g>
+      <g transform="matrix(-0.303 0.837 0.618 -0.191 -35.79 125.22)" fill="url(#iris)"><g transform="rotate(-2)"><use href="#fin" class="fin" style="animation-delay:-2.27s"/></g></g>
+      <g transform="matrix(-0.076 0.888 -0.437 -0.439 46.42 41.90)" fill="url(#jade)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-6.18s"/></g></g>
+      <g transform="matrix(0.536 0.779 0.247 -0.514 113.80 25.90)" fill="url(#jade)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-6.50s"/></g></g>
+      <g transform="matrix(-0.918 -0.387 0.203 -0.644 -88.93 -17.96)" fill="url(#silver)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-1.64s"/></g></g>
+      <g transform="matrix(-0.134 0.880 -0.521 -0.455 37.90 43.22)" fill="url(#jade)"><g transform="rotate(-9)"><use href="#fin" class="fin" style="animation-delay:-6.14s"/></g></g>
+      <g transform="matrix(-0.174 0.872 0.640 -0.253 -24.33 132.23)" fill="url(#iris)"><g transform="rotate(0)"><use href="#fin" class="fin" style="animation-delay:-2.32s"/></g></g>
+      <g transform="matrix(0.627 0.724 0.294 -0.562 122.80 21.57)" fill="url(#jade)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-6.55s"/></g></g>
+      <g transform="matrix(-0.883 -0.454 0.268 -0.700 -85.33 -23.78)" fill="url(#silver)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-1.59s"/></g></g>
+      <g transform="matrix(-0.179 0.871 -0.590 -0.467 29.87 44.61)" fill="url(#jade)"><g transform="rotate(-8)"><use href="#fin" class="fin" style="animation-delay:-6.09s"/></g></g>
+      <g transform="matrix(-0.041 0.891 0.647 -0.320 -12.56 137.80)" fill="url(#iris)"><g transform="rotate(1)"><use href="#fin" class="fin" style="animation-delay:-2.36s"/></g></g>
+      <g transform="matrix(0.713 0.657 0.320 -0.615 131.06 16.59)" fill="url(#jade)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-6.59s"/></g></g>
+      <g transform="matrix(-0.209 0.864 -0.647 -0.473 22.31 46.16)" fill="url(#jade)"><g transform="rotate(-6)"><use href="#fin" class="fin" style="animation-delay:-6.05s"/></g></g>
+      <g transform="matrix(-0.845 -0.511 0.340 -0.739 -81.40 -28.48)" fill="url(#silver)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-1.55s"/></g></g>
+      <g transform="matrix(-0.221 0.861 -0.693 -0.469 15.18 47.95)" fill="url(#jade)"><g transform="rotate(-5)"><use href="#fin" class="fin" style="animation-delay:-6.00s"/></g></g>
+      <g transform="matrix(0.092 0.895 0.640 -0.390 -0.73 141.85)" fill="url(#iris)"><g transform="rotate(2)"><use href="#fin" class="fin" style="animation-delay:-2.41s"/></g></g>
+      <g transform="matrix(0.792 0.579 0.324 -0.669 138.38 10.98)" fill="url(#jade)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-6.64s"/></g></g>
+      <g transform="matrix(-0.809 -0.559 0.412 -0.761 -77.31 -32.11)" fill="url(#silver)"><g transform="rotate(-9)"><use href="#fin" class="fin" style="animation-delay:-1.50s"/></g></g>
+      <g transform="matrix(-0.216 0.863 -0.730 -0.454 8.40 50.01)" fill="url(#jade)"><g transform="rotate(-4)"><use href="#fin" class="fin" style="animation-delay:-5.95s"/></g></g>
+      <g transform="matrix(0.223 0.882 0.618 -0.457 10.93 144.32)" fill="url(#iris)"><g transform="rotate(4)"><use href="#fin" class="fin" style="animation-delay:-2.45s"/></g></g>
+      <g transform="matrix(-0.776 -0.596 0.478 -0.769 -73.22 -34.76)" fill="url(#silver)"><g transform="rotate(-8)"><use href="#fin" class="fin" style="animation-delay:-1.45s"/></g></g>
+      <g transform="matrix(0.860 0.490 0.307 -0.721 144.55 4.80)" fill="url(#jade)"><g transform="rotate(-9)"><use href="#fin" class="fin" style="animation-delay:-6.68s"/></g></g>
+      <g transform="matrix(-0.193 0.868 -0.758 -0.428 1.89 52.37)" fill="url(#jade)"><g transform="rotate(-2)"><use href="#fin" class="fin" style="animation-delay:-5.91s"/></g></g>
+      <g transform="matrix(-0.750 -0.623 0.534 -0.769 -69.25 -36.54)" fill="url(#silver)"><g transform="rotate(-7)"><use href="#fin" class="fin" style="animation-delay:-1.41s"/></g></g>
+      <g transform="matrix(0.349 0.854 0.582 -0.521 22.20 145.21)" fill="url(#iris)"><g transform="rotate(5)"><use href="#fin" class="fin" style="animation-delay:-2.50s"/></g></g>
+      <g transform="matrix(-0.158 0.875 -0.776 -0.396 -4.46 55.02)" fill="url(#jade)"><g transform="rotate(-1)"><use href="#fin" class="fin" style="animation-delay:-5.86s"/></g></g>
+      <g transform="matrix(0.916 0.392 0.273 -0.768 149.40 -1.89)" fill="url(#jade)"><g transform="rotate(-8)"><use href="#fin" class="fin" style="animation-delay:-6.73s"/></g></g>
+      <g transform="matrix(-0.733 -0.639 0.576 -0.766 -65.50 -37.59)" fill="url(#silver)"><g transform="rotate(-6)"><use href="#fin" class="fin" style="animation-delay:-1.36s"/></g></g>
+      <g transform="matrix(-0.116 0.883 -0.783 -0.363 -10.76 57.91)" fill="url(#jade)"><g transform="rotate(0)"><use href="#fin" class="fin" style="animation-delay:-5.82s"/></g></g>
+      <g transform="matrix(0.468 0.811 0.535 -0.576 32.87 144.53)" fill="url(#iris)"><g transform="rotate(6)"><use href="#fin" class="fin" style="animation-delay:-2.55s"/></g></g>
+      <g transform="matrix(0.958 0.285 0.224 -0.808 152.78 -8.98)" fill="url(#jade)"><g transform="rotate(-7)"><use href="#fin" class="fin" style="animation-delay:-6.77s"/></g></g>
+      <g transform="matrix(-0.076 0.888 -0.777 -0.338 -17.14 60.97)" fill="url(#jade)"><g transform="rotate(2)"><use href="#fin" class="fin" style="animation-delay:-5.77s"/></g></g>
+      <g transform="matrix(-0.729 -0.643 0.602 -0.766 -62.03 -38.06)" fill="url(#silver)"><g transform="rotate(-5)"><use href="#fin" class="fin" style="animation-delay:-1.32s"/></g></g>
+      <g transform="matrix(0.577 0.756 0.478 -0.620 42.74 142.34)" fill="url(#iris)"><g transform="rotate(8)"><use href="#fin" class="fin" style="animation-delay:-2.59s"/></g></g>
+      <g transform="matrix(0.807 -0.484 0.276 -0.198 41.21 -105.86)" fill="url(#flame)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-3.95s"/></g></g>
+      <g transform="matrix(0.852 -0.421 0.305 -0.087 45.89 -97.46)" fill="url(#flame)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-3.91s"/></g></g>
+      <g transform="matrix(0.752 -0.550 0.230 -0.300 35.49 -113.79)" fill="url(#flame)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-4.00s"/></g></g>
+      <g transform="matrix(0.887 -0.362 0.317 0.026 49.61 -88.76)" fill="url(#flame)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-3.86s"/></g></g>
+      <g transform="matrix(0.686 -0.615 0.167 -0.388 28.68 -121.08)" fill="url(#flame)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-4.05s"/></g></g>
+      <g transform="matrix(0.913 -0.310 0.317 0.133 52.49 -79.87)" fill="url(#flame)"><g transform="rotate(-9)"><use href="#fin" class="fin" style="animation-delay:-3.82s"/></g></g>
+      <g transform="matrix(-0.048 0.891 -0.758 -0.328 -23.68 64.10)" fill="url(#jade)"><g transform="rotate(3)"><use href="#fin" class="fin" style="animation-delay:-5.73s"/></g></g>
+      <g transform="matrix(0.609 -0.678 0.093 -0.455 20.75 -127.57)" fill="url(#flame)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-4.09s"/></g></g>
+      <g transform="matrix(0.985 0.172 0.163 -0.838 154.56 -16.34)" fill="url(#jade)"><g transform="rotate(-6)"><use href="#fin" class="fin" style="animation-delay:-6.82s"/></g></g>
+      <g transform="matrix(0.932 -0.267 0.309 0.231 54.67 -70.93)" fill="url(#flame)"><g transform="rotate(-8)"><use href="#fin" class="fin" style="animation-delay:-3.77s"/></g></g>
+      <g transform="matrix(-0.737 -0.636 0.610 -0.772 -58.88 -38.12)" fill="url(#silver)"><g transform="rotate(-3)"><use href="#fin" class="fin" style="animation-delay:-1.27s"/></g></g>
+      <g transform="matrix(0.521 -0.736 0.011 -0.499 11.72 -133.06)" fill="url(#flame)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-4.14s"/></g></g>
+      <g transform="matrix(0.944 -0.237 0.299 0.315 56.29 -62.02)" fill="url(#flame)"><g transform="rotate(-7)"><use href="#fin" class="fin" style="animation-delay:-3.73s"/></g></g>
+      <g transform="matrix(0.675 0.689 0.415 -0.651 51.65 138.75)" fill="url(#iris)"><g transform="rotate(9)"><use href="#fin" class="fin" style="animation-delay:-2.64s"/></g></g>
+      <g transform="matrix(0.424 -0.788 -0.074 -0.520 1.66 -137.41)" fill="url(#flame)"><g transform="rotate(-12)"><use href="#fin" class="fin" style="animation-delay:-4.18s"/></g></g>
+      <g transform="matrix(-0.037 0.892 -0.726 -0.334 -30.50 67.17)" fill="url(#jade)"><g transform="rotate(5)"><use href="#fin" class="fin" style="animation-delay:-5.68s"/></g></g>
+      <g transform="matrix(0.950 -0.220 0.295 0.384 57.52 -53.20)" fill="url(#flame)"><g transform="rotate(-6)"><use href="#fin" class="fin" style="animation-delay:-3.68s"/></g></g>
+      <g transform="matrix(0.318 -0.832 -0.155 -0.519 -9.32 -140.44)" fill="url(#flame)"><g transform="rotate(-11)"><use href="#fin" class="fin" style="animation-delay:-4.23s"/></g></g>
+      <g transform="matrix(-0.755 -0.618 0.601 -0.786 -56.04 -37.95)" fill="url(#silver)"><g transform="rotate(-2)"><use href="#fin" class="fin" style="animation-delay:-1.23s"/></g></g>
+      <g transform="matrix(-0.044 0.891 -0.681 -0.357 -37.65 70.04)" fill="url(#silver)"><g transform="rotate(6)"><use href="#fin" class="fin" style="animation-delay:-5.64s"/></g></g>
+      <g transform="matrix(0.205 -0.865 -0.229 -0.497 -21.10 -142.03)" fill="url(#flame)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-4.27s"/></g></g>
+      <g transform="matrix(0.950 -0.220 0.300 0.435 58.50 -44.52)" fill="url(#flame)"><g transform="rotate(-4)"><use href="#fin" class="fin" style="animation-delay:-3.64s"/></g></g>
+      <g transform="matrix(0.994 0.055 0.094 -0.858 154.66 -23.83)" fill="url(#jade)"><g transform="rotate(-4)"><use href="#fin" class="fin" style="animation-delay:-6.86s"/></g></g>
+      <g transform="matrix(0.761 0.612 0.348 -0.666 59.48 133.87)" fill="url(#iris)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-2.68s"/></g></g>
+      <g transform="matrix(0.085 -0.887 -0.291 -0.458 -33.49 -142.05)" fill="url(#flame)"><g transform="rotate(-10)"><use href="#fin" class="fin" style="animation-delay:-4.32s"/></g></g>
+      <g transform="matrix(0.944 -0.235 0.318 0.470 59.39 -35.98)" fill="url(#flame)"><g transform="rotate(-3)"><use href="#fin" class="fin" style="animation-delay:-3.59s"/></g></g>
+      <g transform="matrix(-0.068 0.889 -0.622 -0.393 -45.20 72.55)" fill="url(#silver)"><g transform="rotate(7)"><use href="#fin" class="fin" style="animation-delay:-5.59s"/></g></g>
+      <g transform="matrix(-0.039 -0.895 -0.340 -0.406 -46.28 -140.44)" fill="url(#flame)"><g transform="rotate(-9)"><use href="#fin" class="fin" style="animation-delay:-4.36s"/></g></g>
+      <g transform="matrix(-0.780 -0.592 0.580 -0.806 -53.49 -37.70)" fill="url(#silver)"><g transform="rotate(0)"><use href="#fin" class="fin" style="animation-delay:-1.18s"/></g></g>
+      <g transform="matrix(0.934 -0.263 0.346 0.485 60.30 -27.59)" fill="url(#flame)"><g transform="rotate(-1)"><use href="#fin" class="fin" style="animation-delay:-3.55s"/></g></g>
+      <g transform="matrix(-0.108 0.884 -0.549 -0.435 -53.15 74.52)" fill="url(#silver)"><g transform="rotate(8)"><use href="#fin" class="fin" style="animation-delay:-5.55s"/></g></g>
+      <g transform="matrix(-0.165 -0.890 -0.373 -0.344 -59.26 -137.14)" fill="url(#flame)"><g transform="rotate(-8)"><use href="#fin" class="fin" style="animation-delay:-4.41s"/></g></g>
+      <g transform="matrix(0.833 0.528 0.283 -0.663 66.14 127.85)" fill="url(#iris)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-2.73s"/></g></g>
+      <g transform="matrix(0.987 -0.064 0.020 -0.866 153.04 -31.29)" fill="url(#jade)"><g transform="rotate(-3)"><use href="#fin" class="fin" style="animation-delay:-6.91s"/></g></g>
+      <g transform="matrix(-0.290 -0.869 -0.389 -0.275 -72.17 -132.16)" fill="url(#flame)"><g transform="rotate(-6)"><use href="#fin" class="fin" style="animation-delay:-4.45s"/></g></g>
+      <g transform="matrix(-0.162 0.874 -0.462 -0.477 -61.50 75.78)" fill="url(#silver)"><g transform="rotate(9)"><use href="#fin" class="fin" style="animation-delay:-5.50s"/></g></g>
+      <g transform="matrix(0.919 -0.298 0.379 0.483 61.35 -19.30)" fill="url(#flame)"><g transform="rotate(0)"><use href="#fin" class="fin" style="animation-delay:-3.50s"/></g></g>
+      <g transform="matrix(-0.411 -0.834 -0.389 -0.205 -84.76 -125.53)" fill="url(#silver)"><g transform="rotate(-5)"><use href="#fin" class="fin" style="animation-delay:-4.50s"/></g></g>
+      <g transform="matrix(-0.806 -0.562 0.550 -0.827 -51.14 -37.53)" fill="url(#silver)"><g transform="rotate(1)"><use href="#fin" class="fin" style="animation-delay:-1.14s"/></g></g>
+      <g transform="matrix(0.891 0.439 0.222 -0.641 71.58 120.85)" fill="url(#iris)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-2.77s"/></g></g>
+      <g transform="matrix(-0.227 0.860 -0.362 -0.511 -70.19 76.17)" fill="url(#silver)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-5.45s"/></g></g>
+      <g transform="matrix(0.902 -0.333 0.410 0.464 62.61 -11.08)" fill="url(#flame)"><g transform="rotate(1)"><use href="#fin" class="fin" style="animation-delay:-3.45s"/></g></g>
+      <g transform="matrix(-0.527 -0.783 -0.371 -0.136 -96.78 -117.32)" fill="url(#silver)"><g transform="rotate(-4)"><use href="#fin" class="fin" style="animation-delay:-4.55s"/></g></g>
+      <g transform="matrix(-0.300 0.838 -0.254 -0.530 -79.15 75.52)" fill="url(#silver)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-5.41s"/></g></g>
+      <g transform="matrix(-0.635 -0.718 -0.339 -0.072 -107.99 -107.65)" fill="url(#silver)"><g transform="rotate(-2)"><use href="#fin" class="fin" style="animation-delay:-4.59s"/></g></g>
+      <g transform="matrix(0.961 -0.183 -0.055 -0.861 149.70 -38.58)" fill="url(#jade)"><g transform="rotate(-1)"><use href="#fin" class="fin" style="animation-delay:-6.95s"/></g></g>
+      <g transform="matrix(-0.379 0.808 -0.142 -0.531 -88.24 73.70)" fill="url(#silver)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-5.36s"/></g></g>
+      <g transform="matrix(0.936 0.346 0.170 -0.599 75.79 113.04)" fill="url(#iris)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-2.82s"/></g></g>
+      <g transform="matrix(0.888 -0.360 0.431 0.433 64.13 -2.88)" fill="url(#flame)"><g transform="rotate(3)"><use href="#fin" class="fin" style="animation-delay:-3.41s"/></g></g>
+      <g transform="matrix(-0.732 -0.640 -0.292 -0.015 -118.16 -96.68)" fill="url(#silver)"><g transform="rotate(-1)"><use href="#fin" class="fin" style="animation-delay:-4.64s"/></g></g>
+      <g transform="matrix(-0.826 -0.537 0.520 -0.844 -48.92 -37.58)" fill="url(#silver)"><g transform="rotate(2)"><use href="#fin" class="fin" style="animation-delay:-1.09s"/></g></g>
+      <g transform="matrix(-0.462 0.770 -0.034 -0.512 -97.34 70.60)" fill="url(#silver)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-5.32s"/></g></g>
+      <g transform="matrix(-0.815 -0.551 -0.234 0.031 -127.09 -84.59)" fill="url(#silver)"><g transform="rotate(0)"><use href="#fin" class="fin" style="animation-delay:-4.68s"/></g></g>
+      <g transform="matrix(-0.546 0.721 0.063 -0.472 -106.27 66.13)" fill="url(#silver)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-5.27s"/></g></g>
+      <g transform="matrix(0.880 -0.375 0.436 0.391 65.92 5.37)" fill="url(#flame)"><g transform="rotate(4)"><use href="#fin" class="fin" style="animation-delay:-3.36s"/></g></g>
+      <g transform="matrix(-0.884 -0.451 -0.167 0.064 -134.60 -71.61)" fill="url(#silver)"><g transform="rotate(2)"><use href="#fin" class="fin" style="animation-delay:-4.73s"/></g></g>
+      <g transform="matrix(0.967 0.253 0.131 -0.538 78.80 104.59)" fill="url(#iris)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-2.86s"/></g></g>
+      <g transform="matrix(-0.629 0.662 0.144 -0.415 -114.85 60.26)" fill="url(#silver)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-5.23s"/></g></g>
+      <g transform="matrix(-0.937 -0.344 -0.095 0.083 -140.56 -57.98)" fill="url(#silver)"><g transform="rotate(3)"><use href="#fin" class="fin" style="animation-delay:-4.77s"/></g></g>
+      <g transform="matrix(-0.709 0.593 0.203 -0.346 -122.87 52.97)" fill="url(#silver)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-5.18s"/></g></g>
+      <g transform="matrix(-0.973 -0.232 -0.021 0.087 -144.88 -43.94)" fill="url(#silver)"><g transform="rotate(5)"><use href="#fin" class="fin" style="animation-delay:-4.82s"/></g></g>
+      <g transform="matrix(-0.783 0.514 0.240 -0.270 -130.12 44.30)" fill="url(#silver)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-5.14s"/></g></g>
+      <g transform="matrix(-0.991 -0.116 0.051 0.074 -147.51 -29.77)" fill="url(#silver)"><g transform="rotate(6)"><use href="#fin" class="fin" style="animation-delay:-4.86s"/></g></g>
+      <g transform="matrix(0.880 -0.374 0.424 0.342 67.97 13.72)" fill="url(#iris)"><g transform="rotate(6)"><use href="#fin" class="fin" style="animation-delay:-3.32s"/></g></g>
+      <g transform="matrix(-0.848 0.426 0.254 -0.193 -136.41 34.32)" fill="url(#silver)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-5.09s"/></g></g>
+      <g transform="matrix(-0.993 -0.000 0.118 0.046 -148.43 -15.72)" fill="url(#silver)"><g transform="rotate(7)"><use href="#fin" class="fin" style="animation-delay:-4.91s"/></g></g>
+      <g transform="matrix(-0.839 -0.520 0.496 -0.852 -46.69 -37.97)" fill="url(#silver)"><g transform="rotate(4)"><use href="#fin" class="fin" style="animation-delay:-1.05s"/></g></g>
+      <g transform="matrix(-0.904 0.329 0.246 -0.119 -141.55 23.16)" fill="url(#silver)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-5.05s"/></g></g>
+      <g transform="matrix(-0.978 0.114 0.175 0.003 -147.69 -2.07)" fill="url(#silver)"><g transform="rotate(8)"><use href="#fin" class="fin" style="animation-delay:-4.95s"/></g></g>
+      <g transform="matrix(-0.948 0.224 0.219 -0.052 -145.36 10.97)" fill="url(#silver)"><g transform="rotate(9)"><use href="#fin" class="fin" style="animation-delay:-5.00s"/></g></g>
+      <g transform="matrix(0.919 -0.298 -0.128 -0.844 144.69 -45.52)" fill="url(#jade)"><g transform="rotate(0)"><use href="#fin" class="fin" style="animation-delay:0.00s"/></g></g>
+      <g transform="matrix(0.986 0.160 0.108 -0.460 80.67 95.66)" fill="url(#iris)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-2.91s"/></g></g>
+      <g transform="matrix(0.889 -0.359 0.395 0.284 70.22 22.22)" fill="url(#iris)"><g transform="rotate(7)"><use href="#fin" class="fin" style="animation-delay:-3.27s"/></g></g>
+      <g transform="matrix(0.994 0.069 0.103 -0.367 81.49 86.42)" fill="url(#iris)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-2.95s"/></g></g>
+      <g transform="matrix(0.904 -0.329 0.353 0.216 72.57 30.90)" fill="url(#iris)"><g transform="rotate(8)"><use href="#fin" class="fin" style="animation-delay:-3.23s"/></g></g>
+      <g transform="matrix(0.992 -0.017 0.118 -0.264 81.41 77.01)" fill="url(#iris)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-3.00s"/></g></g>
+      <g transform="matrix(0.924 -0.287 0.302 0.138 74.93 39.79)" fill="url(#iris)"><g transform="rotate(9)"><use href="#fin" class="fin" style="animation-delay:-3.18s"/></g></g>
+      <g transform="matrix(-0.842 -0.516 0.480 -0.850 -44.32 -38.78)" fill="url(#silver)"><g transform="rotate(5)"><use href="#fin" class="fin" style="animation-delay:-1.00s"/></g></g>
+      <g transform="matrix(0.981 -0.097 0.149 -0.157 80.55 67.55)" fill="url(#iris)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-3.05s"/></g></g>
+      <g transform="matrix(0.945 -0.233 0.247 0.049 77.14 48.88)" fill="url(#iris)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-3.14s"/></g></g>
+      <g transform="matrix(0.965 -0.169 0.194 -0.051 79.07 58.15)" fill="url(#iris)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-3.09s"/></g></g>
+      <g transform="matrix(0.859 -0.409 -0.194 -0.816 138.09 -51.96)" fill="url(#jade)"><g transform="rotate(1)"><use href="#fin" class="fin" style="animation-delay:-0.05s"/></g></g>
+      <g transform="matrix(-0.835 -0.525 0.470 -0.836 -41.65 -40.07)" fill="url(#jade)"><g transform="rotate(6)"><use href="#fin" class="fin" style="animation-delay:-0.95s"/></g></g>
+      <g transform="matrix(0.785 -0.512 -0.250 -0.778 130.04 -57.76)" fill="url(#jade)"><g transform="rotate(3)"><use href="#fin" class="fin" style="animation-delay:-0.09s"/></g></g>
+      <g transform="matrix(-0.818 -0.547 0.463 -0.809 -38.55 -41.88)" fill="url(#jade)"><g transform="rotate(8)"><use href="#fin" class="fin" style="animation-delay:-0.91s"/></g></g>
+      <g transform="matrix(0.697 -0.605 -0.295 -0.732 120.70 -62.80)" fill="url(#jade)"><g transform="rotate(4)"><use href="#fin" class="fin" style="animation-delay:-0.14s"/></g></g>
+      <g transform="matrix(-0.792 -0.579 0.453 -0.771 -34.87 -44.17)" fill="url(#jade)"><g transform="rotate(9)"><use href="#fin" class="fin" style="animation-delay:-0.86s"/></g></g>
+      <g transform="matrix(0.597 -0.686 -0.324 -0.680 110.27 -66.98)" fill="url(#jade)"><g transform="rotate(6)"><use href="#fin" class="fin" style="animation-delay:-0.18s"/></g></g>
+      <g transform="matrix(-0.755 -0.618 0.434 -0.722 -30.46 -46.92)" fill="url(#jade)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-0.82s"/></g></g>
+      <g transform="matrix(-0.708 -0.662 0.401 -0.665 -25.22 -50.05)" fill="url(#jade)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-0.77s"/></g></g>
+      <g transform="matrix(0.489 -0.755 -0.338 -0.625 98.96 -70.22)" fill="url(#jade)"><g transform="rotate(7)"><use href="#fin" class="fin" style="animation-delay:-0.23s"/></g></g>
+      <g transform="matrix(-0.651 -0.707 0.353 -0.604 -19.06 -53.47)" fill="url(#jade)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-0.73s"/></g></g>
+      <g transform="matrix(0.374 -0.811 -0.334 -0.571 87.02 -72.49)" fill="url(#jade)"><g transform="rotate(8)"><use href="#fin" class="fin" style="animation-delay:-0.27s"/></g></g>
+      <g transform="matrix(-0.583 -0.752 0.288 -0.545 -11.92 -57.04)" fill="url(#jade)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-0.68s"/></g></g>
+      <g transform="matrix(0.255 -0.852 -0.311 -0.520 74.69 -73.77)" fill="url(#jade)"><g transform="rotate(9)"><use href="#fin" class="fin" style="animation-delay:-0.32s"/></g></g>
+      <g transform="matrix(-0.504 -0.795 0.209 -0.492 -3.78 -60.62)" fill="url(#jade)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-0.64s"/></g></g>
+      <g transform="matrix(0.134 -0.880 -0.271 -0.476 62.21 -74.09)" fill="url(#jade)"><g transform="rotate(10)"><use href="#fin" class="fin" style="animation-delay:-0.36s"/></g></g>
+      <g transform="matrix(-0.416 -0.832 0.121 -0.451 5.33 -64.08)" fill="url(#jade)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-0.59s"/></g></g>
+      <g transform="matrix(0.014 -0.893 -0.215 -0.441 49.83 -73.50)" fill="url(#jade)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-0.41s"/></g></g>
+      <g transform="matrix(-0.319 -0.862 0.029 -0.424 15.37 -67.24)" fill="url(#jade)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-0.55s"/></g></g>
+      <g transform="matrix(-0.102 -0.894 -0.143 -0.420 37.77 -72.09)" fill="url(#jade)"><g transform="rotate(11)"><use href="#fin" class="fin" style="animation-delay:-0.45s"/></g></g>
+      <g transform="matrix(-0.214 -0.883 -0.061 -0.414 26.23 -69.96)" fill="url(#jade)"><g transform="rotate(12)"><use href="#fin" class="fin" style="animation-delay:-0.50s"/></g></g>
+      </g></g>
     </g>
-    <g transform="translate(734 250.2)" fill="url(#lagoon)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v1" transform="matrix(0.7638,-0.2776,0.6455,0.3284,-1.72,0.00)"/></g>
-      <use href="#foil" class="vane v1" transform="matrix(0.7638,-0.2776,0.6455,0.3284,-1.72,0.00)"/>
+    <g class="signature" font-family="Georgia, 'Times New Roman', serif">
+      <text x="68" y="162" font-size="104" letter-spacing="-5" fill="#fff5e4">Benjamin</text>
+      <text x="70" y="247" font-size="101" font-style="italic" letter-spacing="-5" fill="url(#script)">Franklin A</text>
     </g>
-    <g transform="translate(734 236.4)" fill="url(#lagoon)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v2" transform="matrix(0.7145,-0.3009,0.6997,0.3072,-3.40,0.00)"/></g>
-      <use href="#foil" class="vane v2" transform="matrix(0.7145,-0.3009,0.6997,0.3072,-3.40,0.00)"/>
+    <g transform="translate(77 66)" fill="none" stroke-linecap="round">
+      <rect y="-1.2" width="57" height="2.4" rx="1" fill="url(#ruling)"/><path d="M62 0h8" stroke="#d4c1ae" stroke-width="2"/><circle cx="78" r="2" fill="#f2b397"/>
     </g>
-    <g transform="translate(734 222.6)" fill="url(#lagoon)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v3" transform="matrix(0.6735,-0.3178,0.7392,0.2896,-5.00,0.00)"/></g>
-      <use href="#foil" class="vane v3" transform="matrix(0.6735,-0.3178,0.7392,0.2896,-5.00,0.00)"/>
-    </g>
-    <g transform="translate(734 208.8)" fill="url(#lagoon)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v4" transform="matrix(0.6487,-0.3273,0.7611,0.2789,-6.47,0.00)"/></g>
-      <use href="#foil" class="vane v4" transform="matrix(0.6487,-0.3273,0.7611,0.2789,-6.47,0.00)"/>
-    </g>
-    <g transform="translate(734 195.0)" fill="url(#lagoon)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v5" transform="matrix(0.6463,-0.3281,0.7631,0.2779,-7.78,0.00)"/></g>
-      <use href="#foil" class="vane v5" transform="matrix(0.6463,-0.3281,0.7631,0.2779,-7.78,0.00)"/>
-    </g>
-    <g transform="translate(734 181.2)" fill="url(#copper)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v6" transform="matrix(0.6701,-0.3192,0.7423,0.2881,-8.90,0.00)"/></g>
-      <use href="#foil" class="vane v6" transform="matrix(0.6701,-0.3192,0.7423,0.2881,-8.90,0.00)"/>
-    </g>
-    <g transform="translate(734 167.4)" fill="url(#copper)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v7" transform="matrix(0.7202,-0.2983,0.6938,0.3097,-9.80,0.00)"/></g>
-      <use href="#foil" class="vane v7" transform="matrix(0.7202,-0.2983,0.6938,0.3097,-9.80,0.00)"/>
-    </g>
-    <g transform="translate(734 153.6)" fill="url(#copper)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v8" transform="matrix(0.7917,-0.2627,0.6109,0.3404,-10.46,0.00)"/></g>
-      <use href="#foil" class="vane v8" transform="matrix(0.7917,-0.2627,0.6109,0.3404,-10.46,0.00)"/>
-    </g>
-    <g transform="translate(734 139.8)" fill="url(#copper)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v9" transform="matrix(0.8737,-0.2092,0.4865,0.3757,-10.87,0.00)"/></g>
-      <use href="#foil" class="vane v9" transform="matrix(0.8737,-0.2092,0.4865,0.3757,-10.87,0.00)"/>
-    </g>
-    <g transform="translate(734 126.0)" fill="url(#metal)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v10" transform="matrix(0.9488,-0.1358,0.3158,0.4080,-11.00,0.00)"/></g>
-      <use href="#foil" class="vane v10" transform="matrix(0.9488,-0.1358,0.3158,0.4080,-11.00,0.00)"/>
-    </g>
-    <g transform="translate(734 112.2)" fill="url(#metal)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v11" transform="matrix(0.9949,-0.0432,0.1004,0.4278,-10.86,0.00)"/></g>
-      <use href="#foil" class="vane v11" transform="matrix(0.9949,-0.0432,0.1004,0.4278,-10.86,0.00)"/>
-    </g>
-    <g transform="translate(734 98.4)" fill="url(#metal)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v12" transform="matrix(0.9889,0.0639,-0.1485,0.4252,-10.46,0.00)"/></g>
-      <use href="#foil" class="vane v12" transform="matrix(0.9889,0.0639,-0.1485,0.4252,-10.46,0.00)"/>
-    </g>
-    <g transform="translate(734 84.6)" fill="url(#metal)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v13" transform="matrix(0.9126,0.1758,-0.4087,0.3924,-9.80,0.00)"/></g>
-      <use href="#foil" class="vane v13" transform="matrix(0.9126,0.1758,-0.4087,0.3924,-9.80,0.00)"/>
-    </g>
-    <g transform="translate(734 70.8)" fill="url(#metal)">
-      <g transform="translate(0 3.7)"><use href="#edge" class="vane v14" transform="matrix(0.7596,0.2796,-0.6503,0.3266,-8.89,0.00)"/></g>
-      <use href="#cap" class="vane v14" transform="matrix(0.7596,0.2796,-0.6503,0.3266,-8.89,0.00)"/>
-    </g>
-    <path d="M51 300.5H514" stroke="#698173" stroke-width="1" opacity=".8"/>
-    <path class="ink" d="M51 300.5H400" stroke="url(#rule-metal)" stroke-dasharray="94 480" stroke-linecap="round" stroke-width="3.2"/>
+    <rect x="76" y="273.5" width="316" height="1.2" fill="url(#ruling)" opacity=".68"/>
+    <use href="#star" transform="translate(400 274)" class="shine" fill="#efcbaf"/>
+    <g fill="#d2ebe9"><use href="#star" transform="translate(910 88) scale(.86)"/><use href="#star" transform="translate(563 242) scale(.68)"/></g>
+    <rect x="1" y="1" width="998" height="352" rx="15" fill="none" stroke="url(#edge)" opacity=".73"/>
   </g>
 </svg>
