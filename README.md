@@ -1,128 +1,105 @@
+<h1 align="center">Benjamin Franklin A</h1>
+
 <p align="center">
-  <img src="banner.svg" width="100%" alt="Benjamin Franklin A, second-year computer science student building AI-assisted software and cloud projects from Tamil Nadu, India" />
+  Computer Science &amp; Engineering student at SKCET, Coimbatore<br>
+  AWS Student Builder Campus Leader &nbsp;|&nbsp; GeeksforGeeks Campus Mantri<br>
+  Tamil Nadu, India
 </p>
 
 <p align="center">
-  <a href="https://github.com/lolsico9t5">
-    <img
-      width="550"
-      src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;theme=dark&amp;background=135,131A3A,1B2350,131A3A&amp;border=2D3770&amp;stroke=2D3770&amp;ring=F5B82E&amp;fire=F5B82E&amp;currStreakNum=F4F1E8&amp;currStreakLabel=F5B82E&amp;sideNums=2FB8A6&amp;sideLabels=F4F1E8&amp;dates=A9B1D6&amp;border_radius=24&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=false"
-      alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak"
-    />
-  </a>
+  <a href="https://www.linkedin.com/in/benjamin-franklin-a-4b272b391/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:abf2k07@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" alt="Email" /></a>
+  <a href="https://www.instagram.com/lol_sico_9t5/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&amp;logo=instagram&amp;logoColor=white" alt="Instagram" /></a>
 </p>
 
-<p align="center">
-  <a href="#about">About</a> &nbsp;|&nbsp;
-  <a href="#learning">Learning</a> &nbsp;|&nbsp;
-  <a href="#projects">Projects</a> &nbsp;|&nbsp;
-  <a href="#skills">Skills</a> &nbsp;|&nbsp;
-  <a href="#experience">Experience</a> &nbsp;|&nbsp;
-  <a href="#recognition">Recognition</a> &nbsp;|&nbsp;
-  <a href="#contact">Contact</a>
-</p>
+## About
 
-<br>
+Second-year B.E. Computer Science and Engineering student with a 9.54/10 CGPA and a strong foundation in C++, Java, SQL, web technologies, and cloud computing. Completed a C++ programming internship at Thiranex, serves as an AWS Student Builder Campus Leader and GeeksforGeeks Campus Mantri, and builds AI-assisted applications with Amazon Bedrock, Kiro, and Claude. Won first place at EUREKA! 2026 (E-Cell, IIT Bombay) and focuses on software development, AI-enabled applications, and practical problem-solving.
 
-<a name="about"></a>
-<img src="heading-about.svg" height="56" alt="About" />
+## Currently Learning
 
-Second-year B.E. Computer Science and Engineering student with a strong foundation in C++, Java, SQL, web technologies, and cloud computing. Completed a C++ programming internship at Thiranex, serves as an AWS Student Builder Campus Leader and GeeksforGeeks Campus Mantri, and builds AI-assisted applications with Amazon Bedrock, Kiro, and Claude. Won first place at EUREKA! 2026 (E-Cell, IIT Bombay) and focuses on software development, AI-enabled applications, and practical problem-solving.
+- **Java** for object-oriented design
+- **Data structures and algorithms** for problem-solving and interview fundamentals
+- **Oracle SQL** for database design and querying
+- **Python** for backend development and automation
+- **AWS** for cloud architecture
 
-<br>
+## Featured Projects
 
-<a name="learning"></a>
-<img src="heading-learning.svg" height="56" alt="Currently learning" />
-
-<table>
-  <tr><td><b>Java</b></td><td>Object-oriented design</td></tr>
-  <tr><td><b>Data structures and algorithms</b></td><td>Problem-solving and interview fundamentals</td></tr>
-  <tr><td><b>Oracle SQL</b></td><td>Database design and querying</td></tr>
-  <tr><td><b>Python</b></td><td>Backend development and automation</td></tr>
-  <tr><td><b>AWS</b></td><td>Cloud architecture</td></tr>
-</table>
-
-<br>
-
-<a name="projects"></a>
-<img src="heading-projects.svg" height="56" alt="Featured projects" />
-
-<a href="https://github.com/lolsico9t5/hmt-restock-radar">
-  <img src="project-hmt-restock-radar.svg" width="100%" alt="HMT Restock Radar. Python, Requests, HTML, CSS, JavaScript" />
-</a>
+### [HMT Restock Radar](https://github.com/lolsico9t5/hmt-restock-radar)
 
 Radar checks HMT watch availability and sounds an alert when a watch comes back in stock. I designed and tested the alert behavior and guided the implementation with Claude.
 
-[View repository](https://github.com/lolsico9t5/hmt-restock-radar)
+`Python` `Requests` `HTML` `CSS` `JavaScript`
 
-<a href="https://github.com/lolsico9t5/ai-email-intelligence-n8n">
-  <img src="project-ai-email-intelligence.svg" width="100%" alt="AI Email Intelligence System. n8n, Gmail, Ollama, Llama 3, Notion" />
-</a>
+### [AI Email Intelligence System](https://github.com/lolsico9t5/ai-email-intelligence-n8n)
 
-An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Llama 3 runs locally via Ollama to summarize and categorize each snippet. The workflow checks for a summary, category, and priority and attempts one repair if a parsed response is missing a required field.
+An n8n workflow that turns Gmail snippets into a prioritized inbox in Notion. Llama 3 runs locally via Ollama to summarize and categorize each snippet. The workflow checks for a summary, category, and priority and attempts one repair if a parsed response is missing a required field. [See the workflow canvas](https://github.com/lolsico9t5/ai-email-intelligence-n8n#-workflow-overview).
 
-[View repository](https://github.com/lolsico9t5/ai-email-intelligence-n8n) &nbsp;|&nbsp; [Workflow canvas](https://github.com/lolsico9t5/ai-email-intelligence-n8n#-workflow-overview)
+`n8n` `Gmail` `Ollama` `Llama 3` `Notion`
 
-<br>
+## Technical Skills
 
-<a name="skills"></a>
-<img src="heading-skills.svg" height="56" alt="Technical skills" />
+**Programming**<br>
+<img src="https://img.shields.io/badge/C++-00599C?style=flat&amp;logo=cplusplus&amp;logoColor=white" alt="C++" />
+<img src="https://img.shields.io/badge/C-283593?style=flat&amp;logo=c&amp;logoColor=white" alt="C" />
+<img src="https://img.shields.io/badge/Java-ED8B00?style=flat&amp;logo=openjdk&amp;logoColor=white" alt="Java" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat&amp;logo=python&amp;logoColor=white" alt="Python" />
 
-<table>
-  <tr><td><b>Programming</b></td><td>C++, C, Java, Python</td></tr>
-  <tr><td><b>Web and databases</b></td><td>HTML, CSS, JavaScript, Oracle SQL</td></tr>
-  <tr><td><b>Cloud and AI</b></td><td>AWS, Amazon Bedrock, Amazon Nova Pro, Strands Agents, Ollama, Llama 3</td></tr>
-  <tr><td><b>Automation and tools</b></td><td>n8n, Notion, Git, GitHub, Kiro, Claude</td></tr>
-</table>
+**Web and databases**<br>
+<img src="https://img.shields.io/badge/HTML-E34F26?style=flat&amp;logo=html5&amp;logoColor=white" alt="HTML" />
+<img src="https://img.shields.io/badge/CSS-1572B6?style=flat&amp;logo=css3&amp;logoColor=white" alt="CSS" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&amp;logo=javascript&amp;logoColor=black" alt="JavaScript" />
+<img src="https://img.shields.io/badge/Oracle_SQL-F80000?style=flat&amp;logo=oracle&amp;logoColor=white" alt="Oracle SQL" />
 
-<br>
+**Cloud and AI**<br>
+<img src="https://img.shields.io/badge/AWS-FF9900?style=flat&amp;logoColor=white" alt="AWS" />
+<img src="https://img.shields.io/badge/Amazon_Bedrock-232F3E?style=flat" alt="Amazon Bedrock" />
+<img src="https://img.shields.io/badge/Amazon_Nova_Pro-232F3E?style=flat" alt="Amazon Nova Pro" />
+<img src="https://img.shields.io/badge/Strands_Agents-232F3E?style=flat" alt="Strands Agents" />
+<img src="https://img.shields.io/badge/Ollama-000000?style=flat&amp;logo=ollama&amp;logoColor=white" alt="Ollama" />
+<img src="https://img.shields.io/badge/Llama_3-0467DF?style=flat" alt="Llama 3" />
 
-<a name="experience"></a>
-<img src="heading-experience.svg" height="56" alt="Experience and leadership" />
+**Automation and tools**<br>
+<img src="https://img.shields.io/badge/n8n-EA4B71?style=flat&amp;logo=n8n&amp;logoColor=white" alt="n8n" />
+<img src="https://img.shields.io/badge/Notion-000000?style=flat&amp;logo=notion&amp;logoColor=white" alt="Notion" />
+<img src="https://img.shields.io/badge/Git-F05032?style=flat&amp;logo=git&amp;logoColor=white" alt="Git" />
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&amp;logo=github&amp;logoColor=white" alt="GitHub" />
+<img src="https://img.shields.io/badge/Kiro-6F4594?style=flat" alt="Kiro" />
+<img src="https://img.shields.io/badge/Claude-D97757?style=flat&amp;logo=claude&amp;logoColor=white" alt="Claude" />
 
-<table>
-  <tr>
-    <td width="260" valign="top"><img src="date-thiranex.svg" height="40" alt="April to May 2026" /></td>
-    <td valign="top"><b>C++ Programming Intern, Thiranex</b><br>Built four console applications using object-oriented C++, including a library management system and a tic-tac-toe game.</td>
-  </tr>
-  <tr>
-    <td width="260" valign="top"><img src="date-aws.svg" height="40" alt="August to September 2026" /></td>
-    <td valign="top"><b>Student Builder Campus Leader, AWS</b><br>Led campus cloud engineering initiatives focused on building and deploying software on AWS.</td>
-  </tr>
-  <tr>
-    <td width="260" valign="top"><img src="date-gfg.svg" height="40" alt="June 2026 to present" /></td>
-    <td valign="top"><b>Campus Mantri, GeeksforGeeks</b><br>Share technical learning opportunities with fellow students through LinkedIn and direct campus outreach.</td>
-  </tr>
-</table>
+## Experience and Leadership
 
-<br>
+**C++ Programming Intern**, Thiranex &nbsp; `April – May 2026`<br>
+Built four console applications using object-oriented C++, including a library management system and a tic-tac-toe game.
 
-<a name="recognition"></a>
-<img src="heading-recognition.svg" height="56" alt="Recognition" />
+**Student Builder Campus Leader**, AWS &nbsp; `August – September 2026`<br>
+Led campus cloud engineering initiatives focused on building and deploying software on AWS.
 
-<table>
-  <tr>
-    <td width="260" valign="top"><img src="tag-first-place.svg" height="40" alt="First place" /></td>
-    <td valign="top"><b>EUREKA! 2026, Startup Pitching</b><br>My team, <b>Zenith Labs</b>, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.</td>
-  </tr>
-  <tr>
-    <td width="260" valign="top"><img src="tag-top-prompt-creator.svg" height="40" alt="Top Prompt Creator" /></td>
-    <td valign="top"><b>Google Student Ambassador Program</b><br>My Game Night Edition prompt became a playable game in Gemini Canvas.</td>
-  </tr>
-</table>
+**Campus Mantri**, GeeksforGeeks &nbsp; `June 2026 – Present`<br>
+Share technical learning opportunities with fellow students through LinkedIn and direct campus outreach.
 
-<br>
+## Recognition
 
-<a name="contact"></a>
-<img src="heading-contact.svg" height="56" alt="Get in touch" />
+**First place, EUREKA! 2026 Startup Pitching**<br>
+My team, **Zenith Labs**, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.
 
-<p>
-  <a href="https://www.linkedin.com/in/benjamin-franklin-a-4b272b391/"><img src="button-linkedin.svg" height="52" alt="LinkedIn" /></a>
-  <a href="mailto:abf2k07@gmail.com"><img src="button-email.svg" height="52" alt="Email" /></a>
-  <a href="https://www.instagram.com/lol_sico_9t5/"><img src="button-instagram.svg" height="52" alt="Instagram" /></a>
-  <a href="https://github.com/lolsico9t5?tab=repositories"><img src="button-github.svg" height="52" alt="GitHub repositories" /></a>
+**Top Prompt Creator, Google Student Ambassador Program**<br>
+My Game Night Edition prompt became a playable game in Gemini Canvas.
+
+## GitHub Activity
+
+<p align="center">
+  <a href="https://github.com/lolsico9t5">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=lolsico9t5&amp;theme=github-dark&amp;timezone=Asia%2FKolkata&amp;card_width=550" />
+      <img width="550" src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;theme=default&amp;timezone=Asia%2FKolkata&amp;card_width=550" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak" />
+    </picture>
+  </a>
 </p>
 
-<br>
+## Get in Touch
 
-<img src="footer.svg" width="100%" alt="Built in Tamil Nadu, India" />
+- LinkedIn: [benjamin-franklin-a](https://www.linkedin.com/in/benjamin-franklin-a-4b272b391/)
+- Email: [abf2k07@gmail.com](mailto:abf2k07@gmail.com)
+- Instagram: [@lol_sico_9t5](https://www.instagram.com/lol_sico_9t5/)
