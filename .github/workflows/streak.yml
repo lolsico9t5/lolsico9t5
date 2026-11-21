@@ -1,0 +1,39 @@
+name: Refresh public contribution streak
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+concurrency:
+  group: public-contribution-streak
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+      - name: Read the public GitHub calendar
+        run: python3 tools/update-streak.py --user lolsico9t5 --output "$RUNNER_TEMP/github-streak.svg"
+      - name: Publish changed artwork on its own branch
+        run: |
+          target="$RUNNER_TEMP/activity-card"
+          if git ls-remote --exit-code --heads origin activity-card > /dev/null; then
+            git fetch origin refs/heads/activity-card:refs/remotes/origin/activity-card
+            git worktree add --detach "$target" origin/activity-card
+          else
+            git worktree add --orphan -b activity-card "$target"
+          fi
+          cp "$RUNNER_TEMP/github-streak.svg" "$target/github-streak.svg"
+          git -C "$target" add -- github-streak.svg
+          if ! git -C "$target" diff --cached --quiet; then
+            git -C "$target" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh contribution card from GitHub'
+            git -C "$target" push origin HEAD:refs/heads/activity-card
+          fi
