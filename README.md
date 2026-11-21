@@ -144,9 +144,11 @@
   <img src="assets/colophon.svg" width="100%" alt="">
 </picture>
 
+<p align="center">
 <a href="https://lolsico9t5.github.io/lolsico9t5/"><picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/space-dragon.webp">
   <img src="assets/space-dragon.webp" width="100%" alt="A silver-lavender space dragon beats its wings above a violet nebula. Open the scene to drag it.">
 </picture></a>
+</p>
 
 <a href="https://lolsico9t5.github.io/lolsico9t5/"><picture><img src="assets/type/drag.svg" width="161" height="27" align="absmiddle" alt="Drag the dragon ↗"></picture></a> · <a href="profile.md"><picture><img src="assets/type/read-as-text.svg" width="115" height="27" align="absmiddle" alt="Read as text"></picture></a>

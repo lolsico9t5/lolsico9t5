@@ -178,6 +178,6 @@ while i<len(blocks):
         b=re.sub(r'<strong>([^<]+)</strong>',link_label,b)
     out.append(b)
     i+=1
-out += [f'<a href="{scene}"><picture>\n  <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/space-dragon.webp">\n  <img src="assets/space-dragon.webp" width="100%" alt="A silver-lavender space dragon beats its wings above a violet nebula. Open the scene to drag it.">\n</picture></a>',
+out += [f'<p align="center">\n<a href="{scene}"><picture>\n  <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/space-dragon.webp">\n  <img src="assets/space-dragon.webp" width="100%" alt="A silver-lavender space dragon beats its wings above a violet nebula. Open the scene to drag it.">\n</picture></a>\n</p>',
         f'<a href="{scene}">{label("Drag the dragon ↗","drag")}</a> · <a href="profile.md">{label("Read as text","read-as-text")}</a>']
 (root/"README.md").write_text("\n\n".join(out)+"\n",encoding="utf-8")
