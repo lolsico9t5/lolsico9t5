@@ -7,7 +7,7 @@
   </a>
 </h1>
 
-Second-year Computer Science and Engineering Student
+Second-year Computer Science and Engineering Student at SKCET
 
 <a href="https://lolsico9t5.github.io/lolsico9t5/?flight=2"><picture><img src="docs/dragon.webp" width="43" height="22" align="absmiddle" alt=""></picture> <strong>Fly the dragon through my profile ↗</strong></a>
 
