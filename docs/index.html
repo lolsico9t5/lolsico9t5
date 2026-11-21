@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c101a">
   <title>Benjamin Franklin A · Dragon flight</title>
-  <link rel="icon" href="dragon.webp" type="image/webp">
-  <link rel="stylesheet" href="scene.css?v=4">
+  <link rel="preload" as="fetch" href="flight-dragon.glb" crossorigin="anonymous" media="(prefers-reduced-motion: no-preference)">
+  <link rel="modulepreload" href="./dragon-model.js?v=7" media="(prefers-reduced-motion: no-preference)">
+  <link rel="icon" href="dragon-start.webp" type="image/webp">
+  <link rel="stylesheet" href="scene.css?v=7">
 </head>
 <body>
   <div id="deep-sky" aria-hidden="true"><canvas id="stars"></canvas></div>
@@ -110,7 +112,8 @@ My Game Night Edition prompt became a playable game in <strong>Gemini Canvas</st
     <canvas id="effects" aria-hidden="true"></canvas>
     <button type="button" id="creature" aria-label="Steer the dragon" aria-describedby="guide">
       <span class="dragon-body" aria-hidden="true">
-        <span class="side-pose"><img id="texture" src="dragon.webp" alt="" draggable="false"></span>
+        <img id="texture" src="dragon-start.webp" fetchpriority="high" alt="" draggable="false">
+        <span class="flight-preview"></span>
         <canvas id="rig"></canvas>
       </span>
     </button>
@@ -127,7 +130,7 @@ My Game Night Edition prompt became a playable game in <strong>Gemini Canvas</st
   <script type="module">
     import "./sky.js";
     import "./activity.js";
-    import { startFlight } from "./scene.js?v=6";
+    import { startFlight } from "./scene.js?v=7";
     startFlight(document, document.querySelector(".profile h1"));
   </script>
 </body>

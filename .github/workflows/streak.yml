@@ -21,6 +21,8 @@ jobs:
         with:
           ref: main
       - name: Read the public GitHub calendar
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: python3 tools/update-streak.py --user lolsico9t5 --output "$RUNNER_TEMP/github-streak.svg"
       - name: Publish changed artwork on its own branch
         run: |

@@ -8,6 +8,8 @@ import os
 from pathlib import Path
 import re
 from tempfile import NamedTemporaryFile
+from time import sleep
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 INDIA = timezone(timedelta(hours=5, minutes=30), 'Asia/Kolkata')
@@ -18,8 +20,18 @@ def get(url, token=None):
     headers = {'Accept-Language': 'en-US', 'User-Agent': 'portfolio-streak-card/1.0'}
     if token:
         headers['Authorization'] = 'Bearer ' + token
-    with urlopen(Request(url, headers=headers), timeout=30) as response:
-        return response.read().decode('utf-8')
+    request = Request(url, headers=headers)
+    for attempt in range(3):
+        try:
+            with urlopen(request, timeout=30) as response:
+                return response.read().decode('utf-8')
+        except HTTPError as error:
+            if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
+                raise
+        except (URLError, TimeoutError):
+            if attempt == 2:
+                raise
+        sleep(2 ** (attempt + 1))
 
 
 class Calendar(HTMLParser):
