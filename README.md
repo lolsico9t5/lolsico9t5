@@ -7,7 +7,7 @@
   </a>
 </h1>
 
-Second-year computer science student building **AI-assisted software and cloud projects** from Tamil Nadu, India.
+Second-year Computer Science and Engineering Student
 
 <a href="https://lolsico9t5.github.io/lolsico9t5/?flight=2"><picture><img src="docs/dragon.webp" width="43" height="22" align="absmiddle" alt=""></picture> <strong>Fly the dragon through my profile ↗</strong></a>
 
@@ -16,7 +16,6 @@ Second-year computer science student building **AI-assisted software and cloud p
 ## <picture><img src="assets/icons/about.svg" width="36" height="28" align="texttop" alt=""></picture>About
 
 Second-year **B.E. Computer Science and Engineering** student with a strong foundation in C++, Java, SQL, web technologies, and cloud computing.
-
 Completed a C++ programming internship at Thiranex, serves as an **AWS Student Builder Campus Leader** and **GeeksforGeeks Campus Mantri**, and builds AI-assisted applications with Amazon Bedrock, Kiro, and Claude. Won **first place at EUREKA! 2026** (E-Cell, IIT Bombay) and focuses on software development, AI-enabled applications, and practical problem-solving.
 
 <a name="projects"></a>
