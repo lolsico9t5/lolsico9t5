@@ -3,6 +3,9 @@ const vertex = `
 attribute vec2 uv;
 uniform float phase;
 uniform float bank;
+uniform mediump float breath;
+uniform mediump float jawPass;
+uniform float speed;
 varying vec2 tex;
 varying float light;
 void main() {
@@ -16,12 +19,23 @@ void main() {
   float tail = (1.0-smoothstep(.15, .65, x)) * smoothstep(.48, .64, y);
   float head = smoothstep(.72, .96, x);
   vec2 pos = uv;
-  pos.y += wing * reach * fold;
+  // On fast passes the wings sweep back; the trailing membrane lags the rigid spars.
+  pos.y += wing * reach * (fold + .10*speed);
+  pos.x += wing * reach * (-.075*speed + .018*sin(beat*2.0 - 4.0*reach));
   pos.x += wing * reach * (.045 + .064*sin(beat-.4));
-  pos.y += tail * (.044*sin(phase*2.0+6.0*x) + bank*.014);
+  pos.y += tail * ((.044 + .024*speed)*sin(phase*2.0+6.0*x) + bank*.039);
   pos.x += tail * .012*sin(phase*2.0+5.2*x-.6);
   pos.y += head * (.010*sin(2.0*phase+.5) - .008*bank);
   pos.y += .007*cos(2.0*phase)*(y-.68);
+  pos.x -= breath * .012 * head;
+  pos.y -= breath * .022 * head;
+  if (jawPass > .5) {
+    vec2 hinge = vec2(.89,.516);
+    vec2 bone = (uv-hinge)*vec2(1.0,.505);
+    float gape = breath*.31*smoothstep(.88,.94,x);
+    mat2 rotateJaw = mat2(cos(gape),sin(gape),-sin(gape),cos(gape));
+    pos += (rotateJaw*bone-bone)/vec2(1.0,.505);
+  }
   pos = vec2(.055,.075) + pos*vec2(.89,.86);
   gl_Position = vec4(pos.x*2.0-1.0, 1.0-pos.y*2.0, 0.0, 1.0);
   light = wing * (.075*cos(beat-.35) - .045);
@@ -29,11 +43,17 @@ void main() {
 const fragment = `
 precision mediump float;
 uniform sampler2D dragon;
+uniform mediump float breath;
+uniform mediump float jawPass;
 varying vec2 tex;
 varying float light;
 void main() {
   vec4 sampleColor = texture2D(dragon, tex);
-  gl_FragColor = vec4(sampleColor.rgb * (1.0 + light), sampleColor.a);
+  float lip = .514 + .30*(tex.x-.885) + .003*sin(29.0*(tex.x-.885));
+  bool lowerJaw = tex.x>.885 && tex.y>lip && tex.y<lip+.065;
+  if (jawPass>=0.0 && lowerJaw != (jawPass>.5)) discard;
+  float warmth = breath*smoothstep(.69,.98,tex.x)*(1.0-smoothstep(.03,.19,abs(tex.y-lip)));
+  gl_FragColor = vec4(sampleColor.rgb * (1.0 + light) + vec3(.46,.15,.025)*warmth*sampleColor.a, sampleColor.a);
 }`;
 
 export function createWingRig(canvas, image) {
@@ -77,11 +97,21 @@ export function createWingRig(canvas, image) {
   gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
   const angle = gl.getUniformLocation(program, "phase");
   const lean = gl.getUniformLocation(program, "bank");
-  return (phase, bank = 0) => {
+  const breath = gl.getUniformLocation(program,"breath");
+  const jaw = gl.getUniformLocation(program,"jawPass");
+  const speed = gl.getUniformLocation(program,"speed");
+  return (phase, bank = 0, heat = 0, pace = 0) => {
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.uniform1f(angle, phase);
     gl.uniform1f(lean, bank);
+    gl.uniform1f(breath,heat);
+    gl.uniform1f(speed,pace);
+    gl.uniform1f(jaw,heat>.012 ? 0 : -1);
     gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
+    if (heat>.012) {
+      gl.uniform1f(jaw,1);
+      gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
+    }
   };
 }

@@ -1,14 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="69" height="34" viewBox="0 0 69 34" role="img" aria-labelledby="label">
   <title id="label">Skills</title>
   <defs><linearGradient id="enamel" x2=".95" y2=".8"><stop stop-color="#26364f"/><stop offset="1" stop-color="#15182c"/></linearGradient></defs>
-  <style>
-    @keyframes glimmer {0%,44%,100% {fill:#f5f2ff} 59% {fill:#afcfff} 75% {fill:#ffdacb}}
-    @keyframes glint {0%,44%,100% {opacity:.68} 67% {opacity:1}}
-    @media (prefers-reduced-motion:no-preference) {
-      text {animation:glimmer 6.8s -2.10s ease-in-out infinite}
-      g {animation:glint 6.8s -2.10s ease-in-out infinite}
-    }
-  </style>
   <rect x=".8" y="1.8" width="67.4" height="30.4" rx="15.2" fill="url(#enamel)" stroke="#a5d6ef" stroke-opacity=".67"/>
   <g transform="translate(4.2 5.6) scale(.67)">
     <g fill="none" stroke="#a5d6ef" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12.7 11.6L7.2 17l5.5 5.4m8.6-10.8l5.5 5.4-5.5 5.4"/></g>
