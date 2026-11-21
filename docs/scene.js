@@ -1,4 +1,5 @@
 import { createWingRig } from "./wing-rig.js?v=2";
+import { planEdgeTurn, advanceEdgeTurn } from "./flight-turn.js";
 import { createBreath } from "./fire.js";
 
 export function startFlight(root, heroElement, assetURL = name => name) {
@@ -8,6 +9,15 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   const dragon = root.querySelector("#creature");
   const rigCanvas = root.querySelector("#rig");
   const texture = root.querySelector("#texture");
+  const sidePose = dragon.querySelector(".side-pose");
+  function loadPose(filename) {
+    const image=new Image();
+    image.className="turn-pose"; image.alt=""; image.draggable=false;
+    image.src=assetURL(filename);
+    dragon.append(image);
+    return image;
+  }
+  const quarterPose=loadPose("bank-quarter.webp"), frontPose=loadPose("bank-front.webp");
   const fire = root.querySelector("#fire");
   const land = root.querySelector("#land");
   const help = root.querySelector("#help");
@@ -19,7 +29,8 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     ArrowUp:[0,-1],KeyW:[0,-1],ArrowDown:[0,1],KeyS:[0,1]};
   const clamp = (value, lo, hi) => Math.max(lo, Math.min(hi,value));
   const blend = (rate,dt) => 1-Math.exp(-rate*dt);
-  let width=1,height=1,size=180,x,y,vx=0,vy=0,face=-1,yaw=-1,pitch=0,phase=0,heat=0;
+  let width=1,height=1,size=180,x,y,vx=0,vy=0,face=-1,heading=Math.PI,headingRate=0,roll=0,pitch=0,phase=0,heat=0;
+  let turn=null, lastPreference=reduced.matches;
   let active=!reduced.matches, drag=null, rig=null, frame=0, previous=0, elapsed=0, idle=0;
   let burst=0, firePointer=null, space=false, demo=!reduced.matches, helpTime=7, patrol=0;
 
@@ -40,15 +51,15 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     }
     const ratio=Math.min(2,devicePixelRatio);
     rigCanvas.width=Math.round(size*ratio);rigCanvas.height=Math.round(size*.5*ratio);
-    effects.resize(width,height); constrain(); paint(0); request();
+    turn=null; effects.resize(width,height); constrain(); paint(0); request();
+  }
+  function flightArea() {
+    const mx=Math.min(size*.43,width*.35), my=Math.min(size*.23,height*.27);
+    return {left:mx,right:width-mx,top:my,bottom:Math.max(my,height-my-64)};
   }
   function constrain() {
-    const mx=Math.min(size*.43,width*.35), my=Math.min(size*.23,height*.27);
-    const dock = 64;
-    const nx=clamp(x,mx,width-mx), ny=clamp(y,my,Math.max(my,height-my-dock));
-    if(nx!==x) vx=0;
-    if(ny!==y) vy=0;
-    x=nx;y=ny;
+    const box=flightArea();
+    x=clamp(x,box.left,box.right); y=clamp(y,box.top,box.bottom);
   }
   function request() {
     if(!frame && active && !document.hidden) frame=requestAnimationFrame(tick);
@@ -65,21 +76,25 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     if (Math.abs(next-scrollY)>.5) window.scrollTo({top:next,behavior:"instant"});
   }
   // Exact critically damped spring keeps tracking consistent at different frame rates.
-  function follow(position,velocity,goal,dt) {
-    const omega=24, delta=position-goal, spring=velocity+omega*delta, decay=Math.exp(-omega*dt);
+  function follow(position,velocity,goal,dt,omega=24) {
+    const delta=position-goal, spring=velocity+omega*delta, decay=Math.exp(-omega*dt);
     return [goal+(delta+spring*dt)*decay,(velocity-omega*spring*dt)*decay];
-  }
-  function velocityAim() {
-    if(Math.abs(vx)>25) face=Math.sign(vx);
-    const speed=Math.hypot(vx,vy);
-    return speed>20 ? clamp(Math.atan2(vy,Math.max(34,Math.abs(vx))),-1.05,1.05) : .045*Math.sin(phase);
   }
   function steer(dt) {
     let kx=0,ky=0;
     for(const key of keys) {kx+=directions[key][0];ky+=directions[key][1];}
-    if(drag) {
-      [x,vx]=follow(x,vx,clamp(drag.px-drag.ox,0,width),dt);
-      [y,vy]=follow(y,vy,clamp(drag.py-drag.oy,0,height),dt);
+    const box=flightArea();
+    // Up/down input is also how the player travels between profile sections.
+    const cameraMoving=ky<0 && scrollY>1 || ky>0 && scrollY+height<document.documentElement.scrollHeight-1;
+    if(!drag && !turn && !cameraMoving) turn=planEdgeTurn(x,y,vx,vy,box,size);
+    const banking=Boolean(turn);
+    if(turn) {
+      const next=advanceEdgeTurn(turn,dt);
+      x=next.x; y=next.y; vx=next.vx; vy=next.vy;
+      if(next.done) {turn=null;idle=0;}
+    } else if(drag) {
+      [x,vx]=follow(x,vx,clamp(drag.px-drag.ox,box.left,box.right),dt);
+      [y,vy]=follow(y,vy,clamp(drag.py-drag.oy,box.top,box.bottom),dt);
       pan(nearEdge(drag.py,Math.min(96,height*.16)),dt);
       idle=0;
     } else if(kx || ky) {
@@ -94,7 +109,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
         // Cruise around the currently visible part of the profile; scrolling remains in the reader's hands.
         patrol+=dt*.31;
         const goalX=width*.5+Math.cos(patrol)*(width*.5-size*.55);
-        const goalY=height*(.34+.145*Math.sin(patrol*1.6)) + 7*Math.sin(phase*1.6);
+        const goalY=height*(.36+.18*Math.sin(patrol)) + 7*Math.sin(phase*1.6);
         const cruise=Math.min(155,width*.27);
         vx+=(clamp((goalX-x)*1.25,-cruise,cruise)-vx)*blend(2.4,dt);
         vy+=(clamp((goalY-y)*1.25,-cruise*.65,cruise*.65)-vy)*blend(2.4,dt);
@@ -103,30 +118,60 @@ export function startFlight(root, heroElement, assetURL = name => name) {
       }
       x+=vx*dt;y+=vy*dt;
     }
-    const targetPitch=velocityAim();
-    pitch+=(targetPitch-pitch)*blend(8,dt);
-    yaw+=(face-yaw)*blend(12,dt);
+    const speed=Math.hypot(vx,vy);
+    if(Math.abs(vx)>18) face=Math.sign(vx);
+    let desiredHeading=face>0 ? 0 : Math.PI;
+    if(drag && speed<36) {
+      if(x-box.left<7 && face<0) desiredHeading=Math.PI*.61;
+      if(box.right-x<7 && face>0) desiredHeading=Math.PI*.39;
+    }
+    if(banking && speed>9) desiredHeading=Math.acos(clamp(vx/speed,-1,1));
+    // Smooth angular acceleration into and out of the bank; the head leads the tail.
+    [heading,headingRate]=follow(heading,headingRate,desiredHeading,dt,7.2);
+    heading=clamp(heading,0,Math.PI);
+    const targetPitch=speed>20 ? clamp(Math.atan2(vy,Math.max(38,Math.abs(vx))),-1.02,1.02) : .04*Math.sin(phase);
+    pitch+=(targetPitch-pitch)*blend(7,dt);
+    roll+=(-clamp(headingRate*.16,-.66,.66)-roll)*blend(7,dt);
     constrain();
+  }
+  function smooth(a,b,v) {
+    const t=clamp((v-a)/(b-a),0,1);
+    return t*t*(3-2*t);
   }
   function paint(dt) {
     if(!Number.isFinite(x)) return;
     const pace=Math.min(1,Math.hypot(vx,vy)/520);
-    const bank=Math.sin(pitch)*face;
+    const yaw=Math.cos(heading), extent=Math.abs(yaw), sign=yaw<0?-1:1;
+    const bank=clamp(Math.sin(pitch)*yaw+roll,-1,1);
     phase+=dt*(1.6+pace*2.5+heat*.58);
     const lift=active && !reduced.matches ? Math.sin(2*phase+.4)*size*.009 : 0;
-    const bodyY=y+lift, c=Math.cos(pitch),s=Math.sin(pitch);
-    dragon.style.transform='translate3d('+(x-size/2)+'px,'+(bodyY-size/4)+'px,0) scaleX('+yaw+') rotate('+pitch+'rad)';
-    rig?.(phase,bank,heat,pace);
-    // Match the rig's UV padding, head recoil, and tail-to-head coordinate system.
+    const bodyY=y+lift, angle=pitch*yaw+roll*Math.sin(heading);
+    dragon.style.transform='translate3d('+(x-size/2)+'px,'+(bodyY-size/4)+'px,0) rotate('+angle+'rad)';
+    const havePoses=quarterPose.complete && quarterPose.naturalWidth && frontPose.complete && frontPose.naturalWidth;
+    const side=havePoses ? smooth(.66,.91,extent) : 1;
+    const front=havePoses ? 1-smooth(.15,.45,extent) : 0;
+    const quarter=1-side-front;
+    const noseX=.434*yaw*size;
+    // Register all three snouts on the same moving point during the change of view.
+    const sideWidth=(.77+.23*extent)*sign, quarterWidth=(.75+.23*extent)*sign;
+    sidePose.style.opacity=side;
+    sidePose.style.transform='translateX('+(noseX-.434*size*sideWidth)+'px) scaleX('+sideWidth+')';
+    quarterPose.style.opacity=quarter;
+    quarterPose.style.transform='translateX('+(noseX-.341*size*quarterWidth)+'px) scale('+quarterWidth+','+(1+.026*Math.sin(2*phase))+')';
+    frontPose.style.opacity=front;
+    frontPose.style.transform='translateX('+noseX+'px) scale('+(1-.15*extent)+','+(1+.032*Math.sin(2*phase))+')';
+    if(side>.001) rig?.(phase,bank,heat,pace);
     const beat=Math.sin(phase*2+.5)*.010-bank*.008;
-    const mx=(.055+.89*(.988-heat*.012)-.5)*size;
-    const my=(.075+.86*(.551+beat-.010*heat)-.5)*size*.5;
-    const dirX=yaw*Math.cos(pitch+.045),dirY=Math.sin(pitch+.045),norm=Math.max(.15,Math.hypot(dirX,dirY));
-    const mouth={x:x+yaw*(mx*c-my*s),y:bodyY+mx*s+my*c,dx:dirX/norm,dy:dirY/norm};
+    const mx=noseX-side*.011*heat*size*sign;
+    const my=(.051+side*.86*(beat-.010*heat))*size*.5;
+    const c=Math.cos(angle),s=Math.sin(angle);
+    const dirX=yaw,dirY=.09+.51*Math.sin(heading), norm=Math.hypot(dirX,dirY);
+    const mouth={x:x+mx*c-my*s,y:bodyY+mx*s+my*c,dx:(dirX*c-dirY*s)/norm,dy:(dirX*s+dirY*c)/norm};
     effects.draw(dt,mouth,size,active ? heat : 0);
   }
   function tick(now) {
     frame=0;
+    if(lastPreference!==reduced.matches) applyMotionPreference();
     if(!active || document.hidden) return;
     const dt=previous ? Math.min((now-previous)/1000,.05) : 1/60;
     previous=now; elapsed+=dt;
@@ -150,7 +195,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     drag=null; keys.clear();space=false;firePointer=null;burst=0;
   }
   function setActive(value) {
-    active=value;clearInputs();idle=0;vx=vy=0;heat=0;
+    active=value;clearInputs();turn=null;idle=0;vx=vy=0;heat=0;
     dragon.hidden=!value; fire.hidden=!value; land.textContent=value?"Land dragon":"Launch dragon";
     effects.clear();previous=0;
     if(!value) { cancelAnimationFrame(frame);frame=0;showHelp(false); }
@@ -158,7 +203,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   }
   dragon.addEventListener("pointerdown",e=>{
     if(!e.isPrimary || e.button!==0 || drag) return;
-    engage();
+    engage(); turn=null; dragon.dataset.pointerFocus="";
     drag={id:e.pointerId,px:e.clientX,py:e.clientY,ox:e.clientX-x,oy:e.clientY-y,
       startX:e.clientX,startY:e.clientY,last:e.timeStamp,fx:0,fy:0,moved:false};
     dragon.setPointerCapture(e.pointerId); dragon.focus({preventScroll:true});
@@ -177,6 +222,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     }
   }
   dragon.addEventListener("pointermove",recordPointer);
+  dragon.addEventListener("blur",()=>delete dragon.dataset.pointerFocus);
   function release(e) {
     if(!drag || drag.id!==e.pointerId) return;
     recordPointer(e);
@@ -186,6 +232,13 @@ export function startFlight(root, heroElement, assetURL = name => name) {
       vx=clamp(.32*vx+.68*drag.fx*fresh,-950,950);
       vy=clamp(.32*vy+.68*drag.fy*fresh,-950,950);
       if(Math.hypot(vx,vy)>360) burst=.43;
+      if(Math.hypot(vx,vy)<30) {
+        const box=flightArea();
+        if(x-box.left<7) vx=-72;
+        else if(box.right-x<7) vx=72;
+        else if(y-box.top<7) vy=-64;
+        else if(box.bottom-y<7) vy=64;
+      }
     } else {
       vx=vy=0;
       if(e.type==="pointerup") burst=.70;
@@ -205,20 +258,24 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   document.addEventListener("keydown",e=>{
     const origin=e.composedPath()[0];
     if(!active || e.ctrlKey || e.metaKey || e.altKey || (origin!==document.body && origin!==dragon)) return;
-    if(e.code in directions) {e.preventDefault();engage();keys.add(e.code);}
+    if(e.code in directions) {e.preventDefault();engage();delete dragon.dataset.pointerFocus;if(!keys.has(e.code)) turn=null;keys.add(e.code);}
     if(e.code==="Space") {e.preventDefault();engage();space=true;if(!e.repeat) burst=.48;}
   },events);
   document.addEventListener("keyup",e=>{keys.delete(e.code);if(e.code==="Space") space=false;},events);
   window.addEventListener("blur",clearInputs,events);
   document.addEventListener("visibilitychange",()=>{previous=0;if(document.hidden) clearInputs();else request();},events);
-  reduced.addEventListener("change",()=>{demo=false;setActive(!reduced.matches);},events);
+  function applyMotionPreference() {
+    if(lastPreference===reduced.matches) return;
+    lastPreference=reduced.matches; demo=false; setActive(!lastPreference);
+  }
+  reduced.addEventListener("change",applyMotionPreference,events);
   rigCanvas.addEventListener("webglcontextlost",e=>{e.preventDefault();rig=null;if(!lifecycle.signal.aborted) showFallback();});
   function showFallback() {
     dragon.classList.remove("rigged");
     if (!dragon.querySelector(".sprite")) {
       const image=new Image();
       image.className="sprite"; image.src=assetURL("gliding.webp"); image.alt=""; image.draggable=false;
-      dragon.append(image);
+      sidePose.append(image);
     }
   }
   function mountRig() {
