@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0c101a">
   <title>Benjamin Franklin A · Dragon flight</title>
   <link rel="icon" href="dragon.webp" type="image/webp">
-  <link rel="stylesheet" href="scene.css?v=3">
+  <link rel="stylesheet" href="scene.css?v=4">
 </head>
 <body>
   <div id="deep-sky" aria-hidden="true"><canvas id="stars"></canvas></div>
@@ -112,8 +112,8 @@ My Game Night Edition prompt became a playable game in <strong>Gemini Canvas</st
   <div id="flight" hidden>
     <canvas id="effects" aria-hidden="true"></canvas>
     <button type="button" id="creature" aria-label="Steer the dragon" aria-describedby="guide">
-      <span class="side-pose" aria-hidden="true">
-        <img id="texture" src="dragon.webp" alt="" draggable="false">
+      <span class="dragon-body" aria-hidden="true">
+        <span class="side-pose"><img id="texture" src="dragon.webp" alt="" draggable="false"></span>
         <canvas id="rig"></canvas>
       </span>
     </button>
@@ -129,7 +129,7 @@ My Game Night Edition prompt became a playable game in <strong>Gemini Canvas</st
   <footer class="back"><a href="https://github.com/lolsico9t5">Back to GitHub ↗</a></footer>
   <script type="module">
     import "./sky.js";
-    import { startFlight } from "./scene.js?v=3";
+    import { startFlight } from "./scene.js?v=4";
     startFlight(document, document.querySelector(".profile h1"));
   </script>
 </body>

@@ -1,4 +1,4 @@
-import { createWingRig } from "./wing-rig.js?v=2";
+import { createWingRig } from "./wing-rig.js?v=4";
 import { planEdgeTurn, advanceEdgeTurn } from "./flight-turn.js";
 import { createBreath } from "./fire.js";
 
@@ -9,15 +9,19 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   const dragon = root.querySelector("#creature");
   const rigCanvas = root.querySelector("#rig");
   const texture = root.querySelector("#texture");
+  const body = dragon.querySelector(".dragon-body");
   const sidePose = dragon.querySelector(".side-pose");
   function loadPose(filename) {
     const image=new Image();
-    image.className="turn-pose"; image.alt=""; image.draggable=false;
+    const layer=document.createElement("span");
+    layer.className="turn-pose";
+    image.alt=""; image.draggable=false;
     image.src=assetURL(filename);
-    dragon.append(image);
-    return image;
+    layer.append(image);body.append(layer);
+    return layer;
   }
   const quarterPose=loadPose("bank-quarter.webp"), frontPose=loadPose("bank-front.webp");
+  const turnTextures=[quarterPose.firstElementChild,frontPose.firstElementChild];
   const fire = root.querySelector("#fire");
   const land = root.querySelector("#land");
   const help = root.querySelector("#help");
@@ -31,6 +35,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   const blend = (rate,dt) => 1-Math.exp(-rate*dt);
   let width=1,height=1,size=180,x,y,vx=0,vy=0,face=-1,heading=Math.PI,headingRate=0,roll=0,pitch=0,phase=0,heat=0;
   let turn=null, lastPreference=reduced.matches;
+  let placed=false, wingLoad=.85, dockBounds;
   let active=!reduced.matches, drag=null, rig=null, frame=0, previous=0, elapsed=0, idle=0;
   let burst=0, firePointer=null, space=false, demo=!reduced.matches, helpTime=7, patrol=0;
 
@@ -50,16 +55,38 @@ export function startFlight(root, heroElement, assetURL = name => name) {
       x*=width/oldW; y*=height/oldH;
     }
     const ratio=Math.min(2,devicePixelRatio);
-    rigCanvas.width=Math.round(size*ratio);rigCanvas.height=Math.round(size*.5*ratio);
-    turn=null; effects.resize(width,height); constrain(); paint(0); request();
+    rigCanvas.width=Math.round(size*1.22*ratio);rigCanvas.height=Math.round(size*.5*1.64*ratio);
+    dockBounds=land.parentElement.getBoundingClientRect();
+    turn=null; effects.resize(width,height);
+    if(drag) positionInHand();
+    else if(placed) placeAt(x,y);
+    else constrain(flightArea());
+    paint(0); request();
   }
   function flightArea() {
     const mx=Math.min(size*.43,width*.35), my=Math.min(size*.23,height*.27);
     return {left:mx,right:width-mx,top:my,bottom:Math.max(my,height-my-64)};
   }
-  function constrain() {
-    const box=flightArea();
+  function constrain(box) {
     x=clamp(x,box.left,box.right); y=clamp(y,box.top,box.bottom);
+  }
+  function placeAt(px,py) {
+    // Let the player reach the edges, while keeping a patch large enough to pick up again.
+    const margin=Math.min(24,size*.14);
+    x=clamp(px,margin,width-margin); y=clamp(py,margin,height-margin);
+    const dock=dockBounds;
+    if(x>=dock.left-margin && y>=dock.top-margin && x<=dock.right+margin && y<=dock.bottom+margin) {
+      const left=dock.left-margin, top=dock.top-margin;
+      if(left>margin && x-left<y-top) x=left;
+      else y=top;
+    }
+  }
+  function moveBody() {
+    dragon.style.transform='translate3d('+(x-size/2)+'px,'+(y-size/4)+'px,0)';
+  }
+  function positionInHand() {
+    placeAt(drag.px-drag.ox,drag.py-drag.oy);
+    moveBody();
   }
   function request() {
     if(!frame && active && !document.hidden) frame=requestAnimationFrame(tick);
@@ -86,16 +113,19 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     const box=flightArea();
     // Up/down input is also how the player travels between profile sections.
     const cameraMoving=ky<0 && scrollY>1 || ky>0 && scrollY+height<document.documentElement.scrollHeight-1;
-    if(!drag && !turn && !cameraMoving) turn=planEdgeTurn(x,y,vx,vy,box,size);
+    // A flick released partly over an edge starts there and banks back into the normal flight area.
+    box.left=Math.min(box.left,x); box.right=Math.max(box.right,x);
+    box.top=Math.min(box.top,y); box.bottom=Math.max(box.bottom,y);
+    if(!drag && !placed && !turn && !cameraMoving) turn=planEdgeTurn(x,y,vx,vy,box,size);
     const banking=Boolean(turn);
     if(turn) {
       const next=advanceEdgeTurn(turn,dt);
       x=next.x; y=next.y; vx=next.vx; vy=next.vy;
       if(next.done) {turn=null;idle=0;}
     } else if(drag) {
-      [x,vx]=follow(x,vx,clamp(drag.px-drag.ox,box.left,box.right),dt);
-      [y,vy]=follow(y,vy,clamp(drag.py-drag.oy,box.top,box.bottom),dt);
-      pan(nearEdge(drag.py,Math.min(96,height*.16)),dt);
+      // Pointer events own the position. Velocity only steers the pose while held.
+      if(performance.now()-drag.lastMove>65) {vx*=Math.exp(-dt*20);vy*=Math.exp(-dt*20);}
+      if(drag.moved) pan(nearEdge(drag.py,Math.min(96,height*.16)),dt);
       idle=0;
     } else if(kx || ky) {
       const norm=Math.hypot(kx,ky), speed=Math.min(570,width*1.13);
@@ -105,7 +135,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
       idle=0;
     } else {
       idle+=dt;
-      if(idle>3.2 && !reduced.matches) {
+      if(!placed && idle>3.2 && !reduced.matches) {
         // Cruise around the currently visible part of the profile; scrolling remains in the reader's hands.
         patrol+=dt*.31;
         const goalX=width*.5+Math.cos(patrol)*(width*.5-size*.55);
@@ -132,7 +162,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     const targetPitch=speed>20 ? clamp(Math.atan2(vy,Math.max(38,Math.abs(vx))),-1.02,1.02) : .04*Math.sin(phase);
     pitch+=(targetPitch-pitch)*blend(7,dt);
     roll+=(-clamp(headingRate*.16,-.66,.66)-roll)*blend(7,dt);
-    constrain();
+    if(!drag && !placed) constrain(box);
   }
   function smooth(a,b,v) {
     const t=clamp((v-a)/(b-a),0,1);
@@ -143,11 +173,16 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     const pace=Math.min(1,Math.hypot(vx,vy)/520);
     const yaw=Math.cos(heading), extent=Math.abs(yaw), sign=yaw<0?-1:1;
     const bank=clamp(Math.sin(pitch)*yaw+roll,-1,1);
-    phase+=dt*(1.6+pace*2.5+heat*.58);
-    const lift=active && !reduced.matches ? Math.sin(2*phase+.4)*size*.009 : 0;
+    const climb=clamp(-vy/370,0,1);
+    const drifting=!drag && !placed && !keys.size && pace>.22 && !turn;
+    const targetLoad=drifting ? .28 : .82+climb*.26+Math.abs(bank)*.10;
+    wingLoad+=(targetLoad-wingLoad)*blend(3.6,dt);
+    phase+=dt*(2.75+climb*1.05+pace*.46+heat*.22);
+    const lift=active && !drag && !reduced.matches ? Math.cos(2*phase-.50)*size*.009*wingLoad : 0;
     const bodyY=y+lift, angle=pitch*yaw+roll*Math.sin(heading);
-    dragon.style.transform='translate3d('+(x-size/2)+'px,'+(bodyY-size/4)+'px,0) rotate('+angle+'rad)';
-    const havePoses=quarterPose.complete && quarterPose.naturalWidth && frontPose.complete && frontPose.naturalWidth;
+    moveBody();
+    body.style.transform='translateY('+lift+'px) rotate('+angle+'rad)';
+    const havePoses=turnTextures.every(image=>image.complete && image.naturalWidth);
     const side=havePoses ? smooth(.66,.91,extent) : 1;
     const front=havePoses ? 1-smooth(.15,.45,extent) : 0;
     const quarter=1-side-front;
@@ -157,10 +192,14 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     sidePose.style.opacity=side;
     sidePose.style.transform='translateX('+(noseX-.434*size*sideWidth)+'px) scaleX('+sideWidth+')';
     quarterPose.style.opacity=quarter;
-    quarterPose.style.transform='translateX('+(noseX-.341*size*quarterWidth)+'px) scale('+quarterWidth+','+(1+.026*Math.sin(2*phase))+')';
+    quarterPose.style.transform='translateX('+(noseX-.341*size*quarterWidth)+'px) scaleX('+quarterWidth+')';
     frontPose.style.opacity=front;
-    frontPose.style.transform='translateX('+noseX+'px) scale('+(1-.15*extent)+','+(1+.032*Math.sin(2*phase))+')';
-    if(side>.001) rig?.(phase,bank,heat,pace);
+    frontPose.style.transform='translateX('+noseX+'px) scaleX('+(1-.15*extent)+')';
+    rig?.(phase,bank,heat,pace,wingLoad,[
+      {weight:side,shift:noseX/size-.434*sideWidth,scale:sideWidth},
+      {weight:quarter,shift:noseX/size-.341*quarterWidth,scale:quarterWidth},
+      {weight:front,shift:noseX/size,scale:1-.15*extent}
+    ]);
     const beat=Math.sin(phase*2+.5)*.010-bank*.008;
     const mx=noseX-side*.011*heat*size*sign;
     const my=(.051+side*.86*(beat-.010*heat))*size*.5;
@@ -191,11 +230,15 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     if(!active) setActive(true);
   }
   function clearInputs() {
-    if(drag && dragon.hasPointerCapture(drag.id)) dragon.releasePointerCapture(drag.id);
-    drag=null; keys.clear();space=false;firePointer=null;burst=0;
+    if(drag) {
+      const id=drag.id;
+      drag=null; placed=true; vx=vy=0; turn=null;
+      if(dragon.hasPointerCapture(id)) dragon.releasePointerCapture(id);
+    }
+    keys.clear();space=false;firePointer=null;burst=0;
   }
   function setActive(value) {
-    active=value;clearInputs();turn=null;idle=0;vx=vy=0;heat=0;
+    active=value;clearInputs();turn=null;placed=false;idle=0;vx=vy=0;heat=0;
     dragon.hidden=!value; fire.hidden=!value; land.textContent=value?"Land dragon":"Launch dragon";
     effects.clear();previous=0;
     if(!value) { cancelAnimationFrame(frame);frame=0;showHelp(false); }
@@ -203,49 +246,73 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   }
   dragon.addEventListener("pointerdown",e=>{
     if(!e.isPrimary || e.button!==0 || drag) return;
-    engage(); turn=null; dragon.dataset.pointerFocus="";
-    drag={id:e.pointerId,px:e.clientX,py:e.clientY,ox:e.clientX-x,oy:e.clientY-y,
-      startX:e.clientX,startY:e.clientY,last:e.timeStamp,fx:0,fy:0,moved:false};
-    dragon.setPointerCapture(e.pointerId); dragon.focus({preventScroll:true});
+    e.preventDefault();
+    engage(); turn=null; vx=vy=0;
+    const rect=dragon.getBoundingClientRect();
+    // Anchor against the actual displayed position, including a pickup halfway through a glide.
+    drag={id:e.pointerId,px:e.clientX,py:e.clientY,ox:e.clientX-rect.left-rect.width/2,
+      oy:e.clientY-rect.top-rect.height/2,startX:e.clientX,startY:e.clientY,
+      moved:false,lastMove:e.timeStamp,samples:[{x:e.clientX,y:e.clientY,t:e.timeStamp}]};
+    dragon.dataset.pointerFocus="";
+    // The window listeners also finish the gesture on browsers that decline capture.
+    try {dragon.setPointerCapture(e.pointerId);} catch { /* The active pointer is still tracked by ID. */ }
+    dragon.focus({preventScroll:true});
   });
+  function samplePointer(e) {
+    const dx=e.clientX-drag.px,dy=e.clientY-drag.py;
+    if(!dx && !dy) return;
+    const dt=clamp((e.timeStamp-drag.lastMove)/1000,.004,.12);
+    const gain=blend(32,dt);
+    vx+=(clamp(dx/dt,-1400,1400)-vx)*gain;
+    vy+=(clamp(dy/dt,-1400,1400)-vy)*gain;
+    drag.px=e.clientX; drag.py=e.clientY; drag.lastMove=e.timeStamp;
+    drag.moved ||= Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>(e.pointerType==="touch"?6:4);
+    const samples=drag.samples;
+    samples.push({x:e.clientX,y:e.clientY,t:e.timeStamp});
+    while(samples.length>1 && (samples[0].t<e.timeStamp-110 || samples.length>64)) samples.shift();
+  }
   function recordPointer(e) {
     if(!drag || drag.id!==e.pointerId) return;
-    const dx=e.clientX-drag.px,dy=e.clientY-drag.py;
-    if(dx || dy) {
-      const dt=clamp((e.timeStamp-drag.last)/1000,1/240,.14);
-      const gain=blend(26,dt);
-      drag.fx+=(clamp(dx/dt,-1500,1500)-drag.fx)*gain;
-      drag.fy+=(clamp(dy/dt,-1500,1500)-drag.fy)*gain;
-      drag.last=e.timeStamp;
-      drag.px=e.clientX;drag.py=e.clientY;
-      drag.moved ||= Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>6;
-    }
+    for(const sample of e.getCoalescedEvents?.() ?? []) samplePointer(sample);
+    samplePointer(e);
+    if(drag.moved) positionInHand();
   }
-  dragon.addEventListener("pointermove",recordPointer);
-  dragon.addEventListener("blur",()=>delete dragon.dataset.pointerFocus);
+  function dropVelocity(e) {
+    const samples=drag.samples,first=samples[0],last=samples[samples.length-1];
+    const dt=(e.timeStamp-first.t)/1000;
+    if(!drag.moved || e.timeStamp-drag.lastMove>64 || dt<=0 || dt>.16) return null;
+    const dx=last.x-first.x,dy=last.y-first.y,distance=Math.hypot(dx,dy);
+    const speed=distance/dt;
+    if(distance<Math.min(38,width*.08) || speed<clamp(width*.62,440,720)) return null;
+    let path=0;
+    for(let i=1;i<samples.length;i++) path+=Math.hypot(samples[i].x-samples[i-1].x,samples[i].y-samples[i-1].y);
+    if(distance<path*.83) return null;
+    const gain=Math.min(speed*.72,900)/distance;
+    return {x:dx*gain,y:dy*gain};
+  }
   function release(e) {
     if(!drag || drag.id!==e.pointerId) return;
-    recordPointer(e);
-    const flick=drag.moved && e.type==="pointerup";
-    const fresh=Math.exp(-Math.max(0,e.timeStamp-drag.last)/85);
-    if(flick) {
-      vx=clamp(.32*vx+.68*drag.fx*fresh,-950,950);
-      vy=clamp(.32*vy+.68*drag.fy*fresh,-950,950);
-      if(Math.hypot(vx,vy)>360) burst=.43;
-      if(Math.hypot(vx,vy)<30) {
-        const box=flightArea();
-        if(x-box.left<7) vx=-72;
-        else if(box.right-x<7) vx=72;
-        else if(y-box.top<7) vy=-64;
-        else if(box.bottom-y<7) vy=64;
-      }
-    } else {
-      vx=vy=0;
-      if(e.type==="pointerup") burst=.70;
-    }
-    drag=null;idle=0;
+    // Capture loss can report (0,0). Only a real pointerup supplies a final placement.
+    if(e.type==="pointerup") recordPointer(e);
+    const moved=drag.moved, flick=e.type==="pointerup" ? dropVelocity(e) : null;
+    const id=drag.id;
+    drag=null; idle=0;
+    if(dragon.hasPointerCapture(id)) dragon.releasePointerCapture(id);
+    vx=flick?.x ?? 0; vy=flick?.y ?? 0;
+    if(moved || e.type!=="pointerup") placed=!flick;
+    if(flick && Math.hypot(vx,vy)>360) burst=.43;
+    if(!moved && e.type==="pointerup") burst=.70;
+    request();
   }
-  for(const type of ["pointerup","pointercancel","lostpointercapture"]) dragon.addEventListener(type,release);
+  // The physical pointer stays captured even when the visible wings turn away from it.
+  const pointerEvents={capture:true,signal:lifecycle.signal};
+  window.addEventListener("pointermove",recordPointer,pointerEvents);
+  dragon.addEventListener("dragstart",e=>e.preventDefault());
+  dragon.addEventListener("contextmenu",e=>e.preventDefault());
+  dragon.addEventListener("blur",()=>delete dragon.dataset.pointerFocus);
+  window.addEventListener("pointerup",release,pointerEvents);
+  window.addEventListener("pointercancel",release,pointerEvents);
+  dragon.addEventListener("lostpointercapture",release);
   dragon.addEventListener("click",e=>{ if(e.detail===0) {engage();burst=.7;} });
   fire.addEventListener("pointerdown",e=>{
     if(e.button!==0 || firePointer!==null) return;
@@ -258,7 +325,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   document.addEventListener("keydown",e=>{
     const origin=e.composedPath()[0];
     if(!active || e.ctrlKey || e.metaKey || e.altKey || (origin!==document.body && origin!==dragon)) return;
-    if(e.code in directions) {e.preventDefault();engage();delete dragon.dataset.pointerFocus;if(!keys.has(e.code)) turn=null;keys.add(e.code);}
+    if(e.code in directions) {e.preventDefault();engage();placed=false;delete dragon.dataset.pointerFocus;if(!keys.has(e.code)) turn=null;keys.add(e.code);}
     if(e.code==="Space") {e.preventDefault();engage();space=true;if(!e.repeat) burst=.48;}
   },events);
   document.addEventListener("keyup",e=>{keys.delete(e.code);if(e.code==="Space") space=false;},events);
@@ -272,15 +339,19 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   rigCanvas.addEventListener("webglcontextlost",e=>{e.preventDefault();rig=null;if(!lifecycle.signal.aborted) showFallback();});
   function showFallback() {
     dragon.classList.remove("rigged");
-    if (!dragon.querySelector(".sprite")) {
+    // The same skinned poses are available as compact loops on software-only devices.
+    const files=["gliding.webp","glide-quarter.webp","glide-front.webp"];
+    [sidePose,quarterPose,frontPose].forEach((layer,i)=>{
+      if(layer.querySelector(".sprite")) return;
       const image=new Image();
-      image.className="sprite"; image.src=assetURL("gliding.webp"); image.alt=""; image.draggable=false;
-      sidePose.append(image);
-    }
+      image.className="sprite"; image.alt=""; image.draggable=false;
+      image.src=assetURL(files[i]); layer.append(image);
+      image.decode().then(()=>layer.classList.add("has-sprite")).catch(()=>{});
+    });
   }
   function mountRig() {
     if(lifecycle.signal.aborted) return;
-    try {rig=createWingRig(rigCanvas,texture);} catch {rig=null;}
+    try {rig=createWingRig(rigCanvas,texture,turnTextures);} catch {rig=null;}
     if(rig) dragon.classList.add("rigged"); else showFallback();
     paint(0);request();
   }
@@ -288,7 +359,8 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   flight.hidden=false;
   resize();setActive(active);
   window.addEventListener("resize",resize,events);
-  texture.decode().then(mountRig).catch(()=>{});
+  Promise.all([texture,...turnTextures].map(image=>image.decode()))
+    .then(mountRig).catch(()=>{if(!lifecycle.signal.aborted) showFallback();});
 
   return () => {
     lifecycle.abort();
