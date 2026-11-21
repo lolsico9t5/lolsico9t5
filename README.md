@@ -103,12 +103,12 @@ My Game Night Edition prompt became a playable game in **Gemini Canvas**.
 
 ## <picture><img src="assets/icons/learning.svg" width="36" height="28" align="texttop" alt=""></picture>Currently learning
 
-- **n8n** - Workflow Automation
-- **Java** · Object-oriented design
-- **Data structures and algorithms** · Problem-solving and interview fundamentals
-- **Oracle SQL** · Database design and querying
-- **Python** · Backend development and automation
-- **AWS** · Cloud architecture
+➤ **n8n** - Workflow Automation
+➤ **Java** · Object-oriented design
+➤ **Data structures and algorithms** · Problem-solving and interview fundamentals
+➤ **Oracle SQL** · Database design and querying
+➤ **Python** · Backend development and automation
+➤ **AWS** · Cloud architecture
 
 ## <picture><img src="assets/icons/activity.svg" width="36" height="28" align="texttop" alt=""></picture>GitHub activity
 
