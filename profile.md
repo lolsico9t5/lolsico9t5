@@ -9,7 +9,7 @@
 
 Second-year computer science student building **AI-assisted software and cloud projects** from Tamil Nadu, India.
 
-<a href="#about"><img src="assets/links/nav-about.svg" width="80" height="34" align="absmiddle" alt="About"></a> · <a href="#projects"><img src="assets/links/nav-projects.svg" width="93" height="34" align="absmiddle" alt="Projects"></a> · <a href="#experience"><img src="assets/links/nav-experience.svg" width="112" height="34" align="absmiddle" alt="Experience"></a> · <a href="#recognition"><img src="assets/links/nav-recognition.svg" width="119" height="34" align="absmiddle" alt="Recognition"></a> · <a href="#skills"><img src="assets/links/nav-skills.svg" width="69" height="34" align="absmiddle" alt="Skills"></a> · <a href="#learning"><img src="assets/links/nav-learning.svg" width="96" height="34" align="absmiddle" alt="Learning"></a> · <a href="#contact"><img src="assets/links/nav-contact.svg" width="87" height="34" align="absmiddle" alt="Contact"></a>
+<a href="#about"><img src="assets/links/nav-about.svg" width="80" height="34" align="absmiddle" alt="About"></a> · <a href="#projects"><img src="assets/links/nav-projects.svg" width="93" height="34" align="absmiddle" alt="Projects"></a> · <a href="#experience"><img src="assets/links/nav-experience.svg" width="112" height="34" align="absmiddle" alt="Experience"></a> · <a href="#certificates"><img src="assets/links/nav-certificates.svg" width="119" height="34" align="absmiddle" alt="Certificates"></a> · <a href="#recognition"><img src="assets/links/nav-recognition.svg" width="119" height="34" align="absmiddle" alt="Recognition"></a> · <a href="#skills"><img src="assets/links/nav-skills.svg" width="69" height="34" align="absmiddle" alt="Skills"></a> · <a href="#learning"><img src="assets/links/nav-learning.svg" width="96" height="34" align="absmiddle" alt="Learning"></a> · <a href="#contact"><img src="assets/links/nav-contact.svg" width="87" height="34" align="absmiddle" alt="Contact"></a>
 
 ## <picture><img src="assets/icons/about.svg" width="36" height="28" align="texttop" alt=""></picture>About
 
@@ -66,6 +66,39 @@ Led campus cloud engineering initiatives focused on building and **deploying sof
 **Campus Mantri, GeeksforGeeks**<br>
 *June 2026 to present*<br>
 Share technical learning opportunities with fellow students through LinkedIn and **direct campus outreach**.
+
+## <picture><img src="assets/icons/certificates.svg" width="36" height="28" align="texttop" alt=""></picture>Certificates
+
+<table>
+<tr>
+<td valign="top">
+<a href="https://lolsico9t5.github.io/portfolio/certificates/oracle-sql-databases.pdf"><img src="assets/certificates/oracle-sql-databases-mini.webp" width="310" alt="Open the full Oracle SQL Databases certificate"></a><br>
+<strong>Oracle SQL Databases</strong><br>
+<em>LearnQuest · Coursera · Oct 2026</em><br>
+<span><a href="https://lolsico9t5.github.io/portfolio/certificates/oracle-sql-databases.pdf">View certificate</a> · <a href="https://coursera.org/verify/specialization/JOAMFPAMRJ9M">Verify</a></span>
+</td>
+<td valign="top">
+<a href="https://lolsico9t5.github.io/portfolio/certificates/java-programming-fundamentals.pdf"><img src="assets/certificates/java-programming-fundamentals-mini.webp" width="310" alt="Open the full Java Programming Fundamentals certificate"></a><br>
+<strong>Java Programming Fundamentals</strong><br>
+<em>IBM &amp; SkillUp · Coursera · May 2026</em><br>
+<span><a href="https://lolsico9t5.github.io/portfolio/certificates/java-programming-fundamentals.pdf">View certificate</a> · <a href="https://coursera.org/verify/specialization/S0Q4EZQIEGLV">Verify</a></span>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<a href="https://lolsico9t5.github.io/portfolio/certificates/generative-ai-learning-path.pdf"><img src="assets/certificates/generative-ai-learning-path-mini.webp" width="310" alt="Open the full Introduction to Generative AI Learning Path certificate"></a><br>
+<strong>Introduction to Generative AI Learning Path</strong><br>
+<em>Google Cloud · Coursera · Apr 2026</em><br>
+<span><a href="https://lolsico9t5.github.io/portfolio/certificates/generative-ai-learning-path.pdf">View certificate</a> · <a href="https://coursera.org/verify/specialization/CMOPS17TE8YB">Verify</a></span>
+</td>
+<td valign="top">
+<a href="https://lolsico9t5.github.io/portfolio/certificates/joy-of-computing-python.pdf"><img src="assets/certificates/joy-of-computing-python-mini.webp" width="310" alt="Open the full The Joy of Computing using Python certificate"></a><br>
+<strong>The Joy of Computing using Python</strong><br>
+<em>NPTEL · IIT Madras · Jan–Apr 2026</em><br>
+<span><a href="https://lolsico9t5.github.io/portfolio/certificates/joy-of-computing-python.pdf">View certificate</a> · <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL26CS84S105050102804291102">Verify</a></span>
+</td>
+</tr>
+</table>
 
 ## <picture><img src="assets/icons/recognition.svg" width="36" height="28" align="texttop" alt=""></picture>Recognition
 
