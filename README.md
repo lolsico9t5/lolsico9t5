@@ -9,7 +9,7 @@
 
 Second-year computer science student building **AI-assisted software and cloud projects** from Tamil Nadu, India.
 
-<a href="https://lolsico9t5.github.io/lolsico9t5/"><picture><img src="docs/dragon.webp" width="43" height="22" align="absmiddle" alt=""></picture> <strong>Fly the dragon through my profile ↗</strong></a>
+<a href="https://lolsico9t5.github.io/lolsico9t5/?flight=2"><picture><img src="docs/dragon.webp" width="43" height="22" align="absmiddle" alt=""></picture> <strong>Fly the dragon through my profile ↗</strong></a>
 
 <a href="#about"><img src="assets/links/nav-about.svg" width="80" height="34" align="absmiddle" alt="About"></a> · <a href="#projects"><img src="assets/links/nav-projects.svg" width="93" height="34" align="absmiddle" alt="Projects"></a> · <a href="#experience"><img src="assets/links/nav-experience.svg" width="112" height="34" align="absmiddle" alt="Experience"></a> · <a href="#recognition"><img src="assets/links/nav-recognition.svg" width="119" height="34" align="absmiddle" alt="Recognition"></a> · <a href="#skills"><img src="assets/links/nav-skills.svg" width="69" height="34" align="absmiddle" alt="Skills"></a> · <a href="#learning"><img src="assets/links/nav-learning.svg" width="96" height="34" align="absmiddle" alt="Learning"></a> · <a href="#contact"><img src="assets/links/nav-contact.svg" width="87" height="34" align="absmiddle" alt="Contact"></a>
 

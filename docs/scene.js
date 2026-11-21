@@ -1,4 +1,4 @@
-import { createWingRig } from "./wing-rig.js";
+import { createWingRig } from "./wing-rig.js?v=2";
 import { createBreath } from "./fire.js";
 
 export function startFlight(root, heroElement, assetURL = name => name) {

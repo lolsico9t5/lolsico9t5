@@ -20,7 +20,7 @@ def build(rendered):
     rendered = re.sub(r'(src|srcset|href)="((?:assets/|banner\.svg)[^"]*)"',
                       lambda m: f'{m[1]}="{MEDIA}{m[2]}"', rendered)
     rendered = rendered.replace(' dir="auto"', '')
-    rendered = re.sub(r'\s*<p>\s*<a href="https://lolsico9t5\.github\.io/lolsico9t5/"[^>]*>.*?</a>\s*</p>',
+    rendered = re.sub(r'\s*<p>\s*<a href="https://lolsico9t5\.github\.io/lolsico9t5/(?:\?[^"]*)?"[^>]*>.*?</a>\s*</p>',
                       '', rendered, count=1, flags=re.S)
     page = PAGE.read_text(encoding="utf-8")
     page = re.sub(r'(?<=<!-- profile start -->).*?(?=<!-- profile end -->)',
