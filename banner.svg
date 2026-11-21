@@ -86,6 +86,15 @@
     @keyframes twinkle {0%,100% {opacity:.45} 50% {opacity:1}}
     @keyframes transit {0%,23% {opacity:0;transform:translate(0,0)} 25% {opacity:.85} 33%,100% {opacity:0;transform:translate(-132px,56px)}}
     @keyframes traverse {0%,12% {opacity:0;stroke-dashoffset:8} 20% {opacity:.84} 72% {opacity:.84} 84%,100% {opacity:0;stroke-dashoffset:-108}}
+
+    @keyframes starlit-name {0%,45%,100% {fill:#fff6eb} 61% {fill:#cbd7ff} 76% {fill:#ffdedb}}
+    @keyframes refract {0%,45%,100% {stop-color:#cfccff} 63% {stop-color:#fff0d9} 79% {stop-color:#b9ddff}}
+    @media (prefers-reduced-motion:no-preference) {
+      .nameplate text:first-child {animation:starlit-name 8s ease-in-out infinite}
+      #name stop {animation:refract 8s ease-in-out infinite}
+      #name stop:nth-child(2) {animation-delay:.7s}
+      #name stop:nth-child(3) {animation-delay:1.4s}
+    }
   </style>
   <g clip-path="url(#panel)">
     <rect width="1000" height="336" fill="#090b20"/>
@@ -114,7 +123,7 @@
     <g transform="translate(539 42)">
       <g class="meteor" opacity="0"><path d="M0 0 72-29 2 1.5Z" fill="url(#trail)"/><circle r="1.45" fill="#fff6ea"/></g>
     </g>
-    <g font-family="Georgia, 'Times New Roman', serif" letter-spacing="-4.7">
+    <g class="nameplate" font-family="Georgia, 'Times New Roman', serif" letter-spacing="-4.7">
       <text x="59" y="152" font-size="101" fill="#fff6eb">Benjamin</text>
       <text x="62" y="243" font-size="102" font-style="italic" fill="url(#name)">Franklin A</text>
     </g>

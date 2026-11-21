@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="87" height="34" viewBox="0 0 87 34" role="img" aria-labelledby="label">
   <title id="label">Contact</title>
   <defs><linearGradient id="enamel" x2=".95" y2=".8"><stop stop-color="#3d2f4b"/><stop offset="1" stop-color="#15182c"/></linearGradient></defs>
+  <style>
+    @keyframes glimmer {0%,44%,100% {fill:#f5f2ff} 59% {fill:#afcfff} 75% {fill:#ffdacb}}
+    @keyframes glint {0%,44%,100% {opacity:.68} 67% {opacity:1}}
+    @media (prefers-reduced-motion:no-preference) {
+      text {animation:glimmer 6.8s -0.35s ease-in-out infinite}
+      g {animation:glint 6.8s -0.35s ease-in-out infinite}
+    }
+  </style>
   <rect x=".8" y="1.8" width="85.4" height="30.4" rx="15.2" fill="url(#enamel)" stroke="#edbed7" stroke-opacity=".67"/>
   <g transform="translate(4.2 5.6) scale(.67)">
     <g fill="none" stroke="#edbed7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="10" width="20" height="14" rx="2"/><path d="M8.4 11.6l8.6 6.2 8.6-6.2"/></g>

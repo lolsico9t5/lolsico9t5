@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="112" height="34" viewBox="0 0 112 34" role="img" aria-labelledby="label">
   <title id="label">Experience</title>
   <defs><linearGradient id="enamel" x2=".95" y2=".8"><stop stop-color="#373153"/><stop offset="1" stop-color="#15182c"/></linearGradient></defs>
+  <style>
+    @keyframes glimmer {0%,44%,100% {fill:#f5f2ff} 59% {fill:#afcfff} 75% {fill:#ffdacb}}
+    @keyframes glint {0%,44%,100% {opacity:.68} 67% {opacity:1}}
+    @media (prefers-reduced-motion:no-preference) {
+      text {animation:glimmer 6.8s -0.70s ease-in-out infinite}
+      g {animation:glint 6.8s -0.70s ease-in-out infinite}
+    }
+  </style>
   <rect x=".8" y="1.8" width="110.4" height="30.4" rx="15.2" fill="url(#enamel)" stroke="#c3b4fa" stroke-opacity=".67"/>
   <g transform="translate(4.2 5.6) scale(.67)">
     <g fill="none" stroke="#c3b4fa" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7.4" y="12" width="19.2" height="13.2" rx="2.3"/><path d="M13 12V9.7q0-1.7 1.8-1.7h4.4q1.8 0 1.8 1.7V12M8 17q9 4.9 18 0"/></g>

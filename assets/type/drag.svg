@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="161" height="27" viewBox="0 0 161 27" role="img" aria-label="Drag the dragon ↗">
+<defs>
+    <linearGradient id="plate" x2="1" y2=".26"><stop stop-color="#13182d"/><stop offset=".68" stop-color="#131526"/><stop offset="1" stop-color="#1c192f"/></linearGradient>
+    <linearGradient id="ink"><stop class="s0" offset="0.0" stop-color="#e0dff3"/><stop class="s1" offset="0.25" stop-color="#d1d2ed"/><stop class="s2" offset="0.5" stop-color="#d9d9f0"/><stop class="s3" offset="0.75" stop-color="#d7d6ec"/><stop class="s4" offset="1.0" stop-color="#dfdced"/></linearGradient>
+    <linearGradient id="wire" gradientUnits="userSpaceOnUse" x1="16" x2="186"><stop stop-color="#a5b6ed"/><stop offset=".5" stop-color="#b8a5de"/><stop offset="1" stop-color="#efc6b4"/></linearGradient>
+    </defs>
+    <style>
+    .strong{font-weight:700}.em{font-style:italic}.code{font-family:'Courier New',monospace}
+    @keyframes luster{0%,53%,100%{stop-color:#d7d9ef}68%{stop-color:#fff0df}81%{stop-color:#c7c9ff}}
+    @keyframes trace{0%,12%{stroke-dashoffset:108;opacity:0}22%{opacity:.95}78%{opacity:.8}89%,100%{stroke-dashoffset:-12;opacity:0}}
+    @media(prefers-reduced-motion:no-preference){#ink stop{animation:luster 7s ease-in-out infinite}#ink .s0{animation-delay:-2.20s}#ink .s1{animation-delay:-1.86s}#ink .s2{animation-delay:-1.52s}#ink .s3{animation-delay:-1.18s}#ink .s4{animation-delay:-0.84s}.trace{animation:trace 6.4s ease-in-out infinite}}
+    </style>
+<rect x=".5" y=".5" width="160" height="26" rx="5" fill="url(#plate)" stroke="#55516c"/><text x="10" y="19" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="url(#ink)">Drag the dragon ↗</text>
+</svg>
