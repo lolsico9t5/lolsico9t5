@@ -56,24 +56,24 @@ An n8n workflow that turns Gmail snippets into a **prioritized inbox in Notion**
 
 ## <picture><img src="assets/icons/experience.svg" width="36" height="28" align="texttop" alt=""></picture>Experience and leadership
 
-★**C++ Programming Intern, Thiranex**<br>
+➤**C++ Programming Intern, Thiranex**<br>
 *April to May 2026*<br>
 Built four console applications using **object-oriented C++**, including a library management system and a tic-tac-toe game.
 
-★**Student Builder Campus Leader, AWS**<br>
+➤**Student Builder Campus Leader, AWS**<br>
 *August to September 2026*<br>
 Led campus cloud engineering initiatives focused on building and **deploying software on AWS**.
 
-★**Campus Mantri, GeeksforGeeks**<br>
+➤**Campus Mantri, GeeksforGeeks**<br>
 *June 2026 to present*<br>
 Share technical learning opportunities with fellow students through LinkedIn and **direct campus outreach**.
 
 ## <picture><img src="assets/icons/recognition.svg" width="36" height="28" align="texttop" alt=""></picture>Recognition
 
-**EUREKA! 2026, Startup Pitching** · **First place**<br>
+➤**EUREKA! 2026, Startup Pitching** · **First place**<br>
 My team, **Zenith Labs**, won the startup pitching competition at EUREKA! 2026, organized by E-Cell, IIT Bombay.
 
-**Google Student Ambassador Program** · **Top Prompt Creator**<br>
+➤**Google Student Ambassador Program** · **Top Prompt Creator**<br>
 My Game Night Edition prompt became a playable game in **Gemini Canvas**.
 
 <a name="skills"></a>
