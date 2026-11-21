@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="228" height="34" viewBox="0 0 228 34" role="img" aria-label="Currently learning">
+<defs>
+    <linearGradient id="plate" x2="1" y2=".26"><stop stop-color="#13182d"/><stop offset=".68" stop-color="#131526"/><stop offset="1" stop-color="#1c192f"/></linearGradient>
+    <linearGradient id="ink"><stop class="s0" offset="0.0" stop-color="#e0dff3"/><stop class="s1" offset="0.25" stop-color="#d1d2ed"/><stop class="s2" offset="0.5" stop-color="#d9d9f0"/><stop class="s3" offset="0.75" stop-color="#d7d6ec"/><stop class="s4" offset="1.0" stop-color="#dfdced"/></linearGradient>
+    <linearGradient id="wire" gradientUnits="userSpaceOnUse" x1="16" x2="186"><stop stop-color="#a5b6ed"/><stop offset=".5" stop-color="#b8a5de"/><stop offset="1" stop-color="#efc6b4"/></linearGradient>
+    </defs>
+    <style>.strong{font-weight:700}.em{font-style:italic}.code{font-family:Courier New,monospace}</style>
+<rect x=".5" y=".5" width="227" height="33" rx="7" fill="url(#plate)" stroke="#55516c"/><text x="10" y="25" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="url(#ink)">Currently learning</text>
+</svg>

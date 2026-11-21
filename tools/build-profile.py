@@ -180,4 +180,32 @@ while i<len(blocks):
     i+=1
 out += [f'<p align="center">\n<a href="{scene}"><picture>\n  <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/space-dragon.webp">\n  <img src="assets/space-dragon.webp" width="100%" alt="A silver-lavender space dragon beats its wings above a violet nebula. Open the scene to drag it.">\n</picture></a>\n</p>',
         f'<a href="{scene}">{label("Drag the dragon ↗","drag")}</a> · <a href="profile.md">{label("Read as text","read-as-text")}</a>']
-(root/"README.md").write_text("\n\n".join(out)+"\n",encoding="utf-8")
+# GitHub embeds SVGs as external images. Choose an actual still file in the
+# parent picture so motion preferences also work across that image boundary.
+def still_asset(src):
+    still_path = src.replace("assets/", "assets/still/", 1)
+    destination = root / still_path
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    data = (root / src).read_text(encoding="utf-8")
+    fixed = re.sub(r"<style>.*?</style>", '<style>.strong{font-weight:700}.em{font-style:italic}.code{font-family:Courier New,monospace}</style>', data, flags=re.S)
+    destination.write_text(fixed,encoding="utf-8")
+    return still_path
+
+def still_sources(match):
+    picture = match.group()
+    img = re.search(r'<img src="(assets/(?:type/[^"]+|links/nav-[^"]+))"',picture)
+    if not img:
+        return picture
+    sources = []
+    reduced = "(prefers-reduced-motion: reduce)"
+    for media, src in re.findall(r'<source media="([^"]+)" srcset="([^"]+)">',picture):
+        selector = ", ".join(reduced+" and "+q.strip() for q in media.split(","))
+        sources.append(f'<source media="{selector}" srcset="{still_asset(src)}">')
+    sources.append(f'<source media="{reduced}" srcset="{still_asset(img[1])}">')
+    separator = "\n  " if "\n" in picture else ""
+    return picture.replace("<picture>","<picture>"+separator+separator.join(sources),1)
+
+readme = "\n\n".join(out)+"\n"
+readme = re.sub(r'(<img src="assets/links/nav-[^"]+"[^>]+>)',r'<picture>\1</picture>',readme)
+readme = re.sub(r'<picture>.*?</picture>',still_sources,readme,flags=re.S)
+(root/"README.md").write_text(readme,encoding="utf-8")

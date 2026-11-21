@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="192" viewBox="0 0 500 192" role="img" aria-label="n8n - Workflow Automation Java · Object-oriented design Data structures and algorithms · Problem-solving and interview fundamentals Oracle SQL · Database design and querying Python · Backend development and automation AWS · Cloud architecture">
+<defs>
+    <linearGradient id="plate" x2="1" y2=".26"><stop stop-color="#13182d"/><stop offset=".68" stop-color="#131526"/><stop offset="1" stop-color="#1c192f"/></linearGradient>
+    <linearGradient id="ink"><stop class="s0" offset="0.0" stop-color="#e0dff3"/><stop class="s1" offset="0.25" stop-color="#d1d2ed"/><stop class="s2" offset="0.5" stop-color="#d9d9f0"/><stop class="s3" offset="0.75" stop-color="#d7d6ec"/><stop class="s4" offset="1.0" stop-color="#dfdced"/></linearGradient>
+    <linearGradient id="wire" gradientUnits="userSpaceOnUse" x1="16" x2="186"><stop stop-color="#a5b6ed"/><stop offset=".5" stop-color="#b8a5de"/><stop offset="1" stop-color="#efc6b4"/></linearGradient>
+    </defs>
+    <style>.strong{font-weight:700}.em{font-style:italic}.code{font-family:Courier New,monospace}</style>
+<rect x=".5" y=".5" width="499" height="191" rx="9" fill="url(#plate)" stroke="#424059"/><g font-family="Arial,Helvetica,sans-serif" font-size="16" fill="url(#ink)"><circle cx="18" cy="23" r="2" fill="#c8b4e2"/>
+<text x="29" y="28" xml:space="preserve"><tspan class="strong">n8n</tspan><tspan class="body"> </tspan><tspan class="body">-</tspan><tspan class="body"> </tspan><tspan class="body">Workflow</tspan><tspan class="body"> </tspan><tspan class="body">Automation</tspan></text>
+<circle cx="18" cy="46" r="2" fill="#c8b4e2"/>
+<text x="29" y="51" xml:space="preserve"><tspan class="strong">Java</tspan><tspan class="body"> </tspan><tspan class="body">·</tspan><tspan class="body"> </tspan><tspan class="body">Object-oriented</tspan><tspan class="body"> </tspan><tspan class="body">design</tspan></text>
+<circle cx="18" cy="69" r="2" fill="#c8b4e2"/>
+<text x="29" y="74" xml:space="preserve"><tspan class="strong">Data</tspan><tspan class="strong"> </tspan><tspan class="strong">structures</tspan><tspan class="strong"> </tspan><tspan class="strong">and</tspan><tspan class="strong"> </tspan><tspan class="strong">algorithms</tspan><tspan class="body"> </tspan><tspan class="body">·</tspan><tspan class="body"> </tspan><tspan class="body">Problem-solving</tspan><tspan class="body"> </tspan><tspan class="body">and</tspan></text>
+<text x="29" y="97" xml:space="preserve"><tspan class="body">interview</tspan><tspan class="body"> </tspan><tspan class="body">fundamentals</tspan></text>
+<circle cx="18" cy="115" r="2" fill="#c8b4e2"/>
+<text x="29" y="120" xml:space="preserve"><tspan class="strong">Oracle</tspan><tspan class="strong"> </tspan><tspan class="strong">SQL</tspan><tspan class="body"> </tspan><tspan class="body">·</tspan><tspan class="body"> </tspan><tspan class="body">Database</tspan><tspan class="body"> </tspan><tspan class="body">design</tspan><tspan class="body"> </tspan><tspan class="body">and</tspan><tspan class="body"> </tspan><tspan class="body">querying</tspan></text>
+<circle cx="18" cy="138" r="2" fill="#c8b4e2"/>
+<text x="29" y="143" xml:space="preserve"><tspan class="strong">Python</tspan><tspan class="body"> </tspan><tspan class="body">·</tspan><tspan class="body"> </tspan><tspan class="body">Backend</tspan><tspan class="body"> </tspan><tspan class="body">development</tspan><tspan class="body"> </tspan><tspan class="body">and</tspan><tspan class="body"> </tspan><tspan class="body">automation</tspan></text>
+<circle cx="18" cy="161" r="2" fill="#c8b4e2"/>
+<text x="29" y="166" xml:space="preserve"><tspan class="strong">AWS</tspan><tspan class="body"> </tspan><tspan class="body">·</tspan><tspan class="body"> </tspan><tspan class="body">Cloud</tspan><tspan class="body"> </tspan><tspan class="body">architecture</tspan></text></g><path d="M15 183h135.0" fill="none" stroke="url(#wire)" opacity=".52"/><path class="trace" d="M15 183h135.0" pathLength="100" fill="none" stroke="#f5ddce" stroke-width="1.6" stroke-dasharray="9 108" opacity="0"/><path transform="translate(156.0 183)" d="M0-2.6Q.35-.4 2.5 0Q.35.4 0 2.6Q-.35.4-2.5 0Q-.35-.4 0-2.6Z" fill="#e5c5c3"/>
+</svg>
