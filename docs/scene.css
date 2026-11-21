@@ -1,0 +1,26 @@
+:root { color-scheme: dark; font-family: "Segoe UI", system-ui, sans-serif; color: #f2eafa; background: #090b18; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+#scene { position: relative; overflow: hidden; isolation: isolate; width: 100%; height: 100vh; height: 100svh; min-height: 270px; background: #090b18 url("sky.webp") 50% 50% / cover no-repeat; }
+#scene::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #080b1938, transparent 18% 78%, #07091772); }
+header, footer { position: absolute; z-index: 2; left: clamp(18px, 4.2vw, 70px); right: clamp(18px, 4.2vw, 70px); display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+header { top: clamp(18px, 4vh, 52px); }
+footer { bottom: max(18px, 4vh, env(safe-area-inset-bottom)); }
+h1 { margin: 0; font: normal clamp(24px, 3vw, 44px)/1.05 Georgia, serif; letter-spacing: -.045em; color: #f3eafa; }
+a, button, p { font: 500 clamp(12px, 1.3vw, 15px)/1.4 "Segoe UI", system-ui, sans-serif; }
+a, button { color: #efe8fc; text-decoration: none; }
+a:hover, button:hover { color: white; text-decoration: underline; text-underline-offset: 4px; }
+a span { margin-left: 4px; color: #d6b5e7; }
+p { margin: 0; color: #e5dfef; }
+p span[aria-hidden] { color: #a99abd; padding: 0 .3em; }
+button { border: 1px solid #9b91b385; border-radius: 24px; padding: 8px 14px; background: #111329ca; cursor: pointer; flex-shrink: 0; }
+:focus-visible { outline: 2px solid #f2ceac; outline-offset: 5px; }
+#creature { position: absolute; top: 0; left: 0; width: min(57vw, 120vh, 1240px); aspect-ratio: 2 / 1; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; transform: translate(50%, 50%); will-change: transform; border-radius: 38%; }
+#creature[data-held] { cursor: grabbing; }
+#creature img, #creature canvas { position: absolute; width: 100%; height: 100%; inset: 0; pointer-events: none; object-fit: contain; }
+#creature canvas { display: none; }
+#creature.rigged canvas { display: block; }
+#creature.rigged img { visibility: hidden; }
+.touch { display: none; }
+@media (max-width: 600px) { #scene { background-position: 15% center; } #creature { width: 76vw; } }
+@media (pointer: coarse) { .keys, p span[aria-hidden] { display: none; } .touch { display: inline; } }

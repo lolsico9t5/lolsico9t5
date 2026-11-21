@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e20">
+  <title>Space dragon · Benjamin Franklin A</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23101529'/%3E%3Cpath d='m20 5 3 12 12 3-12 3-3 12-3-12-12-3 12-3Z' fill='%23c7beff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="scene.css">
+</head>
+<body>
+  <main id="scene" aria-labelledby="title">
+    <header><h1 id="title">Space dragon</h1><a href="https://github.com/lolsico9t5">GitHub profile <span aria-hidden="true">↗</span></a></header>
+    <div id="creature" tabindex="0" role="group" aria-label="Flying space dragon" aria-describedby="guide">
+      <img id="texture" src="dragon.webp" alt="" draggable="false">
+      <canvas id="rig" aria-hidden="true"></canvas>
+    </div>
+    <footer><p id="guide">Drag the dragon <span aria-hidden="true">·</span> <span class="keys">or use the arrow keys</span><span class="touch">with your finger</span></p><button id="motion" type="button" hidden>Pause flight</button></footer>
+  </main>
+  <script type="module" src="scene.js"></script>
+</body>
+</html>
