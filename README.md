@@ -116,10 +116,7 @@ My Game Night Edition prompt became a playable game in **Gemini Canvas**.
   <a href="https://github.com/lolsico9t5"><picture>
     <source media="(prefers-reduced-motion: reduce)" srcset="assets/still/streak-orbit.webp">
     <img src="assets/streak-orbit.svg" width="620" align="top" alt="">
-  </picture><br><picture>
-    <source media="(prefers-reduced-motion: no-preference)" srcset="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=121529&amp;border=585777&amp;stroke=434565&amp;ring=B8BAFF&amp;fire=F3BDCD&amp;currStreakNum=F4F2FF&amp;currStreakLabel=F4F2FF&amp;sideNums=FFDCB8&amp;sideLabels=F4F2FF&amp;dates=C8CCDF&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=false">
-    <img src="https://streak-stats.demolab.com/?user=lolsico9t5&amp;background=121529&amp;border=585777&amp;stroke=434565&amp;ring=B8BAFF&amp;fire=F3BDCD&amp;currStreakNum=F4F2FF&amp;currStreakLabel=F4F2FF&amp;sideNums=FFDCB8&amp;sideLabels=F4F2FF&amp;dates=C8CCDF&amp;border_radius=4&amp;card_width=550&amp;timezone=Asia%2FKolkata&amp;disable_animations=true" width="620" align="top" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak">
-  </picture></a>
+  </picture><br><img src="https://raw.githubusercontent.com/lolsico9t5/lolsico9t5/activity-card/github-streak.svg" width="620" align="top" alt="GitHub activity for lolsico9t5: total contributions, current streak, and longest streak"></a>
 </p>
 
 <a name="contact"></a>

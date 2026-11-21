@@ -1,4 +1,3 @@
-import { createWingRig } from "./wing-rig.js?v=4";
 import { planEdgeTurn, advanceEdgeTurn } from "./flight-turn.js";
 import { createBreath } from "./fire.js";
 
@@ -8,7 +7,6 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   const flight = root.querySelector("#flight");
   const dragon = root.querySelector("#creature");
   const rigCanvas = root.querySelector("#rig");
-  const texture = root.querySelector("#texture");
   const body = dragon.querySelector(".dragon-body");
   const sidePose = dragon.querySelector(".side-pose");
   function loadPose(filename) {
@@ -35,9 +33,10 @@ export function startFlight(root, heroElement, assetURL = name => name) {
   const blend = (rate,dt) => 1-Math.exp(-rate*dt);
   let width=1,height=1,size=180,x,y,vx=0,vy=0,face=-1,heading=Math.PI,headingRate=0,roll=0,pitch=0,phase=0,heat=0;
   let turn=null, lastPreference=reduced.matches;
-  let placed=false, wingLoad=.85, dockBounds;
+  let placed=false, wingLoad=.85, dockBounds, pitchRate=0, tailLean=0;
   let active=!reduced.matches, drag=null, rig=null, frame=0, previous=0, elapsed=0, idle=0;
-  let burst=0, firePointer=null, space=false, demo=!reduced.matches, helpTime=7, patrol=0;
+  let burst=0, firePointer=null, space=false, demo=!reduced.matches, helpTime=7;
+  let orbitAngle=null, orbitDirection=1;
 
   // Fixed screen coordinates keep the dragon within reach at every scroll position.
   // Edge steering advances the document underneath it, including during a continuous touch drag.
@@ -107,6 +106,24 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     const delta=position-goal, spring=velocity+omega*delta, decay=Math.exp(-omega*dt);
     return [goal+(delta+spring*dt)*decay,(velocity-omega*spring*dt)*decay];
   }
+  function cruise(box,dt) {
+    // Join the nearest part of the orbit, then steer along its tangent.
+    const cx=(box.left+box.right)/2, cy=box.top+(box.bottom-box.top)*.44;
+    const rx=Math.max(1,(box.right-box.left)*.40), ry=Math.max(1,(box.bottom-box.top)*.28);
+    if(orbitAngle===null) {
+      orbitAngle=Math.atan2((y-cy)/ry,(x-cx)/rx);
+      const forward=Math.hypot(vx,vy)>20 ? vx : face*30;
+      orbitDirection=(-rx*Math.sin(orbitAngle)*forward+ry*Math.cos(orbitAngle)*vy)<0 ? -1 : 1;
+    }
+    const speed=Math.min(145,width*.25);
+    const angularSpeed=orbitDirection*Math.min(.63,speed/Math.hypot(rx*Math.sin(orbitAngle),ry*Math.cos(orbitAngle)));
+    orbitAngle+=angularSpeed*dt;
+    const c=Math.cos(orbitAngle),s=Math.sin(orbitAngle);
+    const targetX=-rx*s*angularSpeed+clamp(cx+rx*c-x,-speed,speed);
+    const targetY= ry*c*angularSpeed+clamp(cy+ry*s-y,-speed*.65,speed*.65);
+    vx+=(targetX-vx)*blend(1.85,dt);
+    vy+=(targetY-vy)*blend(1.85,dt);
+  }
   function steer(dt) {
     let kx=0,ky=0;
     for(const key of keys) {kx+=directions[key][0];ky+=directions[key][1];}
@@ -118,6 +135,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     box.top=Math.min(box.top,y); box.bottom=Math.max(box.bottom,y);
     if(!drag && !placed && !turn && !cameraMoving) turn=planEdgeTurn(x,y,vx,vy,box,size);
     const banking=Boolean(turn);
+    if(banking || drag || keys.size || placed || idle<=3.2) orbitAngle=null;
     if(turn) {
       const next=advanceEdgeTurn(turn,dt);
       x=next.x; y=next.y; vx=next.vx; vy=next.vy;
@@ -136,32 +154,33 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     } else {
       idle+=dt;
       if(!placed && idle>3.2 && !reduced.matches) {
-        // Cruise around the currently visible part of the profile; scrolling remains in the reader's hands.
-        patrol+=dt*.31;
-        const goalX=width*.5+Math.cos(patrol)*(width*.5-size*.55);
-        const goalY=height*(.36+.18*Math.sin(patrol)) + 7*Math.sin(phase*1.6);
-        const cruise=Math.min(155,width*.27);
-        vx+=(clamp((goalX-x)*1.25,-cruise,cruise)-vx)*blend(2.4,dt);
-        vy+=(clamp((goalY-y)*1.25,-cruise*.65,cruise*.65)-vy)*blend(2.4,dt);
-      } else {
-        const decay=Math.exp(-2.25*dt);vx*=decay;vy*=decay;
+        cruise(box,dt);
+      } else if(!placed) {
+        // Trade forward momentum for a shallow descent. A gentle drop stays anchored.
+        const airspeed=Math.hypot(vx,vy);
+        const sink=clamp(Math.abs(vx)*.14,0,38);
+        vx*=Math.exp(-(1.04+airspeed/1750)*dt);
+        vy+=(sink-vy)*blend(1.7,dt);
       }
       x+=vx*dt;y+=vy*dt;
     }
     const speed=Math.hypot(vx,vy);
     if(Math.abs(vx)>18) face=Math.sign(vx);
     let desiredHeading=face>0 ? 0 : Math.PI;
-    if(drag && speed<36) {
-      if(x-box.left<7 && face<0) desiredHeading=Math.PI*.61;
-      if(box.right-x<7 && face>0) desiredHeading=Math.PI*.39;
+    if(speed>24 || (banking && speed>9)) {
+      // Down-screen travel brings the chest towards the viewer. Up-screen shows the back.
+      desiredHeading=Math.atan2(vy*(banking?.92:.62),vx);
+    } else if(drag && speed<36) {
+      if(x-box.left<7 && face<0) desiredHeading=Math.PI*.67;
+      if(box.right-x<7 && face>0) desiredHeading=Math.PI*.33;
     }
-    if(banking && speed>9) desiredHeading=Math.acos(clamp(vx/speed,-1,1));
-    // Smooth angular acceleration into and out of the bank; the head leads the tail.
-    [heading,headingRate]=follow(heading,headingRate,desiredHeading,dt,7.2);
-    heading=clamp(heading,0,Math.PI);
-    const targetPitch=speed>20 ? clamp(Math.atan2(vy,Math.max(38,Math.abs(vx))),-1.02,1.02) : .04*Math.sin(phase);
-    pitch+=(targetPitch-pitch)*blend(7,dt);
-    roll+=(-clamp(headingRate*.16,-.66,.66)-roll)*blend(7,dt);
+    let arc=Math.atan2(Math.sin(desiredHeading-heading),Math.cos(desiredHeading-heading));
+    if(Math.abs(arc)>Math.PI-.035 && Math.abs(headingRate)>.22) arc=Math.sign(headingRate)*Math.abs(arc);
+    [heading,headingRate]=follow(heading,headingRate,heading+arc,dt,5.9);
+    const targetPitch=clamp(Math.atan2(vy,Math.max(95,Math.abs(vx)))*.64,-.54,.51);
+    [pitch,pitchRate]=follow(pitch,pitchRate,targetPitch,dt,7.4);
+    roll+=(-clamp(headingRate*.19,-.76,.76)-roll)*blend(5.9,dt);
+    tailLean+=(clamp(pitchRate*.18+roll*.54,-.7,.7)-tailLean)*blend(3.8,dt);
     if(!drag && !placed) constrain(box);
   }
   function smooth(a,b,v) {
@@ -174,13 +193,20 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     const yaw=Math.cos(heading), extent=Math.abs(yaw), sign=yaw<0?-1:1;
     const bank=clamp(Math.sin(pitch)*yaw+roll,-1,1);
     const climb=clamp(-vy/370,0,1);
-    const drifting=!drag && !placed && !keys.size && pace>.22 && !turn;
-    const targetLoad=drifting ? .28 : .82+climb*.26+Math.abs(bank)*.10;
-    wingLoad+=(targetLoad-wingLoad)*blend(3.6,dt);
-    phase+=dt*(2.75+climb*1.05+pace*.46+heat*.22);
-    const lift=active && !drag && !reduced.matches ? Math.cos(2*phase-.50)*size*.009*wingLoad : 0;
+    const glide=!drag && !placed && !keys.size
+      ? smooth(.055,.32,pace)*(1-smooth(.06,.52,climb))*(1-smooth(.15,.6,Math.abs(roll))) : 0;
+    const targetLoad=.85+.22*climb+.12*Math.abs(bank)-.73*glide;
+    wingLoad+=(targetLoad-wingLoad)*blend(2.8,dt);
+    phase+=dt*(1.30+wingLoad*1.71+climb*.82+heat*.22);
+    const lift=active && !drag && !reduced.matches ? Math.cos(2*phase-.72)*size*.010*wingLoad : 0;
     const bodyY=y+lift, angle=pitch*yaw+roll*Math.sin(heading);
     moveBody();
+    if(rig && !contextLost) {
+      body.style.transform='translateY('+lift+'px)';
+      const nozzle=rig.render({dt,heading,pitch,roll,pace,heat,wingLoad,tailLean,size});
+      effects.draw(dt,{x:x+nozzle.x,y:bodyY+nozzle.y,dx:nozzle.dx,dy:nozzle.dy},size,active?heat:0);
+      return;
+    }
     body.style.transform='translateY('+lift+'px) rotate('+angle+'rad)';
     const havePoses=turnTextures.every(image=>image.complete && image.naturalWidth);
     const side=havePoses ? smooth(.66,.91,extent) : 1;
@@ -195,11 +221,6 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     quarterPose.style.transform='translateX('+(noseX-.341*size*quarterWidth)+'px) scaleX('+quarterWidth+')';
     frontPose.style.opacity=front;
     frontPose.style.transform='translateX('+noseX+'px) scaleX('+(1-.15*extent)+')';
-    rig?.(phase,bank,heat,pace,wingLoad,[
-      {weight:side,shift:noseX/size-.434*sideWidth,scale:sideWidth},
-      {weight:quarter,shift:noseX/size-.341*quarterWidth,scale:quarterWidth},
-      {weight:front,shift:noseX/size,scale:1-.15*extent}
-    ]);
     const beat=Math.sin(phase*2+.5)*.010-bank*.008;
     const mx=noseX-side*.011*heat*size*sign;
     const my=(.051+side*.86*(beat-.010*heat))*size*.5;
@@ -242,7 +263,7 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     dragon.hidden=!value; fire.hidden=!value; land.textContent=value?"Land dragon":"Launch dragon";
     effects.clear();previous=0;
     if(!value) { cancelAnimationFrame(frame);frame=0;showHelp(false); }
-    else {resize();request();}
+    else {resize();mountRig();request();}
   }
   dragon.addEventListener("pointerdown",e=>{
     if(!e.isPrimary || e.button!==0 || drag) return;
@@ -336,7 +357,11 @@ export function startFlight(root, heroElement, assetURL = name => name) {
     lastPreference=reduced.matches; demo=false; setActive(!lastPreference);
   }
   reduced.addEventListener("change",applyMotionPreference,events);
-  rigCanvas.addEventListener("webglcontextlost",e=>{e.preventDefault();rig=null;if(!lifecycle.signal.aborted) showFallback();});
+  let contextLost=false, loading=false;
+  rigCanvas.addEventListener("webglcontextlost",e=>{
+    e.preventDefault();contextLost=true;
+    if(!lifecycle.signal.aborted) showFallback();
+  },events);
   function showFallback() {
     dragon.classList.remove("rigged");
     // The same skinned poses are available as compact loops on software-only devices.
@@ -349,23 +374,34 @@ export function startFlight(root, heroElement, assetURL = name => name) {
       image.decode().then(()=>layer.classList.add("has-sprite")).catch(()=>{});
     });
   }
-  function mountRig() {
-    if(lifecycle.signal.aborted) return;
-    try {rig=createWingRig(rigCanvas,texture,turnTextures);} catch {rig=null;}
-    if(rig) dragon.classList.add("rigged"); else showFallback();
-    paint(0);request();
+  async function mountRig() {
+    if(loading || lifecycle.signal.aborted || !active) return;
+    loading=true;
+    try {
+      if(!rig) {
+        const {createDragonModel}=await import("./dragon-model.js");
+        if(lifecycle.signal.aborted) return;
+        const model=await createDragonModel(rigCanvas,assetURL("flight-dragon.glb"));
+        if(lifecycle.signal.aborted) {model.dispose();return;}
+        rig=model;
+      }
+      if(!contextLost) dragon.classList.add("rigged");
+    } catch {
+      if(!lifecycle.signal.aborted) showFallback();
+    } finally { loading=false; }
+    if(!lifecycle.signal.aborted) {paint(0);request();}
   }
-  rigCanvas.addEventListener("webglcontextrestored",mountRig);
+  rigCanvas.addEventListener("webglcontextrestored",()=>{
+    contextLost=false;mountRig();
+  },events);
   flight.hidden=false;
   resize();setActive(active);
   window.addEventListener("resize",resize,events);
-  Promise.all([texture,...turnTextures].map(image=>image.decode()))
-    .then(mountRig).catch(()=>{if(!lifecycle.signal.aborted) showFallback();});
 
   return () => {
     lifecycle.abort();
     active=false; clearInputs(); cancelAnimationFrame(frame); effects.clear();
     // Release GPU resources when the host navigates away and removes the overlay.
-    if(rig) rigCanvas.getContext("webgl")?.getExtension("WEBGL_lose_context")?.loseContext();
+    rig?.dispose();
   };
 }
