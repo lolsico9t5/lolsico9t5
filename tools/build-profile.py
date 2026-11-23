@@ -31,6 +31,11 @@ def build(rendered):
     rendered = re.sub(r'\s*<p>\s*<a href="https://lolsico9t5\.github\.io/lolsico9t5/(?:\?[^"]*)?"[^>]*>.*?</a>\s*</p>',
                       '', rendered, count=1, flags=re.S)
     rendered = rendered.replace('href="#user-content-certificates"', 'href="#certificates"')
+    # The website has its own portrait header and planet navigation above this content.
+    _, about_heading, sections = rendered.partition('<h2 id="about">')
+    if not about_heading:
+        raise ValueError("Could not locate the About section in the rendered profile")
+    rendered = about_heading + sections
     # Style just the certificate table emitted by GitHub's Markdown renderer.
     rendered = re.sub(r'(<h2 id="certificates">.*?</h2>\s*(?:<markdown-accessiblity-table>\s*)?<table)(?=[ >])',
                       r'\1 class="cert-grid"', rendered, count=1, flags=re.S)
