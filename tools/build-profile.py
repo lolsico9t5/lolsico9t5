@@ -36,6 +36,7 @@ def build(rendered):
     if not about_heading:
         raise ValueError("Could not locate the About section in the rendered profile")
     rendered = about_heading + sections
+    rendered = re.sub(r'<img\b(?![^>]*\bloading=)', '<img loading="lazy" decoding="async"', rendered)
     # Style just the certificate table emitted by GitHub's Markdown renderer.
     rendered = re.sub(r'(<h2 id="certificates">.*?</h2>\s*(?:<markdown-accessiblity-table>\s*)?<table)(?=[ >])',
                       r'\1 class="cert-grid"', rendered, count=1, flags=re.S)
