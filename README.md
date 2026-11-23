@@ -15,8 +15,12 @@ Second-year Computer Science and Engineering Student at SKCET
 
 ## <picture><img src="assets/icons/about.svg" width="36" height="28" align="texttop" alt=""></picture>About
 
+<picture><img align="right" width="25%" src="assets/about-portrait.svg" alt="Portrait of Benjamin Franklin A"></picture>
+
 Second-year **B.E. Computer Science and Engineering** student with a strong foundation in C++, Java, SQL, web technologies, and cloud computing.
 Completed a C++ programming internship at Thiranex, serves as an **AWS Student Builder Campus Leader** and **GeeksforGeeks Campus Mantri**, and builds AI-assisted applications with Amazon Bedrock, Kiro, and Claude. Won **first place at EUREKA! 2026** (E-Cell, IIT Bombay) and focuses on software development, AI-enabled applications, and practical problem-solving.
+
+<br clear="right">
 
 <a name="projects"></a>
 

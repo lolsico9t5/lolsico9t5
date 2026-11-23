@@ -12,6 +12,13 @@ PAGE = ROOT / "docs/index.html"
 
 def build(rendered):
     rendered = re.sub(r"</?themed-picture\b[^>]*>", "", rendered)
+    # The About portrait and its float clearing belong only to the GitHub README.
+    portrait = r'<p\b[^>]*>\s*<picture>\s*<img\b[^>]*\bsrc="assets/about-portrait\.svg"[^>]*>\s*</picture>\s*</p>'
+    match = re.search(portrait, rendered)
+    if match:
+        after_portrait = rendered[match.end():]
+        rendered = rendered[:match.start()] + re.sub(
+            r'<br\s+clear="right"\s*/?>', '', after_portrait, count=1)
     rendered = re.sub(r'<p dir="auto"><a name="user-content-[^"]+"></a></p>\s*', "", rendered)
     # The original short navigation anchors correspond to the section icon names.
     rendered = re.sub(r'<h2 dir="auto">(?=<picture><img src="assets/icons/([\w-]+)\.svg")',
