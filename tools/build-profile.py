@@ -13,7 +13,8 @@ PAGE = ROOT / "docs/index.html"
 def build(rendered):
     rendered = re.sub(r"</?themed-picture\b[^>]*>", "", rendered)
     # The About portrait and its float clearing belong only to the GitHub README.
-    portrait = r'<p\b[^>]*>\s*<picture>\s*<img\b[^>]*\bsrc="assets/about-portrait\.svg"[^>]*>\s*</picture>\s*</p>'
+    portrait = (r'(?:<p\b[^>]*>\s*)?<picture>\s*(?:<source\b[^>]*>\s*)*'
+                r'<img\b[^>]*\bsrc="assets/about-portrait\.svg"[^>]*>\s*</picture>(?:\s*</p>)?')
     match = re.search(portrait, rendered)
     if match:
         after_portrait = rendered[match.end():]
